@@ -6,6 +6,7 @@ export const CardIcon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 16px;
   padding: 12px;
   img,
   svg {
@@ -17,21 +18,30 @@ export const CardIcon = styled.div`
 
 export const CardRow = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
 `;
 
-export const CardRowLeft = styled.div`
+const cardItemClassNames = {
+  Auto: "auto",
+  Right: "right",
+} as const;
+
+const CardItemStyled = styled.div`
   display: flex;
-  gap: 16px;
-  align-items: center;
+  flex-flow: column nowrap;
+
+  &.${cardItemClassNames.Auto} {
+    margin-left: auto;
+  }
+
+  &.${cardItemClassNames.Right} {
+    text-align: right;
+  }
 `;
 
-export const CardRowRight = styled.div`
-  text-align: right;
-`;
+export const CardItem = Object.assign(CardItemStyled, cardItemClassNames);
 
-export const CardRowTitle = styled.div`
+export const CardItemTitle = styled.div`
   color: var(--text-primary, #000);
   text-overflow: ellipsis;
   font-family: "PlusJakartaSans", "Medium", sans-serif;
@@ -41,7 +51,7 @@ export const CardRowTitle = styled.div`
   letter-spacing: 0.16px;
 `;
 
-export const CardRowDescription = styled.div`
+export const CardItemDescription = styled.div`
   color: var(--text-secondary, rgba(66, 61, 60, 0.64));
   font-family: "PlusJakartaSans", "Medium", sans-serif;
   font-size: 12px;
