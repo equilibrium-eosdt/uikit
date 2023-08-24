@@ -44,7 +44,7 @@ export const CardItem = Object.assign(CardItemStyled, cardItemClassNames);
 export const CardItemTitle = styled.div`
   color: var(--text-primary, #000);
   text-overflow: ellipsis;
-  font-family: "PlusJakartaSans", "Medium", sans-serif;
+  font-family: "PlusJakartaSans", sans-serif;
   font-size: 16px;
   font-variation-settings: "wght" 500;
   line-height: 150%;
@@ -53,7 +53,7 @@ export const CardItemTitle = styled.div`
 
 export const CardItemDescription = styled.div`
   color: var(--text-secondary, rgba(66, 61, 60, 0.64));
-  font-family: "PlusJakartaSans", "Medium", sans-serif;
+  font-family: "PlusJakartaSans", sans-serif;
   font-size: 12px;
   font-variation-settings: "wght" 500;
   line-height: normal;
@@ -62,7 +62,7 @@ export const CardItemDescription = styled.div`
 
 export const CardHeading = styled.div`
   color: var(--text-primary, #000);
-  font-family: "PlusJakartaSans", "Medium", sans-serif;
+  font-family: "PlusJakartaSans", sans-serif;
   font-size: 24px;
   font-variation-settings: "wght" 700;
   line-height: 133%;
@@ -72,7 +72,7 @@ export const CardHeading = styled.div`
 
 export const CardDescription = styled.div`
   color: var(--text-secondary, rgba(66, 61, 60, 0.64));
-  font-family: "PlusJakartaSans", "Medium", sans-serif;
+  font-family: "PlusJakartaSans", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 150%;

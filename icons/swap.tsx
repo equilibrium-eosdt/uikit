@@ -1,20 +1,18 @@
+import type { IconProps } from "./types";
+
 // TODO refactor to .svg
-export default function SwapIcon(_props: {
-  style?: React.CSSProperties;
-  className?: string;
-  onClick?: () => void;
-}) {
+export default function SwapIcon(_props: IconProps) {
   const { style, ...props } = _props;
 
   return (
     <svg
       {...props}
+      style={{ filter: "invert(var(--svg-invert))", ...style }}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      style={{ filter: "invert(var(--svg-invert))", ...style }}
     >
-      <g clip-path="url(#clip0_12_2206)">
+      <g clipPath="url(#clip0_12_2206)">
         <mask
           id="mask0_12_2206"
           style={{ maskType: "alpha" }}
