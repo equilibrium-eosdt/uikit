@@ -14,7 +14,7 @@ interface Props {
   onClick?: (e: MouseEvent<HTMLDivElement>) => void;
 }
 
-const TextField = forwardRef<HTMLInputElement, Props>((props, ref) => {
+export const TextField = forwardRef<HTMLInputElement, Props>((props, ref) => {
   const container = (
     <div className="input-container">
       <input
