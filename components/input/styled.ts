@@ -128,12 +128,12 @@ export const InputBox = styled.div`
         color: var(--border-negative);
       }
     }
-    &.${classNames.Hovered} {
-      .input__area {
+  &.${classNames.Hovered} {
+    .input__area {
         box-shadow: inset 0 0 0 1px var(--border-negative);
       }
-    }
-    &.${classNames.Focused} {
+  }
+  &.${classNames.Focused} {
       .input__area {
         box-shadow: inset 0 0 0 2px var(--border-negative);
         background: transparent;
