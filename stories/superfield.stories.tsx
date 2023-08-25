@@ -4,9 +4,7 @@ import React from "react";
 import { InputStoryWrapper } from "../components/helpers/input-story-wrapper";
 import { StoryInput } from "../components/helpers/story-controls";
 
-import TF, {
-  Superfield as Superfield_,
-} from "../components/superfield/superfield";
+import TF, { Superfield as Superfield_ } from "../components/input/superfield";
 // import { within, userEvent } from "@storybook/testing-library";
 
 const meta = {
