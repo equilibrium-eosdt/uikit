@@ -29,26 +29,31 @@ export const InputBox = styled.div`
     height: 32px;
     background: transparent;
     caret-color: var(--text-primary);
-    color: transparent;
-    margin: 4px;
+    margin: 0;
+    color: var(--text-primary);
+    padding: 0;
+
     &::-ms-clear {
       display: none;
     }
 
     &__area {
       transition: 300ms ease-out;
-      padding: 10px 14px;
+      padding: 10px 16px;
       background: var(--fill-secondary);
       border-radius: 16px;
-      min-height: 60px;
+      height: 64px;
+      box-sizing: border-box;
     }
     &__hint {
       color: var(--text-secondary);
-      font-size: 12px;
-      line-height: 16px;
-      letter-spacing: 0.5px;
       transition: 300ms ease-out;
-      margin: 2px 4px 2px 6px;
+      margin: 0;
+
+      font-size: 16px;
+      line-height: 24px; 
+      letter-spacing: 0.16px;
+      margin: 10px 0 0;
     }
   }
   .suggestions {
@@ -73,9 +78,12 @@ export const InputBox = styled.div`
     }
   }
 
-  &.${classNames.Filled} {
+  &.${classNames.Hovered} {
     .input {
-      color: var(--text-primary);
+      &__area {
+        background: var(--fill-secondary, rgba(204, 187, 184, 0.16));
+        box-shadow: inset 0 0 0 1px var(--border-hover);
+      }
     }
   }
 
@@ -85,6 +93,12 @@ export const InputBox = styled.div`
         background: transparent;
         box-shadow: inset 0 0 0 2px var(--border-focus);
       }
+      &__hint {
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.5px;
+        margin: 0
+      }
     }
     .suggestions {
       opacity: 1;
@@ -92,16 +106,39 @@ export const InputBox = styled.div`
     }
   }
 
+  &.${classNames.Filled} {
+    .input {
+      color: var(--text-primary);
+      &__hint {
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.5px;
+        margin: 0
+      }
+    }
+  }
+
   &.${classNames.Error} {
     .input {
       &__area {
         background: var(--fill-negative-bg);
-        box-shadow: inset 0 0 0 1px var(--border-negative);
+        box-shadow: none;
       }
       &__hint {
         color: var(--border-negative);
       }
     }
+  &.${classNames.Hovered} {
+    .input__area {
+        box-shadow: inset 0 0 0 1px var(--border-negative);
+      }
+  }
+  &.${classNames.Focused} {
+        .input__area {
+        box-shadow: inset 0 0 0 2px var(--border-negative);
+        background: transparent;
+      }
+  }
   }
 
   &.${classNames.Pending} {
