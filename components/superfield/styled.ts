@@ -8,8 +8,9 @@ export const classNames = {
   Pending: "pending",
 } as const;
 
-export const InputBox = styled.div`
+export const SuperfieldStyled = styled.div`
   width: 100%;
+  height: 96px;
 
   span {
     position: relative;
@@ -26,12 +27,16 @@ export const InputBox = styled.div`
     border: none;
     outline: none;
     width: 100%;
-    height: 32px;
     background: transparent;
     caret-color: var(--text-primary);
     margin: 0;
     color: var(--text-primary);
-    padding: 0;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+    height: auto;
+    font-variation-settings: "wght" 700;
+    padding: 4px 0 4px;
 
     &::-ms-clear {
       display: none;
@@ -39,21 +44,22 @@ export const InputBox = styled.div`
 
     &__area {
       transition: 300ms ease-out;
-      padding: 10px 16px;
       background: var(--fill-secondary);
-      border-radius: 16px;
-      height: 64px;
       box-sizing: border-box;
+      height: 96px;
+      padding: 24px;
+      border-radius: 24px;
     }
     &__hint {
       color: var(--text-secondary);
       transition: 300ms ease-out;
+      font-size: 12px;
       margin: 0;
-
-      font-size: 16px;
-      line-height: 24px;
-      letter-spacing: 0.16px;
-      margin: 10px 0 0;
+      line-height: normal;
+      letter-spacing: 0.5px;
+    }
+    &::placeholder {
+      color: rgba(140, 129, 126, 0.48);
     }
   }
   .suggestions {
