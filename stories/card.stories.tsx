@@ -1,22 +1,18 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import React from "react";
+import cn from "classnames";
+import React, { ReactNode } from "react";
 
-import {
-  CardDescription,
-  CardHeading,
-  CardIcon,
-  CardRow,
-  CardRowDescription,
-  CardRowLeft,
-  CardRowRight,
-  CardRowTitle,
-  CardStyled,
-} from "../components/card/card.styled";
-import { CardStoryWrapper } from "../components/card/card-story-wrapper";
-import Card from "../components/card/card";
+import { CardStoryWrapper } from "../components/helpers/card-story-wrapper";
+import Card, {
+  CardItem,
+  CardItemDescription,
+  CardItemTitle,
+  CardProps,
+} from "../components/card";
+import SwapIcon from "../icons/swap";
 
 const meta = {
-  title: "Card",
+  title: "Components/Card",
   parameters: {
     layout: "fullscreen",
   },
@@ -32,18 +28,44 @@ const underValue = "Description";
 const heading = "Heading";
 const mainDescription = "Description";
 
+interface CardItemHelperProps extends CardProps {
+  title?: ReactNode;
+  underTitle?: ReactNode;
+  value?: ReactNode;
+  underValue?: ReactNode;
+}
+
+function CardItemHelper(props: CardItemHelperProps) {
+  return (
+    <Card {...props}>
+      <CardItem>
+        <CardItemTitle>{props.title}</CardItemTitle>
+        <CardItemDescription>{props.underTitle}</CardItemDescription>
+      </CardItem>
+      <CardItem className={cn(CardItem.Auto, CardItem.Right)}>
+        <CardItemTitle>{props.title}</CardItemTitle>
+        <CardItemDescription>{props.underTitle}</CardItemDescription>
+      </CardItem>
+    </Card>
+  );
+}
+
 export const Common: Story = {
   render: () => {
     return (
       <CardStoryWrapper>
-        <Card
+        <Card cover={<SwapIcon />} />
+
+        <Card cover={<SwapIcon />} className="secondary" />
+
+        <CardItemHelper
           title={title}
           underTitle={underTitle}
           value={value}
           underValue={underValue}
         />
 
-        <Card
+        <CardItemHelper
           title={title}
           underTitle={underTitle}
           value={value}
@@ -51,63 +73,63 @@ export const Common: Story = {
           className="secondary"
         />
 
-        <Card
+        <CardItemHelper
           title={title}
           underTitle={underTitle}
           value={value}
           underValue={underValue}
-          iconSrc={"/public/user.svg"}
+          cover={<img src="/public/user.svg" />}
         />
 
-        <Card
+        <CardItemHelper
           title={title}
           underTitle={underTitle}
           value={value}
           underValue={underValue}
           className="secondary"
-          iconSrc={"/public/user.svg"}
+          cover={<img src="/public/user.svg" />}
         />
 
-        <Card
+        <CardItemHelper
           title={title}
           underTitle={underTitle}
           value={value}
           underValue={underValue}
-          iconSrc={"/public/user.svg"}
+          cover={<img src="/public/user.svg" />}
           heading={heading}
           className="md"
         />
 
-        <Card
+        <CardItemHelper
           title={title}
           underTitle={underTitle}
           value={value}
           underValue={underValue}
           className="secondary md"
-          iconSrc={"/public/user.svg"}
+          cover={<img src="/public/user.svg" />}
           heading={heading}
         />
 
-        <Card
+        <CardItemHelper
           title={title}
           underTitle={underTitle}
           value={value}
           underValue={underValue}
-          iconSrc={"/public/user.svg"}
+          cover={<img src="/public/user.svg" />}
           heading={heading}
-          mainDescription={mainDescription}
+          description={mainDescription}
           className="lg"
         />
 
-        <Card
+        <CardItemHelper
           title={title}
           underTitle={underTitle}
           value={value}
           underValue={underValue}
           className="secondary lg"
-          iconSrc={"/public/user.svg"}
+          cover={<img src="/public/user.svg" />}
           heading={heading}
-          mainDescription={mainDescription}
+          description={mainDescription}
         />
       </CardStoryWrapper>
     );

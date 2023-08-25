@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "private": false,
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "yarn watch & yarn storybook & wait",

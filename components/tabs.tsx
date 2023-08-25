@@ -15,7 +15,11 @@ export const Tabs = styled.div`
   }
 `;
 
-export const TabItem = styled.button.attrs({ type: "button" })`
+const TabItemClassNames = {
+  Active: "active",
+} as const;
+
+const TabItemStyled = styled.button.attrs({ type: "button" })`
   border: 0;
   outline: 0;
   cursor: pointer;
@@ -32,11 +36,12 @@ export const TabItem = styled.button.attrs({ type: "button" })`
   -webkit-tap-highlight-color: transparent;
   color: var(--text-primary);
 
-  &.active {
+  &.${TabItemClassNames.Active} {
     background: var(--fill-elevated);
     box-shadow: 0px 2px 1px rgba(51, 20, 0, 0.04),
       0px 4px 8px rgba(51, 20, 0, 0.08);
     color: var(--text-primary);
   }
-
 `;
+
+export const TabItem = Object.assign({}, TabItemStyled, TabItemClassNames);
