@@ -14,7 +14,7 @@ interface Props {
   onClick?: (e: MouseEvent<HTMLDivElement>) => void;
 }
 
-export const Superfield = forwardRef<HTMLInputElement, Props>((props, ref) => {
+export const SuperField = forwardRef<HTMLInputElement, Props>((props, ref) => {
   const container = (
     <div className="input-container">
       <input
@@ -49,4 +49,4 @@ export const Superfield = forwardRef<HTMLInputElement, Props>((props, ref) => {
   );
 });
 
-export default Object.assign({}, Superfield, classNames);
+export default Object.assign({}, SuperField, classNames);
