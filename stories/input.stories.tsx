@@ -9,7 +9,7 @@ import * as classNames from "../constants/classnames";
 // import { within, userEvent } from "@storybook/testing-library";
 
 const meta = {
-  title: "Components/TextField",
+  title: "Components/Input/Textfield",
   component: TextField_,
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout

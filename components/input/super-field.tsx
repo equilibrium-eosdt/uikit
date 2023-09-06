@@ -1,6 +1,6 @@
 import { ChangeEvent, forwardRef, MouseEvent, ReactNode } from "react";
 import * as classNames from "../../constants/classnames";
-import { SuperfieldStyled } from "./styled";
+import { SuperfieldStyled } from "./text.styled";
 
 interface Props {
   className?: string;

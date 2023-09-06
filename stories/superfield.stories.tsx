@@ -8,7 +8,7 @@ import { StoryInput } from "../components/helpers/story-controls";
 import { SuperField as Superfield_ } from "../components/input/super-field";
 
 const meta = {
-  title: "Components/Superfield",
+  title: "Components/Input/Superfield",
   component: Superfield_,
   parameters: {
     layout: "fullscreen",

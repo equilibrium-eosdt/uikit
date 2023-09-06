@@ -1,5 +1,5 @@
 import { ChangeEvent, forwardRef, MouseEvent, ReactNode } from "react";
-import { InputBox } from "./styled";
+import { InputBox } from "./text.styled";
 import * as classNames from "../../constants/classnames";
 
 interface Props {

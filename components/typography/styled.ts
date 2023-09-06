@@ -1,10 +1,19 @@
 import { styled } from "styled-components";
-import * as classNames from "../../constants/classnames";
+import * as Class from "../../constants/classnames";
+import { cssVar } from "../../util/theme";
 
 export const T = styled.p`
-  font-family: "PlusJakartaSans", sans-serif;
+  font-family: ${cssVar("--default-font")}, sans-serif;
 
-  &.${classNames.Body} {
+  &.${Class.Action} {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.48px;
+  }
+
+  &.${Class.Body} {
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -12,7 +21,7 @@ export const T = styled.p`
     letter-spacing: 0.16px;
   }
 
-  &.${classNames.Caption} {
+  &.${Class.Caption} {
     font-size: 12px;
     font-style: normal;
     font-weight: 500;

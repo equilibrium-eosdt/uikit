@@ -1,3 +1,6 @@
+// common
+export const Hidden = "hidden";
+
 // input states
 export const Active = "active";
 export const Focused = "focused";
@@ -18,6 +21,7 @@ export const M = "md";
 export const L = "lg";
 
 // variants
+export const Action = "action";
 export const Body = "body";
 export const Caption = "caption";
 export const Secondary = "secondary";
