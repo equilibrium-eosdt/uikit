@@ -77,7 +77,7 @@
   --fill-elevated: var(--color-opaque-white);
   --fill-secondary-hover: var(--color-transparent-gray3);
   --fill-secondary: var(--color-transparent-gray2);
-  --fill-primary-hover: var(--color-accent-opaque8);
+  --fill-primary-hover: var(--color-opaque-gray8);
   --fill-primary: var(--color-opaque-black);
   /* fill/invert */
   --fill-invert-negative: var(--color-opaque-red3);
