@@ -1,6 +1,7 @@
 import { useEffect, useState, useSyncExternalStore } from "react";
 
-import { createStore, hasFeature } from "../util";
+import { hasFeature } from "../util/browser-features";
+import { createStore } from "../util/store";
 
 const { emit, subscribe } = createStore();
 
@@ -95,7 +96,8 @@ export const useSetTheme = (config?: {
 
   useEffect(() => {
     config?.onChange?.(currentTheme);
-    document.documentElement.setAttribute("data-theme", currentTheme);
+    const element = document.documentElement;
+    element.setAttribute("data-theme", currentTheme);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentTheme]);
 };

@@ -1,6 +1,6 @@
 import { ChangeEvent, forwardRef, MouseEvent, ReactNode } from "react";
-import { classNames, InputBox } from "./styled";
-import Noop from "../helpers/noop";
+import { InputBox } from "./styled";
+import * as classNames from "../../constants/classnames";
 
 interface Props {
   className?: string;

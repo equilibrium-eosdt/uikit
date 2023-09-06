@@ -1,12 +1,5 @@
 import styled from "styled-components";
-
-export const classNames = {
-  Focused: "focused",
-  Hovered: "hovered",
-  Filled: "filled",
-  Error: "error",
-  Pending: "pending",
-} as const;
+import * as classNames from "../../constants/classnames";
 
 export const InputBox = styled.div`
   width: 100%;

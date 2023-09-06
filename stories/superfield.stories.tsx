@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import cn from "classnames";
 import React from "react";
+import * as classNames from "../constants/classnames";
 import { InputStoryWrapper } from "../components/helpers/input-story-wrapper";
 import { StoryInput } from "../components/helpers/story-controls";
 
-import TF, { SuperField as Superfield_ } from "../components/input/superfield";
+import { SuperField as Superfield_ } from "../components/input/super-field";
 
 const meta = {
   title: "Components/Superfield",
@@ -33,73 +34,81 @@ export const Common: Story = {
         <Superfield title="Label" placeholder="Value" />
 
         <Superfield
-          className={cn(TF.Hovered)}
+          className={cn(classNames.Hovered)}
           title="Label"
           placeholder="Value"
         />
 
         <Superfield
-          className={cn(TF.Focused)}
+          className={cn(classNames.Focused)}
           title="Label"
           placeholder="Value"
         />
 
         <Superfield
-          className={cn(TF.Focused)}
+          className={cn(classNames.Focused)}
           value="Value"
           title="Label"
           placeholder="Value"
         />
 
         <Superfield
-          className={cn(TF.Hovered, TF.Filled)}
+          className={cn(classNames.Hovered, classNames.Filled)}
           title="Label"
           value="Value"
           placeholder="Value"
         />
 
         <Superfield
-          className={cn(TF.Filled)}
+          className={cn(classNames.Filled)}
           title="Label"
           value="Value"
           placeholder="Value"
         />
 
         <Superfield
-          className={cn(TF.Error)}
+          className={cn(classNames.Error)}
           title="Label"
           placeholder="Value"
         />
 
         <Superfield
-          className={cn(TF.Error, TF.Hovered)}
+          className={cn(classNames.Error, classNames.Hovered)}
           title="Label"
           placeholder="Value"
         />
 
         <Superfield
-          className={cn(TF.Error, TF.Focused)}
+          className={cn(classNames.Error, classNames.Focused)}
           title="Label"
           value="Val"
           placeholder="Value"
         />
 
         <Superfield
-          className={cn(TF.Error, TF.Focused, TF.Filled)}
+          className={cn(
+            classNames.Error,
+            classNames.Focused,
+            classNames.Filled,
+          )}
           title="Label"
           value="Value"
           placeholder="Value"
         />
 
         <Superfield
-          className={cn(TF.Error, TF.Hovered, TF.Filled)}
+          className={cn(
+            classNames.Error,
+            classNames.Hovered,
+            classNames.Filled,
+          )}
           title="Label"
           value="Value"
           placeholder="Value"
         />
 
         <Superfield
-          className={cn(TF.Error, TF.Filled)}
+          className={cn(classNames.Error, classNames.Filled)}
           title="Label"
           value="Value"
           placeholder="Value"

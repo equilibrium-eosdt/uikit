@@ -1,4 +1,3 @@
-import cn from "classnames";
 import type { CSSProperties, ReactNode } from "react";
 
 import {
@@ -40,7 +39,6 @@ function Card(props: CardProps) {
     </CardStyled>
   );
 }
-
 
 export default Card;
 export { CardItem, CardItemDescription, CardItemTitle };

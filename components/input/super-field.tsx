@@ -1,6 +1,5 @@
 import { ChangeEvent, forwardRef, MouseEvent, ReactNode } from "react";
-import { classNames } from "./styled";
-import Noop from "../helpers/noop";
+import * as classNames from "../../constants/classnames";
 import { SuperfieldStyled } from "./styled";
 
 interface Props {

@@ -4,7 +4,8 @@ import React from "react";
 import { InputStoryWrapper } from "../components/helpers/input-story-wrapper";
 import { StoryInput } from "../components/helpers/story-controls";
 
-import TF, { TextField as TextField_ } from "../components/input/text-field";
+import { TextField as TextField_ } from "../components/input/text-field";
+import * as classNames from "../constants/classnames";
 // import { within, userEvent } from "@storybook/testing-library";
 
 const meta = {
@@ -34,44 +35,63 @@ export const Common: Story = {
       <InputStoryWrapper>
         <TextField title="Label" />
 
-        <TextField className={cn(TF.Hovered)} title="Label" />
+        <TextField className={cn(classNames.Hovered)} title="Label" />
 
-        <TextField className={cn(TF.Focused)} title="Label" />
-
-        <TextField className={cn(TF.Focused)} value="Value" title="Label" />
+        <TextField className={cn(classNames.Focused)} title="Label" />
 
         <TextField
-          className={cn(TF.Hovered, TF.Filled)}
+          className={cn(classNames.Focused)}
+          value="Value"
+          title="Label"
+        />
+
+        <TextField
+          className={cn(classNames.Hovered, classNames.Filled)}
           title="Label"
           value="Value"
         />
 
-        <TextField className={cn(TF.Filled)} title="Label" value="Value" />
+        <TextField
+          className={cn(classNames.Filled)}
+          title="Label"
+          value="Value"
+        />
 
-        <TextField className={cn(TF.Error)} title="Label" />
-
-        <TextField className={cn(TF.Error, TF.Hovered)} title="Label" />
+        <TextField className={cn(classNames.Error)} title="Label" />
 
         <TextField
-          className={cn(TF.Error, TF.Focused)}
+          className={cn(classNames.Error, classNames.Hovered)}
+          title="Label"
+        />
+
+        <TextField
+          className={cn(classNames.Error, classNames.Focused)}
           title="Label"
           value="Val"
         />
 
         <TextField
-          className={cn(TF.Error, TF.Focused, TF.Filled)}
+          className={cn(
+            classNames.Error,
+            classNames.Focused,
+            classNames.Filled,
+          )}
           title="Label"
           value="Value"
         />
 
         <TextField
-          className={cn(TF.Error, TF.Hovered, TF.Filled)}
+          className={cn(
+            classNames.Error,
+            classNames.Hovered,
+            classNames.Filled,
+          )}
           title="Label"
           value="Value"
         />
 
         <TextField
-          className={cn(TF.Error, TF.Filled)}
+          className={cn(classNames.Error, classNames.Filled)}
           title="Label"
           value="Value"
         />

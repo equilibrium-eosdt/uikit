@@ -9,6 +9,7 @@ import Card, {
   CardItemTitle,
   CardProps,
 } from "../components/card";
+import * as classNames from "../constants/classnames";
 import SwapIcon from "../icons/swap";
 
 const meta = {
@@ -56,7 +57,7 @@ export const Common: Story = {
       <CardStoryWrapper>
         <Card cover={<SwapIcon />} />
 
-        <Card cover={<SwapIcon />} className="secondary" />
+        <Card cover={<SwapIcon />} className={classNames.Secondary} />
 
         <CardItemHelper
           title={title}
@@ -86,7 +87,7 @@ export const Common: Story = {
           underTitle={underTitle}
           value={value}
           underValue={underValue}
-          className="secondary"
+          className={classNames.Secondary}
           cover={<img src="/public/user.svg" />}
         />
 
@@ -97,7 +98,7 @@ export const Common: Story = {
           underValue={underValue}
           cover={<img src="/public/user.svg" />}
           heading={heading}
-          className="md"
+          className={classNames.M}
         />
 
         <CardItemHelper
@@ -118,7 +119,7 @@ export const Common: Story = {
           cover={<img src="/public/user.svg" />}
           heading={heading}
           description={mainDescription}
-          className="lg"
+          className={classNames.L}
         />
 
         <CardItemHelper
@@ -126,7 +127,7 @@ export const Common: Story = {
           underTitle={underTitle}
           value={value}
           underValue={underValue}
-          className="secondary lg"
+          className={cn(classNames.Secondary, classNames.L)}
           cover={<img src="/public/user.svg" />}
           heading={heading}
           description={mainDescription}
