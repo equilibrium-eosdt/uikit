@@ -3,6 +3,8 @@ import * as Class from "./classnames";
 import * as Global from "../../constants/classnames";
 import { cssVar } from "../../util/theme";
 
+export const HANDLE_WIDTH = 56;
+
 export const SliderContainer = styled.div`
   width: 100%;
   border-radius: 32px;
@@ -21,9 +23,7 @@ export const SliderContainer = styled.div`
     height: 48px;
     background: ${cssVar("--fill-accent-primary")};
     z-index: 3;
-    max-width: calc(100% - 40px);
     box-sizing: content-box;
-    padding: 0 20px;
   }
 
   > .${Class.Restrict}, .${Class.RestrictUnderlay} {
@@ -33,9 +33,7 @@ export const SliderContainer = styled.div`
     border-top-left-radius: 32px;
     border-bottom-left-radius: 32px;
     height: 48px;
-    max-width: calc(100% - 40px);
     box-sizing: content-box;
-    padding: 0 20px;
   }
 
   > .${Class.RestrictUnderlay} {
@@ -55,15 +53,6 @@ export const SliderContainer = styled.div`
     );
 
     background-size: 34px 60px;
-
-    &::after {
-      content: " ";
-      position: absolute;
-      right: -15px;
-      top: 0;
-      bottom: 0;
-      width: 30px;
-    }
   }
 
   > .${Class.Title} {
@@ -99,9 +88,8 @@ export const SliderContainer = styled.div`
       align-items: center;
       background-color: ${cssVar("--fill-control")};
       height: 44px;
-      width: 56px;
-      border-radius: 23px;
-      left: 0;
+      width: ${HANDLE_WIDTH}px;
+      border-radius: 28px;
       top: calc(100% - 2px);
       transform: translate(-50%, -100%);
     }
@@ -136,9 +124,9 @@ export const SliderContainer = styled.div`
       -webkit-appearance: none;
       background-color: transparent;
       height: 44px;
-      width: 56px;
+      width: ${HANDLE_WIDTH}px;
       border-radius: 23px;
-      z-index: 1000;
+      z-index: 5;
       // box-shadow: none !important;
       outline: none;
       box-shadow: 0px 2px 1px rgba(51, 20, 0, 0.04),
@@ -156,7 +144,7 @@ export const SliderContainer = styled.div`
       background: transparent;
       background-image: none;
       height: 48px;
-      width: 56px;
+      width: ${HANDLE_WIDTH}px;
       border-radius: 23px;
       z-index: 1000;
       box-shadow: none !important;

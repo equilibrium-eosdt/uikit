@@ -1,7 +1,7 @@
 import cn from "classnames";
 import type { ChangeEvent, ReactNode, TouchEvent } from "react";
 import * as LocalClass from "./classnames";
-import { SliderContainer } from "./slider.styled";
+import { HANDLE_WIDTH, SliderContainer } from "./slider.styled";
 import Noop from "../helpers/noop";
 import T from "../typography";
 import * as GlobalClass from "../../constants/classnames";
@@ -28,10 +28,8 @@ const MAX = 20;
 
 const THRESHOLD_LEFT = 25;
 const THRESHOLD_RIGHT = 75;
-/** @deprecated no magic consts */
-const _WTF = 0.88;
-/** @deprecated no magic consts */
-const _WTF2 = 2;
+
+const percent = (offset: number) => `${offset * 100}%`;
 
 const adjustValue = (min: number, max: number, _value?: number) => {
   let value = _value ?? min;
@@ -62,30 +60,34 @@ function SuperSlider({
   thresholdRight = THRESHOLD_RIGHT,
   ...handlers
 }: Props) {
+  const range = max - min;
   const value = adjustValue(min, max, _value);
+  const offset = (value - min) / range;
 
   const restricted =
     typeof restrictLessThan === "number" && restrictLessThan > min;
 
-  const labelLeftNum = ((value - min) * 100) / (max - min);
-  const labelLeft = `${labelLeftNum}%`;
-  const fillWidthNum = ((value * _WTF - min) * 100) / (max - min - _WTF2);
-
-  const restrictWidthNum = restricted
-    ? ((restrictLessThan! * _WTF - min) * 100) / (max - min - _WTF2)
+  const restrictOffset = restricted
+    ? (restrictLessThan! - min) / range
     : undefined;
 
-  const fillLeft = restricted ? `${restrictWidthNum}%` : 0;
+  const restrictDiff = restricted ? offset - restrictOffset! : undefined;
+  const labelLeft = percent(offset);
+  const fillLeft = restricted
+    ? `calc(${percent(restrictOffset!)} - ${
+        restrictOffset! * (HANDLE_WIDTH + 4)
+      }px)`
+    : 0;
 
   const fillWidth = restricted
-    ? `${fillWidthNum - restrictWidthNum!}%`
-    : `${fillWidthNum}%`;
+    ? `calc(${percent(restrictDiff!)} + ${
+        (1 - restrictDiff!) * (HANDLE_WIDTH + 4)
+      }px)`
+    : `calc(${percent(offset)} + ${(1 - offset) * (HANDLE_WIDTH + 4)}px)`;
 
   const titleHidden =
-    (labelLeftNum >= thresholdLeft && labelLeftNum <= thresholdRight) ||
-    (restricted &&
-      restrictWidthNum! >= thresholdLeft &&
-      restrictWidthNum! <= thresholdRight);
+    (offset * 100 >= thresholdLeft && offset * 100 <= thresholdRight) ||
+    (restricted && restrictOffset! * 100 >= thresholdLeft);
 
   return (
     <SliderContainer className={className}>
@@ -101,11 +103,19 @@ function SuperSlider({
         <>
           <div
             className={LocalClass.RestrictUnderlay}
-            style={{ width: `${restrictWidthNum}%` }}
+            style={{
+              width: `calc(${percent(restrictOffset!)} - ${
+                (HANDLE_WIDTH + 4) / 4
+              }px)`,
+            }}
           />
           <div
             className={LocalClass.Restrict}
-            style={{ width: `${restrictWidthNum}%` }}
+            style={{
+              width: `calc(${percent(restrictOffset!)} - ${
+                (HANDLE_WIDTH + 4) / 4
+              }px)`,
+            }}
           />
         </>
       ) : (
