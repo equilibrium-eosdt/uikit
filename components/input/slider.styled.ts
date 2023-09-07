@@ -63,7 +63,6 @@ export const SliderContainer = styled.div`
     justify-content: center;
     align-items: center;
     height: 100%;
-    mix-blend-mode: multiply;
     z-index: 4;
     transition: 200ms ease-in;
     color: ${cssVar("--text-accent")};
