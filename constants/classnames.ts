@@ -37,5 +37,4 @@ export const Rectangle = "rectangle";
 export const DarkBG = "darkbg";
 export const LightBg = "lightbg";
 export const Status = "status";
-export const Accent = "accent";
 export const Image = "image";
