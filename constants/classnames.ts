@@ -22,6 +22,7 @@ export const Reverse = "reverse";
 export const S = "sm";
 export const M = "md";
 export const L = "lg";
+export const XL = "xl";
 
 // variants
 export const Action = "action";
@@ -32,3 +33,9 @@ export const Accent = "accent";
 export const Brand = "brand";
 export const Positive = "positive";
 export const Negative = "negative";
+export const Rectangle = "rectangle";
+export const DarkBG = "darkbg";
+export const LightBg = "lightbg";
+export const Status = "status";
+export const Accent = "accent";
+export const Image = "image";
