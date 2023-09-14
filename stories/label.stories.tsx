@@ -23,8 +23,8 @@ export const Common: Story = {
     return (
       <LabelStoryWrapper>
         <Label icon lg>
-          {title}
           <FlashIcon />
+          {title}
         </Label>
         <Label lg icon reverse>
           <FlashIcon />
