@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import * as Class from "../../constants/classnames";
-import { cssVar } from "../../util/theme";
+import { cssVar } from "../../util/style";
 
 const STRIPE_WIDTH = "56px";
 

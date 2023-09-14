@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import * as Class from "../../constants/classnames";
-import { cssVar } from "../../util/theme";
+import { cssVar } from "../../util/style";
 
 
 export const ThumbnailWrapper = styled.div`
@@ -28,7 +28,7 @@ img, svg {
     height: 48px;
 }
 }
-        
+
 &.${Class.L} {
     border-radius: ${cssVar("--rounding-radius-xxl")};
     width: 64px;
@@ -73,19 +73,19 @@ img, svg {
     border: 1px solid var(--border-image-edge, rgba(204, 187, 184, 0.16));
 }
 
-&.${Class.LightBg} {    
+&.${Class.LightBg} {
     border: 1px solid var(--border-image-edge, rgba(204, 187, 184, 0.16));
 }
 
-&.${Class.Status} {    
+&.${Class.Status} {
     background: var(--fill-accent-secondary, rgba(50, 250, 220, 0.16));
 }
-&.${Class.Accent} {    
+&.${Class.Accent} {
     background: var(--fill-accent-primary, #9FE);
 }
-&.${Class.Image} {  
+&.${Class.Image} {
 padding: 0;
-overflow: hidden;  
+overflow: hidden;
  svg, img {
     width: 100%;
     height: 100%;

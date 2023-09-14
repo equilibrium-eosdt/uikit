@@ -5,7 +5,7 @@ import { HANDLE_WIDTH, SliderContainer } from "./slider.styled";
 import Noop from "../helpers/noop";
 import T from "../typography";
 import * as GlobalClass from "../../constants/classnames";
-import { cssVar } from "../../util/theme";
+import { cssVar } from "../../util/style";
 
 interface Props {
   active?: boolean;

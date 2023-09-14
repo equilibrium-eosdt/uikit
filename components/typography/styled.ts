@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import * as Class from "../../constants/classnames";
-import { cssVar } from "../../util/theme";
+import { cssVar } from "../../util/style";
 
 export const T = styled.p`
   font-family: ${cssVar("--default-font")}, sans-serif;

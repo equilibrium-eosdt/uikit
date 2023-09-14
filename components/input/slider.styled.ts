@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import * as Class from "./classnames";
 import * as Global from "../../constants/classnames";
-import { cssVar } from "../../util/theme";
+import { cssVar } from "../../util/style";
 
 export const HANDLE_WIDTH = 56;
 
