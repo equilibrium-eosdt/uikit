@@ -31,18 +31,22 @@ export const Common: Story = {
   render: () => {
     return (
       <InputStoryWrapper>
-        <Superfield title="Label" placeholder="Value" />
+        <Superfield title="Label" placeholder="Value" 
+          postfix="USDC"
+          />
 
         <Superfield
           className={cn(classNames.Hovered)}
           title="Label"
           placeholder="Value"
+          postfix="USDC"
         />
 
         <Superfield
           className={cn(classNames.Focused)}
           title="Label"
           placeholder="Value"
+          postfix="ETH"
         />
 
         <Superfield
@@ -50,6 +54,7 @@ export const Common: Story = {
           value="Value"
           title="Label"
           placeholder="Value"
+          postfix="BTC"
         />
 
         <Superfield

@@ -1,14 +1,21 @@
-import { ChangeEvent, forwardRef, MouseEvent, ReactNode } from "react";
+import { ChangeEvent, forwardRef, InputHTMLAttributes, MouseEvent, ReactNode } from "react";
 import * as classNames from "../../constants/classnames";
 import { SuperfieldStyled } from "./text.styled";
+import Noop from "../helpers/noop";
 
-interface Props {
+type Props = InputHTMLAttributes<HTMLInputElement> & {
   className?: string;
   children?: ReactNode;
   value?: string;
   placeholder?: string;
   tabIndex?: number;
   title?: string;
+  type?:string;
+  postfix?:string;
+  autofocus?:boolean;
+  disabled?:boolean;
+  name?:string;
+  required?:boolean;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   onClick?: (e: MouseEvent<HTMLDivElement>) => void;
 }
@@ -19,12 +26,16 @@ export const SuperField = forwardRef<HTMLInputElement, Props>((props, ref) => {
       <input
         key="container"
         ref={ref}
-        tabIndex={props.tabIndex}
         className="input"
-        placeholder={props.placeholder}
-        value={props.value ?? ""}
-        onChange={props.onChange}
+        {...props}
       />
+    <span className="input__span">
+      {props.value}
+    </span>
+    {
+     props.postfix && props.value ? <span className="input__span">{props.postfix}</span> : <Noop />
+    }
+        
 
       {props.children}
     </div>

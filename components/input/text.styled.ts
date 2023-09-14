@@ -159,26 +159,44 @@ export const SuperfieldStyled = styled.div`
   .input-container {
     position: relative;
     display: flex;
+    gap: 4px;
+    height: 32px
   }
-
-  .input {
+  input {
     border: none;
     outline: none;
-    width: 100%;
+    min-width: 50px;
+    max-width: calc(100% - 40px);
     background: transparent;
+    color: transparent;
     caret-color: var(--text-primary);
+    font-variation-settings: "wght" 700;
     margin: 0;
-    color: var(--text-primary);
     font-size: 20px;
     line-height: 24px;
     letter-spacing: 0.4px;
     height: auto;
-    font-variation-settings: "wght" 700;
     padding: 4px 0 4px;
-
+    z-index: 2;
+    position: absolute;
+    &::placeholder {
+      color: rgba(140, 129, 126, 0.48);
+    }
     &::-ms-clear {
       display: none;
     }
+    }
+  .input {
+  
+    &__span {
+      font-size: 20px;  
+      line-height: 24px;
+      letter-spacing: 0.4px;
+      color: var(--text-primary);
+      font-variation-settings: "wght" 700;
+      padding: 4px 0 4px;
+      max-width: 90%;
+      }
 
     &__area {
       transition: 300ms ease-out;
@@ -196,9 +214,7 @@ export const SuperfieldStyled = styled.div`
       line-height: normal;
       letter-spacing: 0.5px;
     }
-    &::placeholder {
-      color: rgba(140, 129, 126, 0.48);
-    }
+
   }
   .suggestions {
     content: " ";
