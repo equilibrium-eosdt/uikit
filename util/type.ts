@@ -1,5 +1,4 @@
-type DeepWriteable<T> = { -readonly [P in keyof T]: DeepWriteable<T[P]> };
-
+import { ComposeProps, DeepWriteable } from "../types/util";
 export const isPrefixed = <P extends string>(
   prefix: P,
   str?: string,
@@ -19,3 +18,12 @@ export const markWritable = <T>(data: T): DeepWriteable<T> => data;
  * @example constStrArray("foo", "bar"): ["foo", "bar"]
  **/
 export const constStrArray = <T extends string[]>(...names: T) => names;
+
+export const extractProps = <T extends string[], V>(
+  props: Partial<ComposeProps<T, V>>,
+  ...names: T
+): ComposeProps<T, V> =>
+  names.reduce<ComposeProps<T, V>>((prev, name) => {
+    const value = props[name as keyof typeof props];
+    return { ...prev, [name]: value };
+  }, {} as any);
