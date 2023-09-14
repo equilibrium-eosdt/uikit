@@ -12,6 +12,10 @@ interface Props {
   title?: string;
   type?:string;
   postfix?:string;
+  autofocus?:boolean;
+  disabled?:boolean;
+  name?:string;
+  required?:boolean;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   onClick?: (e: MouseEvent<HTMLDivElement>) => void;
 }
@@ -22,12 +26,16 @@ export const SuperField = forwardRef<HTMLInputElement, Props>((props, ref) => {
       <input
         key="container"
         ref={ref}
+        name={props.name ?? ""}
         tabIndex={props.tabIndex}
         className="input"
         placeholder={props.placeholder}
         value={props.value ?? ""}
         onChange={props.onChange}
         type={props.type ?? ""}
+        autoFocus={props.autofocus ?? false}
+        disabled={props.disabled ?? false}
+        required={props.disabled ?? false}
       />
 
     {
