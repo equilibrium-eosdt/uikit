@@ -1,6 +1,7 @@
 import { ChangeEvent, forwardRef, MouseEvent, ReactNode } from "react";
 import * as classNames from "../../constants/classnames";
 import { SuperfieldStyled } from "./text.styled";
+import Noop from "../helpers/noop";
 
 interface Props {
   className?: string;
@@ -9,6 +10,8 @@ interface Props {
   placeholder?: string;
   tabIndex?: number;
   title?: string;
+  type?:string;
+  postfix?:string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   onClick?: (e: MouseEvent<HTMLDivElement>) => void;
 }
@@ -24,7 +27,14 @@ export const SuperField = forwardRef<HTMLInputElement, Props>((props, ref) => {
         placeholder={props.placeholder}
         value={props.value ?? ""}
         onChange={props.onChange}
+        type={props.type ?? ""}
       />
+
+    {
+      props.value ? <>  <span className="input__span">{props.value}</span>
+      <span className="input__span">{props.postfix ?? ""}</span></> : <Noop />
+    }
+        
 
       {props.children}
     </div>

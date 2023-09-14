@@ -159,6 +159,8 @@ export const SuperfieldStyled = styled.div`
   .input-container {
     position: relative;
     display: flex;
+    gap: 4px;
+    height: 32px
   }
 
   .input {
@@ -167,18 +169,33 @@ export const SuperfieldStyled = styled.div`
     width: 100%;
     background: transparent;
     caret-color: var(--text-primary);
+    color: transparent;
     margin: 0;
-    color: var(--text-primary);
     font-size: 20px;
     line-height: 24px;
     letter-spacing: 0.4px;
     height: auto;
     font-variation-settings: "wght" 700;
     padding: 4px 0 4px;
-
+    position: absolute;
+    z-index: 2;
+    &::placeholder {
+      color: transparent;
+      display: none;
+    }
     &::-ms-clear {
       display: none;
     }
+  
+    &__span {
+      font-size: 20px;  
+      line-height: 24px;
+      letter-spacing: 0.4px;
+      color: var(--text-primary);
+      font-variation-settings: "wght" 700;
+      padding: 4px 0 4px;
+      max-width: 90%;
+      }
 
     &__area {
       transition: 300ms ease-out;
