@@ -41,7 +41,7 @@ interface Props extends Partial<ComposeProps<typeof classes, boolean>> {
 export default function Label(props: Props) {
   return (
     <LabelWrapper
-      className={cn(extractProps(props, ...classes))}
+      className={cn(props.className, extractProps(props, ...classes))}
       style={props.style}
     >
       {props.children}
