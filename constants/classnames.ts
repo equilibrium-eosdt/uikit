@@ -31,9 +31,9 @@ export const XL = "xl";
 // variants
 export const Action = "action";
 export const Title = "title";
-export const HeaderL = "header-l";
-export const HeaderM = "header-m";
-export const HeaderS = "header-s";
+export const HeaderL = "headerL";
+export const HeaderM = "headerM";
+export const HeaderS = "headerS";
 export const Body = "body";
 export const Caption = "caption";
 export const Secondary = "secondary";
