@@ -1,4 +1,4 @@
-import { ChangeEvent, forwardRef, InputHTMLAttributes, MouseEvent, ReactNode } from "react";
+import { forwardRef, InputHTMLAttributes, MouseEvent, ReactNode } from "react";
 import * as classNames from "../../constants/classnames";
 import { SuperfieldStyled } from "./text.styled";
 import Noop from "../helpers/noop";
