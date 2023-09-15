@@ -37,7 +37,7 @@ interface Props extends Partial<ComposeProps<typeof classes, boolean>> {
   style?: CSSProperties;
 }
 
-export default function Thumbnail(props: Props & React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLDivElement>, HTMLDivElement>) {
+export default function Thumbnail(props: Props & React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>) {
   const { style, className, children, ...otherProps } = props
   return (
     <ThumbnailWrapper
