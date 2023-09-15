@@ -6,17 +6,10 @@ import Noop from "../helpers/noop";
 type Props = InputHTMLAttributes<HTMLInputElement> & {
   className?: string;
   children?: ReactNode;
-  value?: string;
-  placeholder?: string;
   tabIndex?: number;
   title?: string;
-  type?:string;
   postfix?:string;
   autofocus?:boolean;
-  disabled?:boolean;
-  name?:string;
-  required?:boolean;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   onClick?: (e: MouseEvent<HTMLDivElement>) => void;
 }
 
