@@ -38,3 +38,6 @@ export const DarkBG = "darkbg";
 export const LightBg = "lightbg";
 export const Status = "status";
 export const Image = "image";
+export const Top = "top";
+export const Bottom = "bottom";
+export const Multiline = "multiline"
