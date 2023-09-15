@@ -1,4 +1,4 @@
-import { cssVar } from "../util/theme";
+import { cssVar } from "../util/style";
 import type { IconProps } from "./types";
 
 export const getInvertFilter = (secondary?: boolean) =>

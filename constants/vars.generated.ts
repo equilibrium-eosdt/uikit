@@ -104,6 +104,7 @@ export const THEME_VARS_GENERATED = {
   "--path-to-logo": "--path-to-logo",
   "--logo": "--logo",
   "--w3m-accent-color": "--w3m-accent-color",
+  "--spacing-space-2": "--spacing-space-2",
   "--spacing-space-4": "--spacing-space-4",
   "--spacing-space-6": "--spacing-space-6",
   "--spacing-space-8": "--spacing-space-8",

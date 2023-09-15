@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import * as classNames from "../../constants/classnames";
-import { cssVar } from "../../util/theme";
+import { cssVar } from "../../util/style";
 
 export const CardIcon = styled.div`
   background: ${cssVar("--fill-secondary", "rgba(204, 187, 184, 0.16)")};

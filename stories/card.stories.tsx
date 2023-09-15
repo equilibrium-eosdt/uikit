@@ -11,6 +11,7 @@ import Card, {
 } from "../components/card";
 import * as classNames from "../constants/classnames";
 import SwapIcon from "../icons/swap";
+import Cell, { CellItem } from "../components/cell";
 
 const meta = {
   title: "Components/Card",
@@ -36,6 +37,7 @@ interface CardItemHelperProps extends CardProps {
   underValue?: ReactNode;
 }
 
+/** @deprecated */
 function CardItemHelper(props: CardItemHelperProps) {
   return (
     <Card {...props}>
@@ -59,13 +61,14 @@ export const Common: Story = {
 
         <Card cover={<SwapIcon />} className={classNames.Secondary} />
 
-        <CardItemHelper
-          title={title}
-          underTitle={underTitle}
-          value={value}
-          underValue={underValue}
-        />
+        <Card>
+          <Cell>
+            <CellItem label={title}>{underTitle}</CellItem>
+            <CellItem label={value}>{underValue}</CellItem>
+          </Cell>
+        </Card>
 
+        {/* replace as above */}
         <CardItemHelper
           title={title}
           underTitle={underTitle}

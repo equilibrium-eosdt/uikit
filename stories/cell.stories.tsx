@@ -6,9 +6,10 @@ import LampIcon from "../icons/lamp";
 import CheckmarkIcon from "../icons/checkmark";
 import TransitionIcon from "../icons/transition";
 import { CardStoryWrapper } from "../components/helpers/card-story-wrapper";
-import { ThumbnailWrapper } from "../components/thumbnail/thumbnail.styled";
-import { CellWrapper } from "../components/cell/cell.styled";
-import { LabelItemHelper } from "./label.stories";
+import Thumbnail from "../components/thumbnail";
+import Cell, { CellItem } from "../components/cell";
+import Label from "../components/label";
+import { ThemeConsumer } from "styled-components";
 
 const meta = {
   title: "Components/Cell",
@@ -24,80 +25,124 @@ const icon = <LampIcon />;
 const check = <CheckmarkIcon />;
 const transition = <TransitionIcon />;
 
-interface ThumbnailProps  {
+interface CellProps {
   icon?: ReactNode;
-  className?: string;
+  title?: ReactNode;
+  underTitle?: ReactNode;
+  value?: ReactNode;
+  underValue?: ReactNode;
+  aside?: ReactNode;
+  reverse?: boolean;
 }
-
-interface CellProps  {
-    icon?: ReactNode;
-    className?: string;
-    title?: ReactNode;
-    underTitle?: ReactNode;
-    value?: ReactNode;
-    underValue?: ReactNode;
-    aside?: ReactNode;
-  }
 
 const title = "Title";
 const underTitle = "Description";
 const value = "Value";
 const underValue = "Description";
 
-function ThumbnailHelper(props: ThumbnailProps) {
+/** @deprecated */
+function CellHelper(props: CellProps) {
   return (
-    <ThumbnailWrapper {...props} className={cn(Class.M)} >
-        {props?.icon}
-    </ThumbnailWrapper>
+    <Cell>
+      {props.icon ? <Thumbnail md>{props.icon}</Thumbnail> : null}
+      <CellItem clearMargin={Boolean(props.icon)} label={title}>
+        {props.underTitle}
+      </CellItem>
+      {props.aside ? (
+        <CellItem>{props.aside}</CellItem>
+      ) : (
+        <CellItem label={props.value}>{props.underValue}</CellItem>
+      )}
+    </Cell>
   );
 }
-
-function CellHelper(props: CellProps) {
-    return (
-      <CellWrapper className={props.className} >
-        <div className="cell__left">
-            <ThumbnailHelper icon={props.icon} />
-            <div className="cell__info">
-                {props?.title}
-                <div className="cell__secondary">
-                {props?.underTitle}
-                </div>
-            </div>
-        </div>
-
-       <div className="cell__info cell__right">
-        {props.aside ? <>{props.aside}</> : 
-        <>
-        {props?.value}
-        <div className="cell__secondary">
-        {props?.underValue}
-        </div>
-        </>}
-       </div>
-      </CellWrapper>
-    );
-  }
 
 export const Common: Story = {
   render: () => {
     return (
       <CardStoryWrapper>
-        <CellHelper icon={icon} title={title} underTitle={underTitle} value={value} underValue={underValue} />
-        <CellHelper icon={icon} title={title} underTitle={underTitle} value={value} underValue={underValue} className={cn(Class.Caption)} />
+        <Cell>
+          <Thumbnail md>{icon}</Thumbnail>
+          <CellItem clearMargin label={title}>
+            {underTitle}
+          </CellItem>
+          <CellItem reverse label={value}>
+            {underValue}
+          </CellItem>
+        </Cell>
+        {/* TODO replace helpers as above */}
+
+        <CellHelper
+          icon={icon}
+          title={title}
+          underTitle={underTitle}
+          value={value}
+          underValue={underValue}
+          reverse
+        />
+
         <CellHelper icon={icon} title={title} value={value} />
 
-        <CellHelper icon={icon} title={title} underTitle={underTitle}  aside={<LabelItemHelper title="Label" className={cn(Class.M, Class.Accent)} />} />
-        <CellHelper icon={icon} title={title} underTitle={underTitle}  aside={<LabelItemHelper title="Label" className={cn(Class.M, Class.Accent)} />} className={cn(Class.Caption)}  />
-        <CellHelper icon={icon} title={title} aside={<LabelItemHelper title="Label" className={cn(Class.M, Class.Accent)} />} />
+        <CellHelper
+          icon={icon}
+          title={title}
+          underTitle={underTitle}
+          aside={
+            <Label accent md className={cn(Class.M, Class.Accent)}>
+              Label
+            </Label>
+          }
+        />
+        <CellHelper
+          icon={icon}
+          title={title}
+          underTitle={underTitle}
+          aside={
+            <Label accent md className={cn(Class.M, Class.Accent)}>
+              Label
+            </Label>
+          }
+          reverse
+        />
+        <CellHelper
+          icon={icon}
+          title={title}
+          aside={
+            <Label accent md>
+              Label
+            </Label>
+          }
+        />
 
-        <CellHelper icon={icon} title={title} underTitle={underTitle}  aside={check} />
-        <CellHelper icon={icon} title={title} underTitle={underTitle}  aside={check} className={cn(Class.Caption)}  />
-        <CellHelper icon={icon} title={title}  aside={check} />
+        <CellHelper
+          icon={icon}
+          title={title}
+          underTitle={underTitle}
+          aside={check}
+        />
+        <CellHelper
+          icon={icon}
+          title={title}
+          underTitle={underTitle}
+          aside={check}
+          reverse
+        />
+        <CellHelper icon={icon} title={title} aside={check} />
 
-        <CellHelper icon={icon} title={title} underTitle={underTitle}  aside={transition} />
-        <CellHelper icon={icon} title={title} underTitle={underTitle}  aside={transition} className={cn(Class.Caption)}  />
-        <CellHelper icon={icon} title={title}  aside={transition} />
-
+        <CellHelper
+          icon={icon}
+          title={title}
+          underTitle={underTitle}
+          aside={transition}
+        />
+        <CellHelper
+          icon={icon}
+          title={title}
+          underTitle={underTitle}
+          aside={transition}
+          reverse
+        />
+        <CellHelper icon={icon} title={title} aside={transition} />
       </CardStoryWrapper>
     );
   },
