@@ -28,7 +28,7 @@ const classes = constStrArray(
 );
 
 interface Props extends Partial<ComposeProps<typeof classes, boolean>> {
-  as: StyledTarget<any>;
+  as?: StyledTarget<any>;
   children?: ReactNode;
   className?: string;
   style?: CSSProperties;
