@@ -4,7 +4,7 @@ import { composeProps } from "./util";
 // TODO refactor to .svg
 export function FlashIcon(props: IconProps) {
   return (
-<svg   {...composeProps(props)} width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg   {...composeProps(props)} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_138_2853)">
 <mask id="mask0_138_2853" style={{"maskType":"luminance"}} maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
 <path opacity="0.6" fill-rule="evenodd" clip-rule="evenodd" d="M13.6667 10L13 14H10.3333L9 22L19 10H13.6667Z" fill="white" style={{fill: "white", fillOpacity: 1}}/>
