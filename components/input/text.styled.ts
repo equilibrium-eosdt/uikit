@@ -150,6 +150,9 @@ export const SuperfieldStyled = styled.div`
   width: 100%;
   height: 96px;
 
+  // TEMP
+    max-width: 300px;
+
   span {
     position: relative;
     height: 20px;
@@ -168,7 +171,6 @@ export const SuperfieldStyled = styled.div`
     min-width: 50px;
     max-width: calc(100% - 40px);
     background: transparent;
-    color: transparent;
     caret-color: var(--text-primary);
     font-variation-settings: "wght" 700;
     margin: 0;
@@ -178,7 +180,11 @@ export const SuperfieldStyled = styled.div`
     height: auto;
     padding: 4px 0 4px;
     z-index: 2;
-    position: absolute;
+    // position: absolute;
+    overflow: hidden;
+    display: block;
+    color: var(--text-primary);
+
     &::placeholder {
       color: rgba(140, 129, 126, 0.48);
     }
@@ -192,11 +198,11 @@ export const SuperfieldStyled = styled.div`
       font-size: 20px;  
       line-height: 24px;
       letter-spacing: 0.4px;
-      color: var(--text-primary);
       font-variation-settings: "wght" 700;
       padding: 4px 0 4px;
-      max-width: 90%;
-      }
+      height: 32px;
+      display: block;
+    }
 
     &__area {
       transition: 300ms ease-out;
@@ -205,6 +211,7 @@ export const SuperfieldStyled = styled.div`
       height: 96px;
       padding: 24px;
       border-radius: 24px;
+      margin-right: auto;
     }
     &__hint {
       color: var(--text-secondary);
