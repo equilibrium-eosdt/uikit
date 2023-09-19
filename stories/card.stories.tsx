@@ -1,13 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import cn from "classnames";
-import React, { ReactNode } from "react";
+import React from "react";
 
 import { CardStoryWrapper } from "../components/helpers/card-story-wrapper";
 import Card, {
-  CardItem,
-  CardItemDescription,
-  CardItemTitle,
-  CardProps,
 } from "../components/card";
 import * as classNames from "../constants/classnames";
 import SwapIcon from "../icons/swap";

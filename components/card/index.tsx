@@ -1,13 +1,10 @@
 import type { CSSProperties, ReactNode } from "react";
 
 import {
-  CardItem,
   CardDescription,
   CardHeading,
   CardIcon,
   CardRow,
-  CardItemDescription,
-  CardItemTitle,
   CardStyled,
 } from "./styled";
 import Noop from "../helpers/noop";
@@ -59,4 +56,3 @@ function Card(props: CardProps) {
 }
 
 export default Card;
-export { CardItem, CardItemDescription, CardItemTitle };

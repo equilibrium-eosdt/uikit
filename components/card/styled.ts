@@ -36,30 +36,6 @@ const CardItemStyled = styled.div`
   }
 `;
 
-/** @deprecated no more assign; move out to Cell component; https://www.figma.com/file/qEhBc8Ub9LpdiPhOKaQiZV/%E2%9D%96-Varginly?type=design&node-id=73-5005&mode=design&t=0u0sEMhesqcGmc6s-4 */
-export const CardItem = Object.assign(CardItemStyled, classNames);
-
-/** @deprecated no more assign; move out to Cell component; https://www.figma.com/file/qEhBc8Ub9LpdiPhOKaQiZV/%E2%9D%96-Varginly?type=design&node-id=73-5005&mode=design&t=0u0sEMhesqcGmc6s-4 */
-export const CardItemTitle = styled.div`
-  color: var(--text-primary, #000);
-  text-overflow: ellipsis;
-  font-family: "PlusJakartaSans", sans-serif;
-  font-size: 16px;
-  font-variation-settings: "wght" 500;
-  line-height: 150%;
-  letter-spacing: 0.16px;
-`;
-
-/** @deprecated no more assign; move out to Cell component; https://www.figma.com/file/qEhBc8Ub9LpdiPhOKaQiZV/%E2%9D%96-Varginly?type=design&node-id=73-5005&mode=design&t=0u0sEMhesqcGmc6s-4 */
-export const CardItemDescription = styled.div`
-  color: ${cssVar("--text-secondary", "rgba(46, 35, 33, 0.64)")};
-  font-family: "PlusJakartaSans", sans-serif;
-  font-size: 12px;
-  font-variation-settings: "wght" 500;
-  line-height: normal;
-  letter-spacing: 0.5px;
-`;
-
 export const CardHeading = styled.div`
   color: ${cssVar("--text-primary", "#000")};
   font-family: "PlusJakartaSans", sans-serif;
