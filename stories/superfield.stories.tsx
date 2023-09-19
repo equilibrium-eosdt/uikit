@@ -18,6 +18,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+
 const Superfield = StoryInput(
   Superfield_,
   {},
@@ -28,6 +29,14 @@ const Superfield = StoryInput(
 );
 
 export const Common: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'Another description on the story, overriding the comments'
+      },
+    },
+  },
+
   render: () => {
     return (
       <InputStoryWrapper>
