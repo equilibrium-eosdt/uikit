@@ -180,10 +180,42 @@ export const SuperfieldStyled = styled.div`
     height: auto;
     padding: 4px 0 4px;
     z-index: 2;
-    // position: absolute;
     overflow: hidden;
     display: block;
     color: var(--text-primary);
+    overflow: scroll;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      width: 0px;
+      opacity: 0;
+      background-color: transparent;
+      display: none;
+    }
+    &::-webkit-scrollbar:horizontal {
+      opacity: 0;
+      height: 0px;
+      display: none;
+    }
+
+    &::-webkit-scrollbar-track {
+      opacity: 0;
+      background: transparent;
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: transparent;
+      opacity: 0;
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: transparent;
+      opacity: 0;
+    }
+
 
     &::placeholder {
       color: rgba(140, 129, 126, 0.48);
