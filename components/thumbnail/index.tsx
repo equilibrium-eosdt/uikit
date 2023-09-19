@@ -1,3 +1,4 @@
+import React from 'react'
 import cn from "classnames";
 import type { CSSProperties, ReactNode } from "react";
 import { ThumbnailWrapper } from "./styled";
@@ -36,13 +37,15 @@ interface Props extends Partial<ComposeProps<typeof classes, boolean>> {
   style?: CSSProperties;
 }
 
-export default function Thumbnail(props: Props) {
+export default function Thumbnail(props: Props & React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>) {
+  const { style, className, children, ...otherProps } = props
   return (
     <ThumbnailWrapper
-      className={cn(props.className, extractProps(props, ...classes))}
-      style={props.style}
+      className={cn(className, extractProps(props, ...classes))}
+      style={style}
+      {...otherProps}
     >
-      {props.children}
+      {children}
     </ThumbnailWrapper>
   );
 }

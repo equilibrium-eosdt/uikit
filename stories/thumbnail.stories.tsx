@@ -6,7 +6,7 @@ import LampIcon from "../icons/lamp";
 import Pattern from "../icons/pattern";
 import LightPersonIcon from "../icons/person-light";
 import { CardStoryWrapper } from "../components/helpers/card-story-wrapper";
-import { ThumbnailWrapper } from "../components/thumbnail/styled";
+import Thumbnail from "../components/thumbnail";
 
 const meta = {
   title: "Components/Thumbnail",
@@ -28,7 +28,11 @@ interface LabelProps {
 }
 
 function ThumbnailHelper(props: LabelProps) {
-  return <ThumbnailWrapper {...props}>{props?.icon}</ThumbnailWrapper>;
+  return (
+    <Thumbnail {...props}>
+        {props?.icon}
+    </Thumbnail>
+  );
 }
 
 export const Common: Story = {

@@ -30,36 +30,11 @@ const underValue = "Description";
 const heading = "Heading";
 const mainDescription = "Description";
 
-interface CardItemHelperProps extends CardProps {
-  title?: ReactNode;
-  underTitle?: ReactNode;
-  value?: ReactNode;
-  underValue?: ReactNode;
-}
-
-/** @deprecated */
-function CardItemHelper(props: CardItemHelperProps) {
-  return (
-    <Card {...props}>
-      <CardItem>
-        <CardItemTitle>{props.title}</CardItemTitle>
-        <CardItemDescription>{props.underTitle}</CardItemDescription>
-      </CardItem>
-      <CardItem className={cn(CardItem.Auto, CardItem.Right)}>
-        <CardItemTitle>{props.title}</CardItemTitle>
-        <CardItemDescription>{props.underTitle}</CardItemDescription>
-      </CardItem>
-    </Card>
-  );
-}
 
 export const Common: Story = {
   render: () => {
     return (
       <CardStoryWrapper>
-        <Card cover={<SwapIcon />} />
-
-        <Card cover={<SwapIcon />} className={classNames.Secondary} />
 
         <Card>
           <Cell>
@@ -68,73 +43,99 @@ export const Common: Story = {
           </Cell>
         </Card>
 
-        {/* replace as above */}
-        <CardItemHelper
-          title={title}
-          underTitle={underTitle}
-          value={value}
-          underValue={underValue}
-          className="secondary"
-        />
 
-        <CardItemHelper
-          title={title}
-          underTitle={underTitle}
-          value={value}
-          underValue={underValue}
-          cover={<img src="/public/user.svg" />}
-        />
+        <Card>
+          <Cell>
+            <CellItem label={title}>{underTitle}</CellItem>
+            <CellItem label={value}>{underValue}</CellItem>
+          </Cell>
+        </Card>
 
-        <CardItemHelper
-          title={title}
-          underTitle={underTitle}
-          value={value}
-          underValue={underValue}
-          className={classNames.Secondary}
-          cover={<img src="/public/user.svg" />}
-        />
+        <Card  cover={<SwapIcon />}>
+          <Cell>
+            <CellItem label={title}>{underTitle}</CellItem>
+            <CellItem label={value}>{underValue}</CellItem>
+          </Cell>
+        </Card>
 
-        <CardItemHelper
-          title={title}
-          underTitle={underTitle}
-          value={value}
-          underValue={underValue}
-          cover={<img src="/public/user.svg" />}
-          heading={heading}
-          className={classNames.M}
-        />
+        <Card  cover={<SwapIcon />} className={classNames.Secondary}>
+          <Cell>
+            <CellItem label={title}>{underTitle}</CellItem>
+            <CellItem label={value}>{underValue}</CellItem>
+          </Cell>
+        </Card>
 
-        <CardItemHelper
-          title={title}
-          underTitle={underTitle}
-          value={value}
-          underValue={underValue}
-          className="secondary md"
-          cover={<img src="/public/user.svg" />}
-          heading={heading}
-        />
+        <Card  cover={<SwapIcon />}>
+          <Cell>
+            <CellItem reverse label={title}>{underTitle}</CellItem>
+            <CellItem reverse label={value}>{underValue}</CellItem>
+          </Cell>
+        </Card>
 
-        <CardItemHelper
-          title={title}
-          underTitle={underTitle}
-          value={value}
-          underValue={underValue}
-          cover={<img src="/public/user.svg" />}
-          heading={heading}
-          description={mainDescription}
-          className={classNames.L}
-        />
+        <Card  cover={<SwapIcon />} className={classNames.Secondary}>
+          <Cell>
+            <CellItem reverse label={title}>{underTitle}</CellItem>
+            <CellItem reverse label={value}>{underValue}</CellItem>
+          </Cell>
+        </Card>
 
-        <CardItemHelper
-          title={title}
-          underTitle={underTitle}
-          value={value}
-          underValue={underValue}
-          className={cn(classNames.Secondary, classNames.L)}
-          cover={<img src="/public/user.svg" />}
-          heading={heading}
-          description={mainDescription}
-        />
+
+        <Card  cover={<SwapIcon />}>
+          <Cell>
+            <CellItem label={title}>{underTitle}</CellItem>
+            <CellItem reverse label={value}>{underValue}</CellItem>
+          </Cell>
+        </Card>
+
+        <Card  cover={<SwapIcon />} className={classNames.Secondary}>
+          <Cell>
+            <CellItem label={title}>{underTitle}</CellItem>
+            <CellItem reverse label={value}>{underValue}</CellItem>
+          </Cell>
+        </Card>
+
+        <Card heading={heading} cover={<SwapIcon />}>
+            <Cell>
+              <CellItem label={title}>{underTitle}</CellItem>
+              <CellItem reverse label={value}>{underValue}</CellItem>
+            </Cell>
+        </Card>
+
+        <Card heading={heading} cover={<SwapIcon />} className={classNames.Secondary}>
+            <Cell>
+              <CellItem label={title}>{underTitle}</CellItem>
+              <CellItem reverse label={value}>{underValue}</CellItem>
+            </Cell>
+        </Card>
+
+        <Card heading={heading} cover={<SwapIcon />} md>
+            <Cell>
+              <CellItem label={title}>{underTitle}</CellItem>
+              <CellItem reverse label={value}>{underValue}</CellItem>
+            </Cell>
+        </Card>
+
+        <Card heading={heading} cover={<SwapIcon />} md secondary>
+            <Cell>
+              <CellItem label={title}>{underTitle}</CellItem>
+              <CellItem reverse label={value}>{underValue}</CellItem>
+            </Cell>
+        </Card>
+
+        <Card heading={heading} description={mainDescription} cover={<SwapIcon />} lg>
+            <Cell>
+              <CellItem label={title}>{underTitle}</CellItem>
+              <CellItem reverse label={value}>{underValue}</CellItem>
+            </Cell>
+        </Card>
+
+        <Card heading={heading} description={mainDescription} cover={<SwapIcon />} lg secondary>
+            <Cell>
+              <CellItem label={title}>{underTitle}</CellItem>
+              <CellItem reverse label={value}>{underValue}</CellItem>
+            </Cell>
+        </Card>
+
       </CardStoryWrapper>
     );
   },

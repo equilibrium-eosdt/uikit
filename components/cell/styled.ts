@@ -31,6 +31,8 @@ export const CellWrapper = styled.div`
   line-height: 24px;
   letter-spacing: 0.16px;
   width: 100%;
+  max-width: 100%;
+  flex: 1 1 100%;
 
   ${CellItemWrapper} {
     margin-left: auto;
@@ -42,6 +44,9 @@ export const CellWrapper = styled.div`
 
     &:first-child, &.clearMargin {
       margin-left: 0;
+      margin-right: auto;
+      text-align: left;
+      align-items: flex-start;
     }
   }
 `;
