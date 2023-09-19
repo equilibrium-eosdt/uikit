@@ -14,6 +14,7 @@ import {
 import type { ComposeProps } from "../../types/util";
 
 import { constStrArray, extractProps } from "../../util/type";
+import type { StyledTarget } from "styled-components/dist/types";
 
 const classes = constStrArray(
   Title,
@@ -27,6 +28,7 @@ const classes = constStrArray(
 );
 
 interface Props extends Partial<ComposeProps<typeof classes, boolean>> {
+  as?: StyledTarget<any>;
   children?: ReactNode;
   className?: string;
   style?: CSSProperties;
@@ -35,6 +37,7 @@ interface Props extends Partial<ComposeProps<typeof classes, boolean>> {
 export default function Typography(props: Props) {
   return (
     <TypographyWrapper
+      as={props.as}
       className={cn(props.className, extractProps(props, ...classes))}
       style={props.style}
     >
