@@ -18,6 +18,7 @@ type Props = Omit<InputHTMLAttributes<HTMLInputElement>, "value">& {
 }
 
 export const SuperField = forwardRef<HTMLInputElement, Props>(({className, style, onClick, title, required, disabled, value, ...props}, ref) => {
+  const hasValue = Boolean(value?.trim().length)
 
   return (
     <SuperfieldStyled className={className} onClick={onClick}>
@@ -29,11 +30,12 @@ export const SuperField = forwardRef<HTMLInputElement, Props>(({className, style
             key="container"
             ref={ref}
             className="input"
-            style={{ width: value ?  (props.resizeFactor ?? 0.5) * ((value?.length ?? 0) + 1)+ "em" : "100%"}}
+            value={value}
+            style={{ width: hasValue ?  (props.resizeFactor ?? 0.5) * ((value?.length ?? 0) + 1)+ "em" : "100%"}}
             {...props}
           />
         {
-          props.postfix && value ? <span className="input__span">{props.postfix}</span> : <Noop />
+          hasValue && props.postfix ? <span className="input__span">{props.postfix}</span> : <Noop />
         }
             
 

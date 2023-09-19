@@ -168,7 +168,7 @@ export const SuperfieldStyled = styled.div`
   input {
     border: none;
     outline: none;
-    min-width: 50px;
+    min-width: 20px;
     max-width: calc(100% - 40px);
     background: transparent;
     caret-color: var(--text-primary);
