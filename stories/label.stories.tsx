@@ -17,18 +17,19 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const title = "Label";
+const rTitle = "Reverse";
 
 export const Common: Story = {
   render: () => {
     return (
       <LabelStoryWrapper>
         <Label icon lg>
-          {title}
           <FlashIcon />
+          {title}
         </Label>
         <Label lg icon reverse>
           <FlashIcon />
-          {title}
+          {rTitle}
         </Label>
         <Label lg>{title}</Label>
 
@@ -37,12 +38,12 @@ export const Common: Story = {
         </Label>
 
         <Label md icon>
-          {title}
           <FlashIcon />
+          {title}
         </Label>
         <Label icon md reverse>
           <FlashIcon />
-          {title}
+          {rTitle}
         </Label>
         <Label md>{title}</Label>
         <Label singleicon md>
@@ -50,91 +51,86 @@ export const Common: Story = {
         </Label>
 
         <Label icon sm>
-          {title}
-          {<FlashIcon />}
-        </Label>
-        {/* WIP todo remake stories
-        <Label
-          className={cn(Class.S, Class.Icon, Class.Reverse)}
-          icon={<FlashIcon />}
-        >
+          <FlashIcon />
           {title}
         </Label>
-        <Label title={title} className={cn(Class.S)}></Label>
-        <Label
-          className={cn(Class.S, Class.SignleIcon)}
-          icon={<FlashIcon />}
-        ></Label>
+        <Label sm icon reverse>
+          <FlashIcon />
+          {rTitle}
+        </Label>
+        <Label sm>{title}</Label>
+        <Label singleicon sm>
+          <FlashIcon />
+        </Label>
 
-        <Label className={cn(Class.L, Class.Accent)} icon={<FlashIcon />}>
+        <Label accent lg>
+          <FlashIcon />
           {title}
         </Label>
-        <Label
-          className={cn(Class.L, Class.Icon, Class.Reverse, Class.Accent)}
-          icon={<FlashIcon />}
-        >
+        <Label icon lg accent reverse>
+          <FlashIcon />
+          {rTitle}
+        </Label>
+        <Label accent lg>
           {title}
         </Label>
-        <Label title={title} className={cn(Class.L, Class.Accent)}></Label>
-        <Label
-          className={cn(Class.L, Class.Accent, Class.SignleIcon)}
-          icon={<FlashIcon />}
-        ></Label>
+        <Label accent lg singleicon>
+          <FlashIcon />
+        </Label>
 
-        <Label className={cn(Class.M, Class.Accent)} icon={<FlashIcon />}>
+        <Label accent md>
+          <FlashIcon />
           {title}
         </Label>
-        <Label
-          className={cn(Class.M, Class.Icon, Class.Reverse, Class.Accent)}
-          icon={<FlashIcon />}
-        >
-          {title}
+        <Label accent icon md reverse>
+          <FlashIcon />
+          {rTitle}
         </Label>
-        <Label title={title} className={cn(Class.M, Class.Accent)}></Label>
-        <Label
-          className={cn(Class.M, Class.Accent, Class.SignleIcon)}
-          icon={<FlashIcon />}
-        ></Label>
 
-        <Label className={cn(Class.S, Class.Accent)} icon={<FlashIcon />}>
+        <Label accent md>
           {title}
         </Label>
-        <Label
-          className={cn(Class.S, Class.Icon, Class.Reverse, Class.Accent)}
-          icon={<FlashIcon />}
-        >
-          {title}
+        <Label accent md singleicon>
+          <FlashIcon />
         </Label>
-        <Label title={title} className={cn(Class.S, Class.Accent)}></Label>
-        <Label
-          className={cn(Class.S, Class.Accent, Class.SignleIcon)}
-          icon={<FlashIcon />}
-        ></Label>
 
-        <Label className={cn(Class.L, Class.Brand)} icon={<FlashIcon />}>
+        <Label accent sm>
+          <FlashIcon />
           {title}
         </Label>
-        <Label
-          className={cn(Class.L, Class.Icon, Class.Reverse, Class.Brand)}
-          icon={<FlashIcon />}
-        >
+        <Label accent icon reverse sm>
+          <FlashIcon />
+          {rTitle}
+        </Label>
+        <Label accent sm>
           {title}
         </Label>
-        <Label title={title} className={cn(Class.L, Class.Brand)}></Label>
-        <Label
-          className={cn(Class.L, Class.Brand, Class.SignleIcon)}
-          icon={<FlashIcon />}
-        ></Label>
+        <Label accent singleicon sm>
+          <FlashIcon />
+        </Label>
 
-        <Label className={cn(Class.M, Class.Brand)} icon={<FlashIcon />}>
+        <Label className={cn(Class.L, Class.Brand)}>
+          <FlashIcon />
           {title}
         </Label>
-        <Label
-          className={cn(Class.M, Class.Icon, Class.Reverse, Class.Brand)}
-          icon={<FlashIcon />}
-        >
+        <Label className={cn(Class.L, Class.Icon, Class.Reverse, Class.Brand)}>
+          <FlashIcon />
           {title}
         </Label>
+        <Label className={cn(Class.L, Class.Brand)}>{title}</Label>
+        <Label className={cn(Class.L, Class.Brand, Class.SignleIcon)}>
+          <FlashIcon />
+        </Label>
+
+        <Label className={cn(Class.M, Class.Brand)}>
+          <FlashIcon />
+          {title}
+        </Label>
+        <Label className={cn(Class.M, Class.Icon, Class.Reverse, Class.Brand)}>
+          <FlashIcon />
+          {title}
+        </Label>
+        {/*} TODO wip
         <Label title={title} className={cn(Class.M, Class.Brand)}></Label>
         <Label
           className={cn(Class.M, Class.Brand, Class.SignleIcon)}

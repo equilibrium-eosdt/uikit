@@ -1,50 +1,47 @@
 import cn from "classnames";
 import type { CSSProperties, ReactNode } from "react";
-import { LabelWrapper } from "./styled";
+import { TypographyWrapper } from "./styled";
 import {
-  Accent,
-  Brand,
-  Icon,
-  Negative,
-  Pending,
-  Positive,
-  Reverse,
-  SignleIcon,
-  L,
-  M,
-  S,
+  Title,
+  HeaderL,
+  HeaderM,
+  HeaderS,
+  Action,
+  Body,
+  Caption,
+  Secondary,
 } from "../../constants/classnames";
 import type { ComposeProps } from "../../types/util";
 
 import { constStrArray, extractProps } from "../../util/type";
+import type { StyledTarget } from "styled-components/dist/types";
 
 const classes = constStrArray(
-  Accent,
-  Brand,
-  Icon,
-  Negative,
-  Pending,
-  Positive,
-  Reverse,
-  SignleIcon,
-  L,
-  M,
-  S,
+  Title,
+  HeaderL,
+  HeaderM,
+  HeaderS,
+  Action,
+  Body,
+  Caption,
+  Secondary,
 );
 
 interface Props extends Partial<ComposeProps<typeof classes, boolean>> {
+  as?: StyledTarget<any>;
   children?: ReactNode;
   className?: string;
   style?: CSSProperties;
 }
 
-export default function Label(props: Props) {
+export default function Typography(props: Props) {
   return (
-    <LabelWrapper
+    <TypographyWrapper
+      as={props.as}
       className={cn(props.className, extractProps(props, ...classes))}
       style={props.style}
     >
       {props.children}
-    </LabelWrapper>
+    </TypographyWrapper>
   );
 }
