@@ -150,6 +150,9 @@ export const SuperfieldStyled = styled.div`
   width: 100%;
   height: 96px;
 
+  // TEMP
+    max-width: 300px;
+
   span {
     position: relative;
     height: 20px;
