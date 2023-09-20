@@ -18,7 +18,7 @@ type Props = Omit<InputHTMLAttributes<HTMLInputElement>, "value">& {
 }
 
 export const SuperField = forwardRef<HTMLInputElement, Props>(({className, style, onClick, title, required, disabled, value, ...props}, ref) => {
-  const hasValue = Boolean(value?.trim().length)
+  const hasValue = Boolean(value?.trim().length);
 
   return (
     <SuperfieldStyled className={className} onClick={onClick}>
