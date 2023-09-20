@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import cn from "classnames";
-import React, { ReactNode } from "react";
-import * as Class from "../constants/classnames";
+import React from "react";
 import Tooltip from "../components/tooltip/index";
 import { LabelStoryWrapper } from "../components/helpers/label-story-wrapper";
 

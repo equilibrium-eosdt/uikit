@@ -19,13 +19,21 @@ export const Right = "right";
 export const Reverse = "reverse";
 
 // sizes
+/** @description small sized element */
 export const S = "sm";
+/** @description medium sized element */
 export const M = "md";
+/** @description large sized element */
 export const L = "lg";
+/** @description extra large sized element */
 export const XL = "xl";
 
 // variants
 export const Action = "action";
+export const Title = "title";
+export const HeaderL = "headerL";
+export const HeaderM = "headerM";
+export const HeaderS = "headerS";
 export const Body = "body";
 export const Caption = "caption";
 export const Secondary = "secondary";
