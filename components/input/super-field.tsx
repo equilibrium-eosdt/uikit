@@ -38,6 +38,7 @@ export const SuperField = forwardRef<HTMLInputElement, Props>(({className, style
         {
           hasValue && props.postfix ? <span className="input__span">{props.postfix}</span> : <Noop />
         }
+
             
 
           {props.children}
@@ -46,7 +47,7 @@ export const SuperField = forwardRef<HTMLInputElement, Props>(({className, style
           {title}
         </div>
       </div>
-    {props.suggestion ? <div className="suggestions"><div className="suggestions__item">Max 2500</div></div> : <Noop />}
+    {props.suggestion ? <div className="suggestions"><div className="suggestions__item">{props.suggestion}</div></div> : <Noop />}
     </SuperfieldStyled>
   );
 });
