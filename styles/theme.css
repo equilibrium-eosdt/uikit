@@ -127,14 +127,14 @@
   --spacing-space-12: 12px;
   --spacing-space-16: 16px;
   --spacing-space-20: 20px;
+  --spacing-space-24: 24px;
   --spacing-space-48: 48px;
   --rounding-radius-xs: 8px;
-  --rounding-radius-s: 16px;
-  --rounding-radius-m: 24px;
+  --rounding-radius-s: 12px;
+  --rounding-radius-m: 16px;
   --rounding-radius-xl: 24px;
   --rounding-radius-xxl: 32px;
   --rounding-radius-xxxl: 48px;
-  --spacing-space-24: 24px;
   --border-image-edge: rgba(204, 187, 184, 0.16);
 }
 

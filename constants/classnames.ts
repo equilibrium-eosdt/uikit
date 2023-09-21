@@ -52,3 +52,6 @@ export const LightBg = "lightbg";
 export const Status = "status";
 export const Image = "image";
 export const WidthFit = "fit";
+export const Top = "top";
+export const Bottom = "bottom";
+export const Multiline = "multiline"
