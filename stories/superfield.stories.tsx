@@ -126,6 +126,14 @@ export const Common: Story = {
       value="Value"
       placeholder="Value"
     />
+
+  <Superfield
+      className={cn( classNames.Focused)}
+      title="Label"
+      value="Value"
+      placeholder="Value"
+      suggestion={"123123 ARB"}
+    />
     </InputStoryWrapper>
     </>
     );

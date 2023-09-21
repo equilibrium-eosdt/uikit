@@ -14,6 +14,7 @@ type Props = Omit<InputHTMLAttributes<HTMLInputElement>, "value">& {
   value?: string;
   required?: boolean;
   disabled?:boolean;
+  suggestion?: string;
   onClick?: (e: MouseEvent<HTMLDivElement>) => void;
 }
 
@@ -45,6 +46,7 @@ export const SuperField = forwardRef<HTMLInputElement, Props>(({className, style
           {title}
         </div>
       </div>
+    {props.suggestion ? <div className="suggestions"><div className="suggestions__item">Max 2500</div></div> : <Noop />}
     </SuperfieldStyled>
   );
 });

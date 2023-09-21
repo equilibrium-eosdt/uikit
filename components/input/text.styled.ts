@@ -150,9 +150,6 @@ export const SuperfieldStyled = styled.div`
   width: 100%;
   height: 96px;
 
-  // TEMP
-    max-width: 300px;
-
   span {
     position: relative;
     height: 20px;
@@ -265,15 +262,23 @@ export const SuperfieldStyled = styled.div`
     pointer-events: none;
 
     &__item {
-      box-shadow: 0px 2px 1px rgba(51, 20, 0, 0.04),
-        0px 4px 8px rgba(51, 20, 0, 0.08);
       border-radius: 16px;
       letter-spacing: 0.03em;
       font-variation-settings: "wght" 700;
-      padding: 4px 8px;
       height: 32px;
-      background: var(--fill-secondary);
+      background: var(--fill-elevated);
       color: var(--text-primary);
+      border-radius: var(--rounding-radius-m, 16px);
+      box-shadow: 0px 4px 8px 0px rgba(51, 20, 0, 0.08), 0px 2px 1px 0px rgba(51, 20, 0, 0.04);
+      padding: 0 var(--spacing-space-12, 12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 300ms ease-out;
+      &:hover {
+        background: var(--fill-elevated-hover);
+      }
     }
   }
 
