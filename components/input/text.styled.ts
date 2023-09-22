@@ -256,7 +256,7 @@ export const SuperfieldStyled = styled.div`
     margin-bottom: 40px;
   }
   .input__area {
-    padding-right: 110px
+    padding-right: 136px
   }
 }
 
