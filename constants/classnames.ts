@@ -11,6 +11,7 @@ export const Pending = "pending";
 export const Icon = "icon";
 export const SignleIcon = "singleicon";
 export const Suggestion = "suggestion";
+export const Controls = "controls";
 
 // positioning
 /** @deprecated fixme styling consistency */

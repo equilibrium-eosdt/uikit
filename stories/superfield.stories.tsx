@@ -12,14 +12,16 @@ import { FieldContainer } from "../components/input/text.styled";
 import Label from "../components/label";
 
 import {
-Suggestion
+Suggestion,
+Controls
 } from "../constants/classnames";
 import type { ComposeProps } from "../types/util";
 
 import { constStrArray, extractProps } from "../util/type";
 
 const classes = constStrArray(
-  Suggestion
+  Suggestion,
+  Controls
 );
 
 interface FieldContainerProps extends Partial<ComposeProps<typeof classes, boolean>> {
@@ -78,7 +80,31 @@ export const Common: Story = {
       title="Label"
       placeholder="Value"
       postfix="USDC"
-    />
+    >
+       <Field controls>
+        <Label badge>+</Label>
+        <Label badge>-</Label>
+      </Field>
+      <Field suggestion>
+        <Label badge>Max 2500</Label>
+      </Field>
+    </Superfield>
+
+
+    <Superfield
+      className={cn(classNames.Focused, classNames.Controls)}
+      title="Label"
+      placeholder="Value"
+      postfix="USDC"
+    >
+       <Field controls>
+        <Label badge>+</Label>
+        <Label badge>-</Label>
+      </Field>
+      <Field suggestion>
+        <Label badge>Max 2500</Label>
+      </Field>
+    </Superfield>
 
     <Superfield
       className={cn(classNames.Focused)}
@@ -158,11 +184,15 @@ export const Common: Story = {
     />
 
   <Superfield
-      className={cn( classNames.Focused)}
+      className={cn( classNames.Focused, classNames.Controls)}
       title="Label"
       value="Value"
       placeholder="Value"
     >
+      <Field controls>
+        <Label badge>+</Label>
+        <Label badge>-</Label>
+      </Field>
       <Field suggestion>
         <Label badge>Max 2500</Label>
       </Field>
@@ -172,7 +202,12 @@ export const Common: Story = {
       title="Label"
       value="Value"
       placeholder="Value"
+      className={cn( classNames.Controls)}
     >
+      <Field controls>
+        <Label badge>+</Label>
+        <Label badge>-</Label>
+      </Field>
       <Field suggestion>
         <Label badge>Max 2500</Label>
       </Field>

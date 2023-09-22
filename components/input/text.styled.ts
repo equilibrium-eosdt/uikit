@@ -3,12 +3,22 @@ import * as classNames from "../../constants/classnames";
 
 export const FieldContainer = styled.div`
   &.${classNames.Suggestion} {
-  height: 34px;
-  gap: 6px;
-  margin-top: 7px;
-  display: flex;
-  opacity: 0;
-  pointer-events: none;
+    height: 34px;
+    gap: 6px;
+    margin-top: 7px;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+  } 
+  &.${classNames.Controls} {
+    gap: 8px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+    z-index: 3;
   } 
 `
 
@@ -136,6 +146,7 @@ export const InputBox = styled.div`
 export const SuperfieldStyled = styled.div`
   width: 100%;
   height: 96px;
+  position: relative;
 
   span {
     position: relative;
@@ -240,6 +251,14 @@ export const SuperfieldStyled = styled.div`
 
   }
 
+&.${classNames.Controls} {
+  &.${classNames.Focused} {
+    margin-bottom: 40px;
+  }
+  .input__area {
+    padding-right: 110px
+  }
+}
 
   &.${classNames.Hovered} {
     .input {
