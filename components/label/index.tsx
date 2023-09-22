@@ -13,6 +13,7 @@ import {
   L,
   M,
   S,
+  Badge
 } from "../../constants/classnames";
 import type { ComposeProps } from "../../types/util";
 
@@ -30,6 +31,7 @@ const classes = constStrArray(
   L,
   M,
   S,
+  Badge
 );
 
 interface Props extends Partial<ComposeProps<typeof classes, boolean>> {

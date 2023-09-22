@@ -1,13 +1,43 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import cn from "classnames";
-import React from "react";
+import React, { CSSProperties, ReactNode } from "react";
 import * as classNames from "../constants/classnames";
 import { InputStoryWrapper } from "../components/helpers/input-story-wrapper";
 import { StoryInput } from "../components/helpers/story-controls";
 import T from "../components/typography";
 
 import { SuperField as Superfield_ } from "../components/input/super-field";
+import { FieldContainer } from "../components/input/text.styled";
+import Label from "../components/label";
+
+import {
+Suggestion
+} from "../constants/classnames";
+import type { ComposeProps } from "../types/util";
+
+import { constStrArray, extractProps } from "../util/type";
+
+const classes = constStrArray(
+  Suggestion
+);
+
+interface FieldContainerProps extends Partial<ComposeProps<typeof classes, boolean>> {
+  children?: ReactNode;
+  className?: string;
+  style?: CSSProperties;
+}
+
+function Field(props: FieldContainerProps) {
+  return (
+    <FieldContainer
+      className={cn(props.className, extractProps(props, ...classes))}
+      style={props.style}
+    >
+      {props.children}
+    </FieldContainer>
+  );
+}
 
 const meta = {
   title: "Components/Input/Superfield",
@@ -132,8 +162,22 @@ export const Common: Story = {
       title="Label"
       value="Value"
       placeholder="Value"
-      suggestion={"123123 ARB"}
-    />
+    >
+      <Field suggestion>
+        <Label badge>Max 2500</Label>
+      </Field>
+    </Superfield>
+
+    <Superfield
+      title="Label"
+      value="Value"
+      placeholder="Value"
+    >
+      <Field suggestion>
+        <Label badge>Max 2500</Label>
+      </Field>
+    </Superfield>
+
     </InputStoryWrapper>
     </>
     );

@@ -10,6 +10,7 @@ export const Error = "error";
 export const Pending = "pending";
 export const Icon = "icon";
 export const SignleIcon = "singleicon";
+export const Suggestion = "suggestion";
 
 // positioning
 /** @deprecated fixme styling consistency */
@@ -49,3 +50,4 @@ export const Image = "image";
 export const Top = "top";
 export const Bottom = "bottom";
 export const Multiline = "multiline";
+export const Badge = "badge";
