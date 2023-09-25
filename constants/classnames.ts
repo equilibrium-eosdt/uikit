@@ -15,6 +15,7 @@ export const Controls = "controls";
 export const Disabled = "disabled";
 export const Loading = "loading";
 export const Text = "text";
+export const On = "on";
 
 // positioning
 /** @deprecated fixme styling consistency */
@@ -44,6 +45,7 @@ export const Caption = "caption";
 export const Secondary = "secondary";
 export const Tertiary = "tertiary";
 export const Elevated = "elevated";
+export const Alert = "alert";
 export const Accent = "accent";
 export const Brand = "brand";
 export const Positive = "positive";
