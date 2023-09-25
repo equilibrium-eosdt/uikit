@@ -1,13 +1,67 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import IconPlus from "../icons/plus-button";
+import IconMinus from "../icons/minus-button";
 
 import cn from "classnames";
-import React from "react";
+import React, { CSSProperties, ReactNode } from "react";
 import * as classNames from "../constants/classnames";
 import { InputStoryWrapper } from "../components/helpers/input-story-wrapper";
 import { StoryInput } from "../components/helpers/story-controls";
 import T from "../components/typography";
+import { ButtonWrapper as Button } from "../components/button/styled";
 
 import { SuperField as Superfield_ } from "../components/input/super-field";
+import { FieldContainer } from "../components/input/text.styled";
+import Label from "../components/label";
+
+import {
+Suggestion,
+Controls,
+M,
+Elevated,
+Icon
+} from "../constants/classnames";
+import type { ComposeProps } from "../types/util";
+
+import { constStrArray, extractProps } from "../util/type";
+
+const classes = constStrArray(
+  Suggestion,
+  Controls,
+  M,
+  Elevated,
+  Icon
+);
+
+interface FieldContainerProps extends Partial<ComposeProps<typeof classes, boolean>> {
+  children?: ReactNode;
+  className?: string;
+  style?: CSSProperties;
+}
+
+function Field(props: FieldContainerProps) {
+  return (
+    <FieldContainer
+      className={cn(props.className, extractProps(props, ...classes))}
+      style={props.style}
+    >
+      {props.children}
+    </FieldContainer>
+  );
+}
+interface ButtonProps extends Partial<ComposeProps<typeof classes, boolean>> {
+  className?: string;
+  style?: CSSProperties;
+  children?: ReactNode;
+}
+
+function ButtonComponent(props: ButtonProps) {
+  return (
+      <Button className={cn(props.className, extractProps(props, ...classes))} style={props.style}>
+          {props.children}
+      </Button>
+  );
+}
 
 const meta = {
   title: "Components/Input/Superfield",
@@ -48,7 +102,39 @@ export const Common: Story = {
       title="Label"
       placeholder="Value"
       postfix="USDC"
-    />
+    >
+       <Field controls>
+       <ButtonComponent md elevated icon>
+        <IconMinus />
+      </ButtonComponent>
+      <ButtonComponent md elevated icon>
+        <IconPlus />
+      </ButtonComponent>
+      </Field>
+      <Field suggestion>
+        <Label badge>Max 2500</Label>
+      </Field>
+    </Superfield>
+
+
+    <Superfield
+      className={cn(classNames.Focused, classNames.Controls)}
+      title="Label"
+      placeholder="Value"
+      postfix="USDC"
+    >
+       <Field controls>
+       <ButtonComponent md elevated icon>
+        <IconMinus />
+      </ButtonComponent>
+      <ButtonComponent md elevated icon>
+        <IconPlus />
+      </ButtonComponent>
+      </Field>
+      <Field suggestion>
+        <Label badge>Max 2500</Label>
+      </Field>
+    </Superfield>
 
     <Superfield
       className={cn(classNames.Focused)}
@@ -126,6 +212,45 @@ export const Common: Story = {
       value="Value"
       placeholder="Value"
     />
+
+  <Superfield
+      className={cn( classNames.Focused, classNames.Controls)}
+      title="Label"
+      value="Value"
+      placeholder="Value"
+    >
+      <Field controls>
+      <ButtonComponent md elevated icon>
+        <IconMinus />
+      </ButtonComponent>
+      <ButtonComponent md elevated icon>
+        <IconPlus />
+      </ButtonComponent>
+      </Field>
+      <Field suggestion>
+        <Label badge>Max 2500</Label>
+      </Field>
+    </Superfield>
+
+    <Superfield
+      title="Label"
+      value="Value"
+      placeholder="Value"
+      className={cn( classNames.Controls)}
+    >
+      <Field controls>
+      <ButtonComponent md elevated icon>
+        <IconMinus />
+      </ButtonComponent>
+        <ButtonComponent md elevated icon>
+          <IconPlus />
+        </ButtonComponent>
+      </Field>
+      <Field suggestion>
+        <Label badge>Max 2500</Label>
+      </Field>
+    </Superfield>
+
     </InputStoryWrapper>
     </>
     );

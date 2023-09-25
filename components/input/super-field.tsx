@@ -17,7 +17,7 @@ type Props = Omit<InputHTMLAttributes<HTMLInputElement>, "value">& {
   onClick?: (e: MouseEvent<HTMLDivElement>) => void;
 }
 
-export const SuperField = forwardRef<HTMLInputElement, Props>(({className, style, onClick, title, required, disabled, value, ...props}, ref) => {
+export const SuperField = forwardRef<HTMLInputElement, Props>(({className, style, onClick, title, required, disabled, value, children, ...props}, ref) => {
   const hasValue = Boolean(value?.trim().length);
 
   return (
@@ -37,14 +37,13 @@ export const SuperField = forwardRef<HTMLInputElement, Props>(({className, style
         {
           hasValue && props.postfix ? <span className="input__span">{props.postfix}</span> : <Noop />
         }
-            
-
-          {props.children}
         </div>
         <div key="hint" className="input__hint">
           {title}
         </div>
       </div>
+      {children}
+
     </SuperfieldStyled>
   );
 });

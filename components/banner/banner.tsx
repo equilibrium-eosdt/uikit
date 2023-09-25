@@ -1,19 +1,12 @@
 import cn from "classnames";
 import type { CSSProperties, ReactNode } from "react";
-import { LabelWrapper } from "./styled";
+import { BannerWrapper } from "./styled";
 import {
   Accent,
-  Brand,
-  Icon,
-  Negative,
-  Pending,
-  Positive,
-  Reverse,
-  SignleIcon,
-  L,
-  M,
+  Alert,
   S,
-  Badge
+  M,
+  L
 } from "../../constants/classnames";
 import type { ComposeProps } from "../../types/util";
 
@@ -21,17 +14,10 @@ import { constStrArray, extractProps } from "../../util/type";
 
 const classes = constStrArray(
   Accent,
-  Brand,
-  Icon,
-  Negative,
-  Pending,
-  Positive,
-  Reverse,
-  SignleIcon,
-  L,
-  M,
+  Alert,
   S,
-  Badge
+  M,
+  L
 );
 
 interface Props extends Partial<ComposeProps<typeof classes, boolean>> {
@@ -40,13 +26,13 @@ interface Props extends Partial<ComposeProps<typeof classes, boolean>> {
   style?: CSSProperties;
 }
 
-export default function Label(props: Props) {
+export default function Banner(props: Props) {
   return (
-    <LabelWrapper
+    <BannerWrapper
       className={cn(props.className, extractProps(props, ...classes))}
       style={props.style}
     >
       {props.children}
-    </LabelWrapper>
+    </BannerWrapper>
   );
 }

@@ -10,6 +10,12 @@ export const Error = "error";
 export const Pending = "pending";
 export const Icon = "icon";
 export const SignleIcon = "singleicon";
+export const Suggestion = "suggestion";
+export const Controls = "controls";
+export const Disabled = "disabled";
+export const Loading = "loading";
+export const Text = "text";
+export const On = "on";
 
 // positioning
 /** @deprecated fixme styling consistency */
@@ -37,6 +43,9 @@ export const HeaderS = "headerS";
 export const Body = "body";
 export const Caption = "caption";
 export const Secondary = "secondary";
+export const Tertiary = "tertiary";
+export const Elevated = "elevated";
+export const Alert = "alert";
 export const Accent = "accent";
 export const Brand = "brand";
 export const Positive = "positive";
@@ -46,6 +55,8 @@ export const DarkBG = "darkbg";
 export const LightBg = "lightbg";
 export const Status = "status";
 export const Image = "image";
+export const WidthFit = "fit";
 export const Top = "top";
 export const Bottom = "bottom";
-export const Multiline = "multiline"
+export const Multiline = "multiline";
+export const Badge = "badge";
