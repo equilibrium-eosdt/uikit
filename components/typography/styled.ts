@@ -6,10 +6,16 @@ export const TypographyWrapper = styled.p`
   font-family: ${cssVar("--default-font")}, sans-serif;
 
   &.${Class.Title} {
-    font-size: 64px;
+    font-size: 48px;
     font-style: normal;
-    font-weight: 500;
-    line-height: 72px;
+    font-weight: 700;
+    line-height: 56px;
+    letter-spacing: 0;
+    @media (min-width: 1024px) {
+      font-size: 64px;
+      line-height: 80px;
+      letter-spacing: 0.64px;
+    }
   }
 
   &.${Class.HeaderL} {
@@ -17,6 +23,11 @@ export const TypographyWrapper = styled.p`
     font-style: normal;
     font-weight: 700;
     line-height: 40px;
+    letter-spacing: 0;
+    @media (min-width: 1024px) {
+      font-size: 40px;
+      line-height: 48px;
+    }
   }
 
   &.${Class.HeaderM} {
@@ -24,6 +35,7 @@ export const TypographyWrapper = styled.p`
     font-style: normal;
     font-weight: 700;
     line-height: 32px;
+    letter-spacing: 0.24px;
   }
 
   &.${Class.HeaderS} {
@@ -31,6 +43,7 @@ export const TypographyWrapper = styled.p`
     font-style: normal;
     font-weight: 700;
     line-height: 28px;
+    letter-spacing: 0.4px;
   }
 
   &.${Class.Action} {
