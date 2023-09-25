@@ -15,21 +15,21 @@ export const TypographyWrapper = styled.p`
   &.${Class.HeaderL} {
     font-size: 32px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 40px;
   }
 
   &.${Class.HeaderM} {
     font-size: 24px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 32px;
   }
 
   &.${Class.HeaderS} {
     font-size: 20px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 28px;
   }
 
