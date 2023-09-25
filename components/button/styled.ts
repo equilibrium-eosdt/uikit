@@ -30,10 +30,12 @@ export const ButtonWrapper = styled.button`
     transition: 0.3s ease-out;
   }
 
-  &>img, svg {
+  & > img,
+  svg {
     margin-left: -6px;
     transition: 0.3s ease-out;
-    path, rect {
+    path,
+    rect {
       transition: 0.3s ease-out;
     }
   }
@@ -81,7 +83,7 @@ export const ButtonWrapper = styled.button`
   }
 
   &.${Class.WidthFit} {
-    width: fit-content
+    width: fit-content;
   }
 
   &.${Class.Pending} {
@@ -117,73 +119,79 @@ export const ButtonWrapper = styled.button`
     p {
       color: ${cssVar("--text-primary")};
     }
-    &>img, svg {
+    & > img,
+    svg {
       filter: invert(0) !important;
     }
     &.${Class.Hovered}, &:hover {
       background: ${cssVar("--fill-secondary-hover")};
     }
-      &.${Class.Disabled} {
-        opacity: 0.24;
-      }
-      &.${Class.Loading} {
-          opacity: 0.24;
-      }
-
+    &.${Class.Disabled} {
+      opacity: 0.24;
+    }
+    &.${Class.Loading} {
+      opacity: 0.24;
     }
   }
 
   &.${Class.Tertiary} {
     background: transparent;
     color: ${cssVar("--text-primary")};
-     p {
+    p {
       color: ${cssVar("--text-primary")};
     }
-    &>img, &>svg {
+    & > img,
+    & > svg {
       filter: invert(0) !important;
     }
     &.${Class.Hovered}, &:hover {
       background: ${cssVar("--fill-secondary")};
     }
-      &.${Class.Disabled} {
-        background: transparent;
-        opacity: 0.24;
-      }
-      &.${Class.Loading} {
-        background: transparent;
-        opacity: 0.24;
-      }
+    &.${Class.Disabled} {
+      background: transparent;
+      opacity: 0.24;
     }
+    &.${Class.Loading} {
+      background: transparent;
+      opacity: 0.24;
+    }
+  }
 
   &.${Class.Elevated} {
     background: ${cssVar("--fill-elevated")};
-    box-shadow: 0px 4px 8px 0px rgba(51, 20, 0, 0.08), 0px 2px 1px 0px rgba(51, 20, 0, 0.04);
-     p {
+    box-shadow: 0px 4px 8px 0px rgba(51, 20, 0, 0.08),
+      0px 2px 1px 0px rgba(51, 20, 0, 0.04);
+    p {
       color: ${cssVar("--text-primary")};
     }
-    &>img, &>svg {
+    & > img,
+    & > svg {
       filter: invert(0) !important;
     }
     &.${Class.Hovered}, &:hover {
       background: ${cssVar("--fill-elevated-hover")};
-      box-shadow: 0px 4px 8px 0px rgba(51, 20, 0, 0.08), 0px 2px 1px 0px rgba(51, 20, 0, 0.04);
+      box-shadow: 0px 4px 8px 0px rgba(51, 20, 0, 0.08),
+        0px 2px 1px 0px rgba(51, 20, 0, 0.04);
     }
-      &.${Class.Disabled} {
-        background: ${cssVar("--fill-elevated")};
-        opacity: 0.24;
-        box-shadow: 0px 4px 8px 0px rgba(51, 20, 0, 0.08), 0px 2px 1px 0px rgba(51, 20, 0, 0.04);
-      }
-      &.${Class.Loading} {
-        background: ${cssVar("--fill-elevated")};
-        opacity: 0.24;
-        box-shadow: 0px 4px 8px 0px rgba(51, 20, 0, 0.08), 0px 2px 1px 0px rgba(51, 20, 0, 0.04);
-      }
+    &.${Class.Disabled} {
+      background: ${cssVar("--fill-elevated")};
+      opacity: 0.24;
+      box-shadow: 0px 4px 8px 0px rgba(51, 20, 0, 0.08),
+        0px 2px 1px 0px rgba(51, 20, 0, 0.04);
     }
+    &.${Class.Loading} {
+      background: ${cssVar("--fill-elevated")};
+      opacity: 0.24;
+      box-shadow: 0px 4px 8px 0px rgba(51, 20, 0, 0.08),
+        0px 2px 1px 0px rgba(51, 20, 0, 0.04);
+    }
+  }
 
-   &.${Class.Icon} {
+  &.${Class.Icon} {
     width: fit-content;
     aspect-ratio: 1 / 1;
-    &>img, &>svg {
+    & > img,
+    & > svg {
       margin: 0 auto;
     }
     &.${Class.L} {
@@ -196,8 +204,8 @@ export const ButtonWrapper = styled.button`
       padding: 0 var(--spacing-space-4, 4px) !important;
     }
   }
-      
-   &.${Class.Text} {
+
+  &.${Class.Text} {
     width: fit-content;
     padding: 0 !important;
     background: transparent;
@@ -205,10 +213,12 @@ export const ButtonWrapper = styled.button`
     p {
       color: ${cssVar("--text-secondary")};
     }
-    &>img, &>svg {
+    & > img,
+    & > svg {
       margin: 0 auto;
       filter: invert(0) !important;
-      path, rect {
+      path,
+      rect {
         fill: ${cssVar("--icon-secondary")} !important;
       }
     }
@@ -217,16 +227,16 @@ export const ButtonWrapper = styled.button`
       p {
         color: ${cssVar("--icon-secondary-hover")};
       }
-      &>svg path,
-      &>svg rect {
+      & > svg path,
+      & > svg rect {
         fill: ${cssVar("--icon-secondary-hover")} !important;
       }
     }
     &.${Class.Disabled} {
       opacity: 0.24;
       background: transparent;
-      &>svg path,
-      &>svg rect {
+      & > svg path,
+      & > svg rect {
         fill: ${cssVar("--icon-secondary")} !important;
       }
     }
