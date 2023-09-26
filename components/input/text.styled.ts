@@ -260,7 +260,7 @@ export const SuperfieldStyled = styled.div`
   }
 }
 
-  &.${classNames.Hovered} {
+  &.${classNames.Hovered}, &:hover {
     .input {
       &__area {
         background: var(--fill-secondary, rgba(204, 187, 184, 0.16));

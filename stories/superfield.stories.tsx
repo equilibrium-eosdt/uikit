@@ -97,6 +97,25 @@ export const Common: Story = {
       postfix="USDC"
       />
 
+  <Superfield
+      title="Label"
+      placeholder="Value"
+      postfix="USDC"
+    >
+       <Field controls>
+       <ButtonComponent md elevated icon>
+        <IconMinus />
+      </ButtonComponent>
+      <ButtonComponent md elevated icon>
+        <IconPlus />
+      </ButtonComponent>
+      </Field>
+      <Field suggestion>
+        <Label badge>Max 2500</Label>
+      </Field>
+    </Superfield>
+
+
     <Superfield
       className={cn(classNames.Hovered)}
       title="Label"
