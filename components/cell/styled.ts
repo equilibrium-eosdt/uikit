@@ -33,6 +33,7 @@ export const CellWrapper = styled.div`
   width: 100%;
   max-width: 100%;
   flex: 1 1 100%;
+  min-height: 48px;
 
   ${CellItemWrapper} {
     margin-left: auto;
@@ -42,7 +43,8 @@ export const CellWrapper = styled.div`
       align-items: flex-end;
     }
 
-    &:first-child, &.clearMargin {
+    &:first-child,
+    &.clearMargin {
       margin-left: 0;
       margin-right: auto;
       text-align: left;
