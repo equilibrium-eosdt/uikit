@@ -116,4 +116,26 @@ export const LabelWrapper = styled.div`
       opacity: 1;
     }
   }
+
+
+  &.${Class.Badge} {
+    border-radius: 16px;
+    letter-spacing: 0.03em;
+    font-variation-settings: "wght" 700;
+    height: 32px;
+    background: var(--fill-elevated);
+    color: var(--text-primary);
+    border-radius: var(--rounding-radius-m, 16px);
+    box-shadow: 0px 4px 8px 0px rgba(51, 20, 0, 0.08), 0px 2px 1px 0px rgba(51, 20, 0, 0.04);
+    padding: 0 var(--spacing-space-12, 12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 300ms ease-out;
+    &:hover {
+      background: var(--fill-elevated-hover);
+    }
+  }
+
 `;
