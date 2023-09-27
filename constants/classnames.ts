@@ -60,3 +60,4 @@ export const Top = "top";
 export const Bottom = "bottom";
 export const Multiline = "multiline";
 export const Badge = "badge";
+export const FullWidth = 'fullWidth'
