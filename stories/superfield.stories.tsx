@@ -65,16 +65,15 @@ function ButtonComponent(props: ButtonProps) {
 }
 
 function SuperfieldWithState() {
-  const {inputFocused, ...inputProps} = useFocus()
+  const withFocus = useFocus()
   return (
     <>
       <T style={{textAlign: "center", padding: "0 0"}}>With State</T>
       <Superfield_
-        className={cn(inputFocused && classNames.Focused)}
         title="Label"
         placeholder="Value"
         postfix="ETH"
-        {...inputProps}
+        {...withFocus}
       />
     </>
     

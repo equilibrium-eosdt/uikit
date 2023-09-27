@@ -1,5 +1,6 @@
 import { useRef, useState } from "react"
 import { useClickOutside } from "../../hooks/use-outside-click";
+import { Focused } from "../../constants/classnames"
 
 export const useFocus = () => {
     const ref = useRef<HTMLInputElement>(null)
@@ -10,7 +11,7 @@ export const useFocus = () => {
 
     return { 
         onClick: () => setInputFocused(true),
-        inputFocused,
+        [Focused]: inputFocused,
         ref
     }
 }
