@@ -39,27 +39,6 @@ export const ButtonWrapper = styled.button`
       transition: 0.3s ease-out;
     }
   }
-  &:before {
-    content: " ";
-    transition: opacity 0.2s ease-in-out;
-    position: absolute;
-    opacity: 0;
-    display: block;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: calc(100% + ${STRIPE_WIDTH});
-    background: repeating-linear-gradient(
-      135deg,
-      ${cssVar("--background-primary")} 25%,
-      ${cssVar("--background-primary")} 50%,
-      ${cssVar("--background-secondary")} 50%,
-      ${cssVar("--background-secondary")} 75%
-    );
-
-    background-size: ${STRIPE_WIDTH} ${STRIPE_WIDTH};
-    animation: ${animateButtonPendingBackground} 2s linear infinite;
-  }
 
   &.${Class.L} {
     height: 64px;
@@ -97,7 +76,25 @@ export const ButtonWrapper = styled.button`
     pointer-events: none;
 
     &:before {
+      content: " ";
+      transition: opacity 0.2s ease-in-out;
+      position: absolute;
       opacity: 1;
+      display: block;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: calc(100% + ${STRIPE_WIDTH});
+      background: repeating-linear-gradient(
+        135deg,
+        ${cssVar("--background-primary")} 25%,
+        ${cssVar("--background-primary")} 50%,
+        ${cssVar("--background-secondary")} 50%,
+        ${cssVar("--background-secondary")} 75%
+      );
+
+      background-size: ${STRIPE_WIDTH} ${STRIPE_WIDTH};
+      animation: ${animateButtonPendingBackground} 2s linear infinite;
     }
   }
 
