@@ -119,6 +119,7 @@ export const Common: Story = {
       title="Label"
       placeholder="Value"
       postfix="USDC"
+      className={cn(classNames.Controls)}
     >
        <Field controls>
        <ButtonComponent md elevated icon>
@@ -135,7 +136,7 @@ export const Common: Story = {
 
 
     <Superfield
-      className={cn(classNames.Hovered)}
+      className={cn(classNames.Hovered, classNames.Controls)}
       title="Label"
       placeholder="Value"
       postfix="USDC"
