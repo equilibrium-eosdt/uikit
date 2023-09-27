@@ -15,6 +15,7 @@ import {
   Elevated,
   Icon,
   Text,
+  FullWidth,
 } from "../../constants/classnames";
 import { ComposeProps } from "../../types/util";
 import { DefaultProps } from "../../types/core";
@@ -30,6 +31,7 @@ const classes = constStrArray(
   Pending,
   Secondary,
   WidthFit,
+  FullWidth,
   Tertiary,
   Elevated,
   Icon,
