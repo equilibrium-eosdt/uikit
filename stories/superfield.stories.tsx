@@ -98,7 +98,7 @@ export const Common: Story = {
       />
 
     <Superfield
-      className={cn(classNames.Hovered)}
+      className={cn(classNames.Hovered, classNames.Controls)}
       title="Label"
       placeholder="Value"
       postfix="USDC"
