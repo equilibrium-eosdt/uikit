@@ -1,9 +1,22 @@
 import { forwardRef, InputHTMLAttributes, MouseEvent, ReactNode } from "react";
+import cn from "classnames";
 import * as classNames from "../../constants/classnames";
 import { SuperfieldStyled } from "./text.styled";
 import Noop from "../helpers/noop";
+import { constStrArray, extractProps } from "../../util/type";
+import { ComposeProps } from "../../types/util";
 
-type Props = Omit<InputHTMLAttributes<HTMLInputElement>, "value">& {
+const classes = constStrArray(
+  classNames.Suggestion,
+  classNames.Controls,
+  classNames.Hovered,
+  classNames.Focused,
+  classNames.Filled,
+  classNames.Error,
+  classNames.Pending,
+);
+
+type Props = Omit<InputHTMLAttributes<HTMLInputElement>, "value"> & Partial<ComposeProps<typeof classes, boolean>> & {
   className?: string;
   children?: ReactNode;
   tabIndex?: number;
@@ -21,7 +34,7 @@ export const SuperField = forwardRef<HTMLInputElement, Props>(({className, style
   const hasValue = Boolean(value?.trim().length);
 
   return (
-    <SuperfieldStyled className={className} onClick={onClick}>
+    <SuperfieldStyled className={cn(className, extractProps(props, ...classes))} onClick={onClick}>
       <div className="input__area">
         <div className="input-container"
             style={{ width: value ? "fit-conetnt" : "100%" }}

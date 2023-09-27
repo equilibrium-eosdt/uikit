@@ -11,6 +11,7 @@ import T from "../components/typography";
 import { ButtonWrapper as Button } from "../components/button/styled";
 
 import { SuperField as Superfield_ } from "../components/input/super-field";
+import {useFocus} from '../components/input/use-focus'
 import { FieldContainer } from "../components/input/text.styled";
 import Label from "../components/label";
 
@@ -62,6 +63,23 @@ function ButtonComponent(props: ButtonProps) {
       </Button>
   );
 }
+
+function SuperfieldWithState() {
+  const withFocus = useFocus()
+  return (
+    <>
+      <T style={{textAlign: "center", padding: "0 0"}}>With State</T>
+      <Superfield_
+        title="Label"
+        placeholder="Value"
+        postfix="ETH"
+        {...withFocus}
+      />
+    </>
+    
+  )
+}
+
 
 const meta = {
   title: "Components/Input/Superfield",
@@ -269,7 +287,7 @@ export const Common: Story = {
         <Label badge>Max 2500</Label>
       </Field>
     </Superfield>
-
+    <SuperfieldWithState/>
     </InputStoryWrapper>
     </>
     );
