@@ -4,5 +4,5 @@ export interface DefaultProps {
   className?: string;
   style?: CSSProperties;
   children?: ReactNode;
-  onClick?: (e: MouseEvent) => void;
+  onClick?: (e: MouseEvent<HTMLElement>) => void;
 }
