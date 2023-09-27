@@ -14,7 +14,6 @@ const animateButtonPendingBackground = keyframes`
 `;
 
 export const ButtonWrapper = styled.button`
-  width: 100%;
   position: relative;
   display: inline-flex;
   justify-content: center;
