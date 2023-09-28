@@ -11,6 +11,7 @@ import T from "../components/typography";
 import { ButtonWrapper as Button } from "../components/button/styled";
 
 import { SuperField as Superfield_ } from "../components/input/super-field";
+import {useFocus} from '../components/input/use-focus'
 import { FieldContainer } from "../components/input/text.styled";
 import Label from "../components/label";
 
@@ -63,6 +64,23 @@ function ButtonComponent(props: ButtonProps) {
   );
 }
 
+function SuperfieldWithState() {
+  const withFocus = useFocus()
+  return (
+    <>
+      <T style={{textAlign: "center", padding: "0 0"}}>With State</T>
+      <Superfield_
+        title="Label"
+        placeholder="Value"
+        postfix="ETH"
+        {...withFocus}
+      />
+    </>
+    
+  )
+}
+
+
 const meta = {
   title: "Components/Input/Superfield",
   component: Superfield_,
@@ -96,6 +114,25 @@ export const Common: Story = {
     <Superfield title="Label" placeholder="Value" 
       postfix="USDC"
       />
+
+  <Superfield
+      title="Label"
+      placeholder="Value"
+      postfix="USDC"
+    >
+       <Field controls>
+       <ButtonComponent md elevated icon>
+        <IconMinus />
+      </ButtonComponent>
+      <ButtonComponent md elevated icon>
+        <IconPlus />
+      </ButtonComponent>
+      </Field>
+      <Field suggestion>
+        <Label badge>Max 2500</Label>
+      </Field>
+    </Superfield>
+
 
     <Superfield
       className={cn(classNames.Hovered)}
@@ -250,7 +287,7 @@ export const Common: Story = {
         <Label badge>Max 2500</Label>
       </Field>
     </Superfield>
-
+    <SuperfieldWithState/>
     </InputStoryWrapper>
     </>
     );

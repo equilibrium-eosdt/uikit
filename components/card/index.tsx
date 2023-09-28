@@ -1,4 +1,4 @@
-import type { CSSProperties, ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import {
   CardDescription,
@@ -8,37 +8,29 @@ import {
   CardStyled,
 } from "./styled";
 import Noop from "../helpers/noop";
-import { constStrArray, extractProps} from "../../util/type";
-import {
-  L,
-  M,
-  Reverse,
-  Secondary
-} from "../../constants/classnames";
+import { constStrArray, extractProps } from "../../util/type";
+import { L, M, Reverse, Secondary } from "../../constants/classnames";
 import cn from "classnames";
 import type { ComposeProps } from "../../types/util";
+import type { DefaultProps } from "../../types/core";
 
-export interface CardProps  extends Partial<ComposeProps<typeof classes, boolean>>  {
-  className?: string;
-  style?: CSSProperties;
+export interface CardProps
+  extends DefaultProps,
+    Partial<ComposeProps<typeof classes, boolean>> {
   heading?: ReactNode;
   description?: ReactNode;
   cover?: ReactNode;
-  children?: ReactNode;
 }
 
-const classes = constStrArray(
-  M,
-  L,
-  Reverse, 
-  Secondary,
-  "clearMargin"
-);
-
+const classes = constStrArray(M, L, Reverse, Secondary, "clearMargin");
 
 function Card(props: CardProps) {
   return (
-    <CardStyled className={cn(props.className, extractProps(props, ...classes))} style={props.style}>
+    <CardStyled
+      className={cn(props.className, extractProps(props, ...classes))}
+      style={props.style}
+      onClick={props.onClick}
+    >
       {props.heading ? <CardHeading>{props.heading}</CardHeading> : <Noop />}
 
       {props.description ? (

@@ -63,6 +63,7 @@ export const CardStyled = styled.div`
   border-radius: 24px;
   padding: 16px 24px 16px 16px;
   height: fit-content;
+
   &.${classNames.Secondary} {
     background: ${cssVar("--fill-secondary", "rgba(204, 187, 184, 0.16)")};
     box-shadow: none;

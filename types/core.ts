@@ -1,7 +1,8 @@
-import type { CSSProperties, ReactNode } from "react";
+import type { CSSProperties, MouseEvent, ReactNode } from "react";
 
 export interface DefaultProps {
   className?: string;
   style?: CSSProperties;
   children?: ReactNode;
+  onClick?: (e: MouseEvent<HTMLElement>) => void;
 }
