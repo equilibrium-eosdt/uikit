@@ -19,8 +19,6 @@ function PlusIcon(props: IconProps) {
 </clipPath>
 </defs>
 </svg>
-
-
   );
 }
 
