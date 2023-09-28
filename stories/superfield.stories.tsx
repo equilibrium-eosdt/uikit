@@ -119,6 +119,7 @@ export const Common: Story = {
       title="Label"
       placeholder="Value"
       postfix="USDC"
+      className={cn(classNames.Controls)}
     >
        <Field controls>
        <ButtonComponent md elevated icon>
