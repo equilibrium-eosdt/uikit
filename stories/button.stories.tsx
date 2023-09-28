@@ -1,12 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import cn from "classnames";
-import React, { CSSProperties, ReactNode } from "react";
+import React from "react";
 
 import styled from "styled-components";
 import IconPlus from "../icons/plus";
 import { useThemeConfigStore, useSetTheme, setValue } from "../stores/theme";
-import type { ComposeProps } from "../types/util";
-import { constStrArray, extractProps } from "../util/type";
 import T from "../components/typography";
 import ButtonComponent from "../components/button"
 
@@ -17,6 +14,7 @@ const Container = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: 30px 20px;
 `;
+
 
 const meta = {
   title: "Components/Button/Primary",
@@ -37,23 +35,19 @@ export const PrimaryButton: Story = {
     return (
       <>
         <Container>
-          <ButtonComponent lg>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg hovered icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg disabled icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg loading icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
@@ -73,23 +67,19 @@ export const PrimaryButton: Story = {
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md hovered icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md disabled icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md loading icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
@@ -109,23 +99,19 @@ export const PrimaryButton: Story = {
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm hovered icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm disabled icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm loading icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
@@ -147,23 +133,19 @@ export const PrimaryButton: Story = {
         </Container>
 
         <Container>
-          <ButtonComponent lg fit>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg fit icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg fit hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg fit hovered icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg fit disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg fit disabled icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg fit loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg fit loading icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
@@ -183,23 +165,19 @@ export const PrimaryButton: Story = {
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md fit>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md fit icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md fit hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md fit hovered icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md fit disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md fit disabled icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md fit loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md fit loading icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
@@ -219,23 +197,19 @@ export const PrimaryButton: Story = {
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm fit>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm fit icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm fit hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm fit hovered icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm fit disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm fit disabled icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm fit loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm fit loading icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
@@ -253,18 +227,6 @@ export const PrimaryButton: Story = {
 
           <ButtonComponent sm fit loading>
             <T action>Action</T>
-          </ButtonComponent>
-
-          <ButtonComponent lg fit pending>
-            <T action>Action</T>
-          </ButtonComponent>
-
-          <ButtonComponent md fit pending>
-            <T action>Action</T>
-          </ButtonComponent>
-
-          <ButtonComponent sm fit pending>
-            Main
           </ButtonComponent>
         </Container>
       </>
@@ -289,23 +251,19 @@ export const SecondaryButton: StorySecondary = {
     return (
       <>
         <Container>
-          <ButtonComponent lg secondary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg secondary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg hovered secondary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg hovered secondary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg disabled secondary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg disabled secondary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg loading secondary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg loading secondary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
@@ -325,23 +283,19 @@ export const SecondaryButton: StorySecondary = {
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md secondary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md secondary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md hovered secondary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md hovered secondary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md disabled secondary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md disabled secondary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md loading secondary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md loading secondary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
@@ -361,23 +315,19 @@ export const SecondaryButton: StorySecondary = {
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm secondary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm secondary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm secondary hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm secondary hovered icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm secondary disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm secondary disabled icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm secondary loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm secondary loading icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
@@ -399,23 +349,19 @@ export const SecondaryButton: StorySecondary = {
         </Container>
 
         <Container>
-          <ButtonComponent lg fit secondary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg fit secondary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg fit secondary hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg fit secondary hovered icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg fit secondary disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg fit secondary disabled icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg fit secondary loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg fit secondary loading icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
@@ -435,23 +381,19 @@ export const SecondaryButton: StorySecondary = {
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md fit secondary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md fit secondary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md fit secondary hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md fit secondary hovered icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md fit secondary disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md fit secondary disabled icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md fit secondary loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md fit secondary loading icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
@@ -471,23 +413,19 @@ export const SecondaryButton: StorySecondary = {
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm fit secondary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm fit secondary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm fit secondary hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm fit secondary hovered icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm fit secondary disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm fit secondary disabled icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm fit secondary loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm fit secondary loading icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
@@ -505,18 +443,6 @@ export const SecondaryButton: StorySecondary = {
 
           <ButtonComponent sm fit secondary loading>
             <T action>Action</T>
-          </ButtonComponent>
-
-          <ButtonComponent lg fit secondary pending>
-            <T action>Action</T>
-          </ButtonComponent>
-
-          <ButtonComponent md fit secondary pending>
-            <T action>Action</T>
-          </ButtonComponent>
-
-          <ButtonComponent sm fit secondary pending>
-            Main
           </ButtonComponent>
         </Container>
       </>
@@ -525,7 +451,7 @@ export const SecondaryButton: StorySecondary = {
 };
 
 const metaTertiary = {
-  title: "Components/Button/Secondary",
+  title: "Components/Button/Teriary",
   parameters: {
     layout: "fullscreen",
   },
@@ -541,23 +467,19 @@ export const TertiaryButton: StoryTertiary = {
     return (
       <>
         <Container>
-          <ButtonComponent lg tertiary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg tertiary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg hovered tertiary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg hovered tertiary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg disabled tertiary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg disabled tertiary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg loading tertiary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg loading tertiary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
@@ -569,7 +491,7 @@ export const TertiaryButton: StoryTertiary = {
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg disabled tertiary>
+          <ButtonComponent lg disabled tertiary >
             <T action>Action</T>
           </ButtonComponent>
 
@@ -577,23 +499,19 @@ export const TertiaryButton: StoryTertiary = {
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md tertiary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md tertiary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md hovered tertiary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md hovered tertiary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md disabled tertiary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md disabled tertiary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md loading tertiary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md loading tertiary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
@@ -613,23 +531,22 @@ export const TertiaryButton: StoryTertiary = {
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm tertiary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+
+          <ButtonComponent sm tertiary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm tertiary hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+
+          <ButtonComponent sm tertiary hovered icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm tertiary disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm tertiary disabled icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm tertiary loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+
+          <ButtonComponent sm tertiary loading icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
@@ -651,23 +568,19 @@ export const TertiaryButton: StoryTertiary = {
         </Container>
 
         <Container>
-          <ButtonComponent lg fit tertiary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg fit tertiary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg fit tertiary hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg fit tertiary hovered icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg fit tertiary disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg fit tertiary disabled icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg fit tertiary loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg fit tertiary loading icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
@@ -687,23 +600,19 @@ export const TertiaryButton: StoryTertiary = {
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md fit tertiary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md fit tertiary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md fit tertiary hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md fit tertiary hovered icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md fit tertiary disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md fit tertiary disabled icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md fit tertiary loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md fit tertiary loading icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
@@ -723,23 +632,19 @@ export const TertiaryButton: StoryTertiary = {
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm fit tertiary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm fit tertiary icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm fit tertiary hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm fit tertiary hovered icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm fit tertiary disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm fit tertiary disabled icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm fit tertiary loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm fit tertiary loading icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
@@ -774,6 +679,7 @@ const metaElevated = {
 type StoryElevated = StoryObj<typeof metaElevated>;
 
 export const ElevatedButton: StoryElevated = {
+
   render: () => {
     const theme = useThemeConfigStore();
     useSetTheme({ theme });
@@ -781,23 +687,19 @@ export const ElevatedButton: StoryElevated = {
     return (
       <>
         <Container>
-          <ButtonComponent lg elevated>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg hovered elevated icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg hovered elevated>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg hovered elevated icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg disabled elevated>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg disabled elevated icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg loading elevated>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg loading elevated icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
@@ -817,23 +719,19 @@ export const ElevatedButton: StoryElevated = {
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md elevated>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md elevated icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md hovered elevated>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md hovered elevated icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md disabled elevated>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md disabled elevated icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md loading elevated>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md loading elevated icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
@@ -853,23 +751,19 @@ export const ElevatedButton: StoryElevated = {
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm elevated>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm elevated icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm elevated hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm elevated hovered icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm elevated disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm elevated disabled icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm elevated loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm elevated loading icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
@@ -891,23 +785,19 @@ export const ElevatedButton: StoryElevated = {
         </Container>
 
         <Container>
-          <ButtonComponent lg fit elevated>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg fit elevated icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg fit elevated hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg fit elevated hovered icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg fit elevated disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg fit elevated disabled icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent lg fit elevated loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent lg fit elevated loading icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
@@ -927,23 +817,19 @@ export const ElevatedButton: StoryElevated = {
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md fit elevated>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md fit elevated icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md fit elevated hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md fit elevated hovered icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md fit elevated disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md fit elevated disabled icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent md fit elevated loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent md fit elevated loading icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
@@ -963,23 +849,19 @@ export const ElevatedButton: StoryElevated = {
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm fit elevated>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm fit elevated icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm fit elevated hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm fit elevated hovered icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm fit elevated disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm fit elevated disabled icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent sm fit elevated loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent sm fit elevated loading icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} >
             <T action>Action</T>
           </ButtonComponent>
 
@@ -1024,212 +906,116 @@ export const IconButtton: StoryIcon = {
           Primary
         </T>
         <Container>
-          <ButtonComponent lg icon>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent lg icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} />
 
-          <ButtonComponent lg hovered icon>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent lg hovered icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} />
 
-          <ButtonComponent lg disabled icon>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent lg disabled icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} />
 
-          <ButtonComponent lg loading icon>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent lg loading icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} />
 
-          <ButtonComponent md icon>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent md icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} />
 
-          <ButtonComponent md hovered icon>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent md hovered icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} />
 
-          <ButtonComponent md disabled icon>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent md disabled icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} />
 
-          <ButtonComponent md loading icon>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent md loading icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} />
 
-          <ButtonComponent sm icon>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent sm icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} />
 
-          <ButtonComponent sm icon hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent sm icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} hovered/>
 
-          <ButtonComponent sm icon disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent sm icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} disabled/>
 
-          <ButtonComponent sm icon loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent sm icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} loading/>
         </Container>
 
         <T headerM style={{ margin: "40px 20px 10px" }}>
           Secondary
         </T>
         <Container>
-          <ButtonComponent lg icon secondary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent lg icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} secondary />
 
-          <ButtonComponent lg icon secondary hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent lg icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} secondary hovered />
 
-          <ButtonComponent lg icon secondary disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent lg icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} secondary disabled />
 
-          <ButtonComponent lg icon secondary loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent lg icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} secondary loading />
 
-          <ButtonComponent md icon secondary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent md icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} secondary />
 
-          <ButtonComponent md icon secondary hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent md icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} secondary hovered />
 
-          <ButtonComponent md icon secondary disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent md icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} secondary disabled />
 
-          <ButtonComponent md icon secondary loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent md icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} secondary loading />
 
-          <ButtonComponent sm icon secondary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent sm icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} secondary />
 
-          <ButtonComponent sm icon secondary hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent sm icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} secondary hovered />
 
-          <ButtonComponent sm icon secondary disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent sm icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} secondary disabled />
 
-          <ButtonComponent sm icon secondary loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent sm icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} secondary loading />
         </Container>
 
         <T headerM style={{ margin: "40px 20px 10px" }}>
           Tertiary
         </T>
         <Container>
-          <ButtonComponent lg icon tertiary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent lg icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} tertiary />
 
-          <ButtonComponent lg icon tertiary hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent lg icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} tertiary hovered />
 
-          <ButtonComponent lg icon tertiary disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent lg icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} tertiary disabled />
 
-          <ButtonComponent lg icon tertiary loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent lg icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} tertiary loading />
 
-          <ButtonComponent md icon tertiary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent md icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} tertiary />
 
-          <ButtonComponent md icon tertiary hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent md icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} tertiary hovered />
 
-          <ButtonComponent md icon tertiary disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent md icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} tertiary disabled />
 
-          <ButtonComponent md icon tertiary loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent md icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} tertiary loading />
 
-          <ButtonComponent sm icon tertiary>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent sm icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} tertiary />
 
-          <ButtonComponent sm icon tertiary hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent sm icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} tertiary hovered />
 
-          <ButtonComponent sm icon tertiary disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent sm icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} tertiary disabled />
 
-          <ButtonComponent sm icon tertiary loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent sm icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} tertiary loading />
         </Container>
 
         <T headerM style={{ margin: "40px 20px 10px" }}>
           Elevated
         </T>
         <Container>
-          <ButtonComponent lg icon elevated>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent lg icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} elevated />
 
-          <ButtonComponent lg icon elevated hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent lg icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} elevated hovered />
 
-          <ButtonComponent lg icon elevated disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent lg icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} elevated disabled />
 
-          <ButtonComponent lg icon elevated loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent lg icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} elevated loading />
 
-          <ButtonComponent md icon elevated>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent md icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} elevated />
 
-          <ButtonComponent md icon elevated hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent md icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} elevated hovered />
 
-          <ButtonComponent md icon elevated disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent md icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} elevated disabled />
 
-          <ButtonComponent md icon elevated loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent md icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} elevated loading />
 
-          <ButtonComponent sm icon elevated>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent sm icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} elevated />
 
-          <ButtonComponent sm icon elevated hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent sm icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} elevated hovered />
 
-          <ButtonComponent sm icon elevated disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent sm icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} elevated disabled />
 
-          <ButtonComponent sm icon elevated loading>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent sm icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} elevated loading />
         </Container>
       </>
     );
@@ -1237,7 +1023,7 @@ export const IconButtton: StoryIcon = {
 };
 
 const metaText = {
-  title: "Components/Button/Icon",
+  title: "Components/Button/Text",
   parameters: {
     layout: "fullscreen",
   },
@@ -1253,18 +1039,15 @@ export const TextButtton: StoryText = {
     return (
       <>
         <Container>
-          <ButtonComponent text>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent text icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent hovered text>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent hovered text icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
 
-          <ButtonComponent disabled text>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
+          <ButtonComponent disabled text icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}>
             <T action>Action</T>
           </ButtonComponent>
         </Container>
@@ -1284,17 +1067,11 @@ export const TextButtton: StoryText = {
         </Container>
 
         <Container>
-          <ButtonComponent text>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent text icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} />
 
-          <ButtonComponent text hovered>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent text hovered icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} />
 
-          <ButtonComponent text disabled>
-            <IconPlus secondary style={{ width: 24, height: 24 }} />
-          </ButtonComponent>
+          <ButtonComponent text disabled icon={<IconPlus secondary style={{ width: 24, height: 24 }} />} />
         </Container>
       </>
     );
