@@ -44,7 +44,7 @@ export const SuperField = forwardRef<HTMLInputElement, Props>(({className, style
             ref={ref}
             className="input"
             value={value}
-            style={{ width: hasValue ?  (props.resizeFactor ?? 0.5) * ((value?.length ?? 0) + 1)+ "em" : "100%"}}
+            style={{ width: hasValue ?  (props.resizeFactor ?? 0.46) * ((value?.length ?? 0) + 1)+ "em" : "100%"}}
             {...props}
           />
         {
