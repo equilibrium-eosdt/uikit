@@ -5,8 +5,11 @@ export const FieldContainer = styled.div`
   &.${classNames.Suggestion} {
     height: 34px;
     gap: 6px;
-    margin-top: 7px;
+    transform: translateY(100%);
     display: flex;
+    position: absolute;
+    gap: 6px;
+    bottom: -8px;
     opacity: 0;
     pointer-events: none;
   } 
