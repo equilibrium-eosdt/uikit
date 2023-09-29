@@ -11,6 +11,7 @@ import {
 import type { ComposeProps } from "../../types/util";
 
 import { constStrArray, extractProps } from "../../util/type";
+import { ReactNode } from "react";
 
 const classes = constStrArray(
   L,
@@ -22,16 +23,16 @@ const classes = constStrArray(
 );
 
 interface Props extends Partial<ComposeProps<typeof classes, boolean>> {
-  content?: string;
+  children: ReactNode;
   className?: string;
 }
 
-export default function Label(props: Props) {
+export default function Tooltip(props: Props) {
   return (
     <TooltipWrapper
       className={cn(extractProps(props, ...classes))}
     >
-      {props.content}
+      {props.children}
     </TooltipWrapper>
   );
 }
