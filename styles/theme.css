@@ -56,7 +56,7 @@
 
   /** Aliases(light theme) **/
   /* background */
-  --background-overlay: var(--color-transparent-gray2);
+  --background-overlay: var(--color-transparent-invert-gray2);
   --background-accent-secondary: var(--color-accent-opaque1);
   --background-accent-primary: var(--color-accent-opaque2);
   --background-negative: var(--color-opaque-red1);
