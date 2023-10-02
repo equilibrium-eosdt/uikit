@@ -8,7 +8,7 @@ import cn from "classnames";
 import * as classNames from "../../constants/classnames";
 import { SuperfieldStyled } from "./text.styled";
 import Noop from "../helpers/noop";
-import { constStrArray, extractProps, isNumStr } from "../../util/type";
+import { constStrArray, divideBy, extractProps, isNumStr } from "../../util/type";
 import { ComposeProps } from "../../types/util";
 
 const classes = constStrArray(
@@ -59,7 +59,7 @@ const absoluteNumStrLength = (str: `${number}`, factors: WidthMap) =>
     .split("")
     .reduce(
       (prev: number, char: string | number) =>
-        prev + factors[char] ?? factors.__default,
+        prev + (factors[char] ?? factors.__default),
       0,
     );
 
@@ -81,14 +81,15 @@ const Superfield = forwardRef<HTMLInputElement, Props>(
   ) => {
     const hasValue = Boolean(value?.trim().length);
 
-    const width = absoluteNumStrLength(
-      isNumStr(value) ? value : "0",
-      resizeFactor,
-    );
+    const width = isNumStr(value)
+      ? absoluteNumStrLength(value, resizeFactor)
+      : undefined;
+
+    const [composedProps, rest] = divideBy(props, ...classes)
 
     return (
       <SuperfieldStyled
-        className={cn(className, extractProps(props, ...classes))}
+        className={cn(className, composedProps)}
         onClick={onClick}
       >
         <div className="input__area">
@@ -104,7 +105,7 @@ const Superfield = forwardRef<HTMLInputElement, Props>(
               style={{
                 width,
               }}
-              {...props}
+              {...rest}
             />
             {hasValue && props.postfix ? (
               <span className="input__span">{props.postfix}</span>
