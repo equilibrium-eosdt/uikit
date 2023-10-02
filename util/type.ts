@@ -1,4 +1,4 @@
-import { ComposeProps, DeepWriteable } from "../types/util";
+import { ComposeProps, DeepWriteable, UnwrapArray } from "../types/util";
 
 export const isNumStr = (num?: string): num is `${number}` => {
   if (!num) {
@@ -37,3 +37,31 @@ export const extractProps = <T extends string[], V>(
     const value = props[name as keyof typeof props];
     return { ...prev, [name]: value };
   }, {} as any);
+
+export const divideBy = <R extends {}, T extends keyof R>(
+  obj: R,
+  ...names: T[]
+) => {
+  const [included, omitted]: [Partial<Pick<R, T>>, Partial<Omit<R, T>>] =
+    getEntries(obj).reduce(
+      (prev, [name, value]) => {
+        const [_included, _omitted] = prev as [
+          Partial<Pick<R, T>>,
+          Partial<Omit<R, T>>,
+        ];
+
+        const included = names.includes(name as T)
+          ? { ..._included, [name]: value }
+          : _included;
+
+        const omitted = !names.includes(name as T)
+          ? { ..._omitted, [name]: value }
+          : _omitted;
+
+        return [included, omitted];
+      },
+      [{}, {}],
+    );
+
+  return [included, omitted] as [Pick<R, T>, Omit<R, T>];
+};
