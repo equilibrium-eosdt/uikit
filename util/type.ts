@@ -1,4 +1,14 @@
 import { ComposeProps, DeepWriteable } from "../types/util";
+
+export const isNumStr = (num?: string): num is `${number}` => {
+  if (!num) {
+    return false;
+  }
+
+  const val = Number(num);
+  return Number.isFinite(val);
+};
+
 export const isPrefixed = <P extends string>(
   prefix: P,
   str?: string,
