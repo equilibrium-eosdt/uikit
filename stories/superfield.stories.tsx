@@ -115,6 +115,15 @@ export const Common: Story = {
       postfix="USDC"
       />
 
+<Superfield
+      title="Label"
+      placeholder="Value"
+      postfix="USDC"
+    >
+    </Superfield>
+
+
+
   <Superfield
       title="Label"
       placeholder="Value"
