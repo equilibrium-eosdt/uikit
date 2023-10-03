@@ -189,7 +189,7 @@
   --icon-invert: var(--color-opaque-black);
   --icon-on-light: var(--color-opaque-black);
   --icon-on-dark: var(--color-opaque-gray1);
-  --icon-tertiary: var(--color-opaque-gray6);
+  --icon-tertiary: var(--color-transparent-gray4);
   --icon-secondary-hover: var(--color-opaque-gray4);
   --icon-secondary: var(--color-opaque-gray5);
   --icon-primary-hover: var(--color-opaque-gray3);
