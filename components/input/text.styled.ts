@@ -146,9 +146,12 @@ export const InputBox = styled.div`
   }
 `;
 
-export const SuperfieldStyled = styled.div`
+export const SuperfieldStyledLabelWrapper = styled.label`
   width: 100%;
   height: 96px;
+`
+
+export const SuperfieldStyled = styled.div`
   position: relative;
 
   span {

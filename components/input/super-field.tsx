@@ -6,7 +6,7 @@ import React, {
 } from "react";
 import cn from "classnames";
 import * as classNames from "../../constants/classnames";
-import { SuperfieldStyled } from "./text.styled";
+import { SuperfieldStyled, SuperfieldStyledLabelWrapper } from "./text.styled";
 import Noop from "../helpers/noop";
 import { constStrArray, divideBy, extractProps, isNumStr } from "../../util/type";
 import { ComposeProps } from "../../types/util";
@@ -88,37 +88,39 @@ const Superfield = forwardRef<HTMLInputElement, Props>(
     const [composedProps, rest] = divideBy(props, ...classes)
 
     return (
-      <SuperfieldStyled
-        className={cn(className, composedProps)}
-        onClick={onClick}
-      >
-        <div className="input__area">
-          <div
-            className="input-container"
-            style={{ width: value ? "fit-conetnt" : "100%" }}
-          >
-            <input
-              key="container"
-              ref={ref}
-              className="input"
-              value={value}
-              style={{
-                width,
-              }}
-              {...rest}
-            />
-            {hasValue && props.postfix ? (
-              <span className="input__span">{props.postfix}</span>
-            ) : (
-              <Noop />
-            )}
+      <SuperfieldStyledLabelWrapper>
+        <SuperfieldStyled
+          className={cn(className, composedProps)}
+          onClick={onClick}
+        >
+          <div className="input__area">
+            <div
+              className="input-container"
+              style={{ width: value ? "fit-conetnt" : "100%" }}
+            >
+              <input
+                key="container"
+                ref={ref}
+                className="input"
+                value={value}
+                style={{
+                  width,
+                }}
+                {...rest}
+              />
+              {hasValue && props.postfix ? (
+                <span className="input__span">{props.postfix}</span>
+              ) : (
+                <Noop />
+              )}
+            </div>
+            <div key="hint" className="input__hint">
+              {title}
+            </div>
           </div>
-          <div key="hint" className="input__hint">
-            {title}
-          </div>
-        </div>
-        {children}
-      </SuperfieldStyled>
+          {children}
+        </SuperfieldStyled>
+      </SuperfieldStyledLabelWrapper>
     );
   },
 );
