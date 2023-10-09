@@ -1,4 +1,4 @@
-import { ComposeProps, DeepWriteable, UnwrapArray } from "../types/util";
+import { ComposeProps, DeepWriteable } from "../types/util";
 
 export const isNumStr = (num?: string): num is `${number}` => {
   if (!num) {
