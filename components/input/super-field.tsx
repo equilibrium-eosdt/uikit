@@ -8,7 +8,12 @@ import cn from "classnames";
 import * as classNames from "../../constants/classnames";
 import { SuperfieldStyled, SuperfieldStyledLabelWrapper } from "./text.styled";
 import Noop from "../helpers/noop";
-import { constStrArray, divideBy, extractProps, isNumStr } from "../../util/type";
+import {
+  constStrArray,
+  divideBy,
+  extractProps,
+  isNumStr,
+} from "../../util/type";
 import { ComposeProps } from "../../types/util";
 
 const classes = constStrArray(
@@ -85,7 +90,7 @@ const Superfield = forwardRef<HTMLInputElement, Props>(
       ? absoluteNumStrLength(value, resizeFactor)
       : undefined;
 
-    const [composedProps, rest] = divideBy(props, ...classes)
+    const [composedProps, rest] = divideBy(props, ...classes);
 
     return (
       <SuperfieldStyledLabelWrapper>
