@@ -158,3 +158,7 @@ export const SliderContainer = styled.div`
     }
   }
 `;
+
+export const Input = styled.input`
+  cursor: pointer;
+`;
