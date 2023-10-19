@@ -95,6 +95,7 @@ export const SliderContainer = styled.div`
   }
 
   > input {
+    cursor: pointer;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -157,8 +158,4 @@ export const SliderContainer = styled.div`
       outline: 0;
     }
   }
-`;
-
-export const Input = styled.input`
-  cursor: pointer;
 `;

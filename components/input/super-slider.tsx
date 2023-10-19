@@ -1,7 +1,7 @@
 import cn from "classnames";
 import type { ChangeEvent, ReactNode, TouchEvent } from "react";
 import * as LocalClass from "./classnames";
-import { HANDLE_WIDTH, SliderContainer, Input } from "./slider.styled";
+import { HANDLE_WIDTH, SliderContainer } from "./slider.styled";
 import Noop from "../helpers/noop";
 import T from "../typography";
 import * as GlobalClass from "../../constants/classnames";
@@ -135,7 +135,7 @@ function SuperSlider({
         </div>
       </div>
 
-      <Input
+      <input
         className={cn({ [GlobalClass.Active]: active })}
         type="range"
         min={min}
