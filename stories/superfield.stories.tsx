@@ -10,9 +10,9 @@ import { StoryInput } from "../components/helpers/story-controls";
 import T from "../components/typography";
 import { ButtonWrapper as Button } from "../components/button/styled";
 
+import { FieldInnerContainer as Field } from "../components/input";
 import Superfield_ from "../components/input/super-field";
 import { useFocus } from "../components/input/use-focus";
-import { FieldContainer } from "../components/input/text.styled";
 import Label from "../components/label";
 
 import {
@@ -28,23 +28,6 @@ import { constStrArray, extractProps } from "../util/type";
 
 const classes = constStrArray(Suggestion, Controls, M, Elevated, Icon);
 
-interface FieldContainerProps
-  extends Partial<ComposeProps<typeof classes, boolean>> {
-  children?: ReactNode;
-  className?: string;
-  style?: CSSProperties;
-}
-
-function Field(props: FieldContainerProps) {
-  return (
-    <FieldContainer
-      className={cn(props.className, extractProps(props, ...classes))}
-      style={props.style}
-    >
-      {props.children}
-    </FieldContainer>
-  );
-}
 interface ButtonProps extends Partial<ComposeProps<typeof classes, boolean>> {
   className?: string;
   style?: CSSProperties;
@@ -64,6 +47,7 @@ function ButtonComponent(props: ButtonProps) {
 
 function SuperfieldWithState() {
   const withFocus = useFocus();
+
   return (
     <>
       <T style={{ textAlign: "center", padding: "0 0" }}>With State</T>
