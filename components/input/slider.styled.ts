@@ -95,6 +95,7 @@ export const SliderContainer = styled.div`
   }
 
   > input {
+    cursor: pointer;
     position: absolute;
     top: 0;
     bottom: 0;
