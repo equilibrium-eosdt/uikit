@@ -1,9 +1,10 @@
 import cn from "classnames";
+import TooltipUi from "@marginly/ui/components/tooltip";
 import type { ChangeEvent, ReactNode, TouchEvent } from "react";
 import * as LocalClass from "./classnames";
-import { HANDLE_WIDTH, SliderContainer } from "./slider.styled";
+import { HANDLE_WIDTH, SliderContainer, TooltipWrapper } from "./slider.styled";
 import Noop from "../helpers/noop";
-import T from "../typography";
+import T, { Props as TypographyProps } from "../typography";
 import * as GlobalClass from "../../constants/classnames";
 import { cssVar } from "../../util/style";
 
@@ -37,14 +38,19 @@ const adjustValue = (min: number, max: number, _value?: number) => {
   return Math.max(value, min);
 };
 
+const ActionTypography = (props: TypographyProps) => {
+  return (
+    <T {...props} className={cn(GlobalClass.Action, props.className)}>
+      {props.children}
+    </T>
+  );
+};
+
 const defaultFormatter = (num?: number) => (
-  <T
-    className={GlobalClass.Action}
-    style={{ color: cssVar("--text-on-light") }}
-  >
+  <>
     {num?.toFixed(0) ?? ""}
     &#215;
-  </T>
+  </>
 );
 
 function SuperSlider({
@@ -131,7 +137,20 @@ function SuperSlider({
           className={cn({ [GlobalClass.Active]: active }, LocalClass.Label)}
           style={{ left: labelLeft }}
         >
-          {formatNumber(value)}
+          {active && (
+            <TooltipWrapper>
+              <TooltipUi top md>
+                <ActionTypography
+                  style={{ color: cssVar("--fill-invert-primary") }}
+                >
+                  {formatNumber(value)}
+                </ActionTypography>
+              </TooltipUi>
+            </TooltipWrapper>
+          )}
+          <ActionTypography style={{ color: cssVar("--text-on-light") }}>
+            {formatNumber(value)}
+          </ActionTypography>
         </div>
       </div>
 

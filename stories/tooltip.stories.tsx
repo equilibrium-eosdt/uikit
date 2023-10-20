@@ -19,18 +19,33 @@ export const Common: Story = {
   render: () => {
     return (
       <LabelStoryWrapper>
-        <Tooltip lg top content={content} />
-        <Tooltip lg bottom content={content} />
+        <Tooltip lg top>
+          {content}
+        </Tooltip>
+        <Tooltip lg bottom>
+          {content}
+        </Tooltip>
 
-        <Tooltip md top content={content} />
-        <Tooltip md bottom  content={content} />
+        <Tooltip md top>
+          {content}
+        </Tooltip>
+        <Tooltip md bottom>
+          {content}
+        </Tooltip>
 
-        <Tooltip sm top content={content} />
-        <Tooltip sm bottom content={content} />
+        <Tooltip sm top>
+          {content}
+        </Tooltip>
+        <Tooltip sm bottom>
+          {content}
+        </Tooltip>
 
-        <Tooltip sm top multiline content={content} />
-        <Tooltip sm bottom multiline content={content} />
-
+        <Tooltip sm top multiline>
+          {content}
+        </Tooltip>
+        <Tooltip sm bottom multiline>
+          {content}
+        </Tooltip>
       </LabelStoryWrapper>
     );
   },
