@@ -27,7 +27,7 @@ const classes = constStrArray(
   Secondary,
 );
 
-interface Props extends Partial<ComposeProps<typeof classes, boolean>> {
+export interface Props extends Partial<ComposeProps<typeof classes, boolean>> {
   as?: StyledTarget<any>;
   children?: ReactNode;
   className?: string;
