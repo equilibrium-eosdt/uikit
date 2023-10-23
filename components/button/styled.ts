@@ -60,23 +60,32 @@ export const ButtonWrapper = styled.button`
 
   &.${Class.L} {
     height: 64px;
-    padding: 0 var(--spacing-space-20, 20px);
+    padding: 0 var(--spacing-space-48, 48px);
     gap: var(--spacing-space-8, 8px);
     border-radius: var(--rounding-radius-m, 16px);
+    &.${Class.Icon} {
+      padding: 0 var(--spacing-space-48, 48px) 0 var(--spacing-space-40, 40px);
+    }
   }
 
   &.${Class.M} {
     height: 48px;
-    padding: var(--spacing-space-12, 12px);
+    padding: 0 var(--spacing-space-24, 24px);
     gap: var(--spacing-space-8, 8px);
     border-radius: var(--rounding-radius-xs, 8px);
+    &.${Class.Icon} {
+      padding: 0 var(--spacing-space-24, 24px) 0 var(--spacing-space-16, 16px);
+    }
   }
 
   &.${Class.S} {
     height: 32px;
-    padding: 0 var(--spacing-space-4, 4px);
+    padding: var(--spacing-space-12, 12px);
     gap: var(--spacing-space-4, 4px);
     border-radius: var(--rounding-radius-m, 16px);
+    &.${Class.Icon} {
+      padding: 0 var(--spacing-space-12, 12px) 0 var(--spacing-space-6, 6px);
+    }
   }
 
   &.${Class.FullWidth} {
@@ -231,7 +240,7 @@ export const ButtonWrapper = styled.button`
     }
   }
 
-  &.${Class.Icon} {
+  &.${Class.Icon}&:not(.${Class.Children}) {
     width: fit-content;
     aspect-ratio: 1 / 1;
     & > img,
@@ -242,10 +251,10 @@ export const ButtonWrapper = styled.button`
       padding: 0 var(--spacing-space-20, 20px);
     }
     &.${Class.M} {
-      padding: 0 var(--spacing-space-12, 12px) !important;
+      padding: 0 var(--spacing-space-12, 12px);
     }
     &.${Class.S} {
-      padding: 0 var(--spacing-space-4, 4px) !important;
+      padding: 0 var(--spacing-space-4, 4px);
     }
   }
 
@@ -334,21 +343,21 @@ export const ButtonWrapper = styled.button`
       }
     }
 
-   &.${Class.Icon} {
-    width: fit-content;
-    aspect-ratio: 1 / 1;
-    &>img, &>svg {
-      margin: 0 auto;
-    }
-    &.${Class.L} {
-      padding: 0 var(--spacing-space-20, 20px);
-    }
-    &.${Class.M} {
-      padding: 0 var(--spacing-space-12, 12px) !important;
-    }
-    &.${Class.S} {
-      padding: 0 var(--spacing-space-4, 4px) !important;
-    }
+    &.${Class.Icon}&:not(.${Class.Children}) {
+      width: fit-content;
+      aspect-ratio: 1 / 1;
+      &>img, &>svg {
+        margin: 0 auto;
+      }
+      &.${Class.L} {
+        padding: 0 var(--spacing-space-20, 20px);
+      }
+      &.${Class.M} {
+        padding: 0 var(--spacing-space-12, 12px);
+      }
+      &.${Class.S} {
+        padding: 0 var(--spacing-space-4, 4px);
+      } 
   }
       
   &.${Class.Text} {

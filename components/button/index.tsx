@@ -16,6 +16,7 @@ import {
   Icon,
   Text,
   FullWidth,
+  Children,
 } from "../../constants/classnames";
 import { ComposeProps } from "../../types/util";
 import { DefaultProps } from "../../types/core";
@@ -35,26 +36,44 @@ const classes = constStrArray(
   Tertiary,
   Elevated,
   Text,
-  Loading
+  Loading,
 );
 
-const loaderSvg = <svg viewBox="0 0 24 24" ><circle cx="12" cy="12" r="10.5"></circle></svg>;
+const loaderSvg = (
+  <svg viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10.5"></circle>
+  </svg>
+);
 interface ButtonProps
   extends Partial<ComposeProps<typeof classes, boolean>>,
     DefaultProps {
-      icon?: ReactNode
-    }
+  icon?: ReactNode;
+}
 
 export default function Button(props: ButtonProps) {
   const { children, className, onClick, style, icon, ...rest } = props;
   return (
     <ButtonWrapper
-      className={classNames(className, extractProps(rest, ...classes), {[Icon]: props.icon && !children})}
+      className={classNames(className, extractProps(rest, ...classes), {
+        [Icon]: props.icon,
+        [Children]: props.children,
+      })}
       style={style}
       onClick={onClick}
     >
-      {rest.loading && !icon ? loaderSvg : 
-      rest.loading ? <>{loaderSvg}{children}</> : <>{icon}{children}</>}
+      {rest.loading && !icon ? (
+        loaderSvg
+      ) : rest.loading ? (
+        <>
+          {loaderSvg}
+          {children}
+        </>
+      ) : (
+        <>
+          {icon}
+          {children}
+        </>
+      )}
     </ButtonWrapper>
   );
 }
