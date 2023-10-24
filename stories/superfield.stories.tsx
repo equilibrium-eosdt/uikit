@@ -10,46 +10,24 @@ import { StoryInput } from "../components/helpers/story-controls";
 import T from "../components/typography";
 import { ButtonWrapper as Button } from "../components/button/styled";
 
-import { SuperField as Superfield_ } from "../components/input/super-field";
-import {useFocus} from '../components/input/use-focus'
-import { FieldContainer } from "../components/input/text.styled";
+import { FieldInnerContainer as Field } from "../components/input";
+import Superfield_ from "../components/input/super-field";
+import { useFocus } from "../components/input/use-focus";
 import Label from "../components/label";
 
 import {
-Suggestion,
-Controls,
-M,
-Elevated,
-Icon
+  Suggestion,
+  Controls,
+  M,
+  Elevated,
+  Icon,
 } from "../constants/classnames";
 import type { ComposeProps } from "../types/util";
 
 import { constStrArray, extractProps } from "../util/type";
 
-const classes = constStrArray(
-  Suggestion,
-  Controls,
-  M,
-  Elevated,
-  Icon
-);
+const classes = constStrArray(Suggestion, Controls, M, Elevated, Icon);
 
-interface FieldContainerProps extends Partial<ComposeProps<typeof classes, boolean>> {
-  children?: ReactNode;
-  className?: string;
-  style?: CSSProperties;
-}
-
-function Field(props: FieldContainerProps) {
-  return (
-    <FieldContainer
-      className={cn(props.className, extractProps(props, ...classes))}
-      style={props.style}
-    >
-      {props.children}
-    </FieldContainer>
-  );
-}
 interface ButtonProps extends Partial<ComposeProps<typeof classes, boolean>> {
   className?: string;
   style?: CSSProperties;
@@ -58,17 +36,21 @@ interface ButtonProps extends Partial<ComposeProps<typeof classes, boolean>> {
 
 function ButtonComponent(props: ButtonProps) {
   return (
-      <Button className={cn(props.className, extractProps(props, ...classes))} style={props.style}>
-          {props.children}
-      </Button>
+    <Button
+      className={cn(props.className, extractProps(props, ...classes))}
+      style={props.style}
+    >
+      {props.children}
+    </Button>
   );
 }
 
 function SuperfieldWithState() {
-  const withFocus = useFocus()
+  const withFocus = useFocus();
+
   return (
     <>
-      <T style={{textAlign: "center", padding: "0 0"}}>With State</T>
+      <T style={{ textAlign: "center", padding: "0 0" }}>With State</T>
       <Superfield_
         title="Label"
         placeholder="Value"
@@ -76,10 +58,8 @@ function SuperfieldWithState() {
         {...withFocus}
       />
     </>
-    
-  )
+  );
 }
-
 
 const meta = {
   title: "Components/Input/Superfield",
@@ -104,193 +84,199 @@ const Superfield = StoryInput(
 export const Common: Story = {
   render: () => {
     return (
-    <>
-    <T headerM style={{textAlign: "center", padding: "10px 40px 0px"}}>Superfield needs to be placed in fixed width bock to avoid unwanted expansion</T>
+      <>
+        <T headerM style={{ textAlign: "center", padding: "10px 40px 0px" }}>
+          Superfield needs to be placed in fixed width bock to avoid unwanted
+          expansion
+        </T>
 
-    <InputStoryWrapper>
+        <InputStoryWrapper>
+          <T style={{ textAlign: "center", padding: "0 0" }}>
+            here is an exaple flex-column continer with 340px max-width:
+          </T>
 
-    <T style={{textAlign: "center", padding: "0 0"}}>here is an exaple flex-column continer with 340px max-width:</T>
+          <Superfield title="Label" placeholder="Value" postfix="USDC" />
 
-    <Superfield title="Label" placeholder="Value" 
-      postfix="USDC"
-      />
+          <Superfield
+            title="Label"
+            placeholder="Value"
+            postfix="USDC"
+          ></Superfield>
 
-  <Superfield
-      title="Label"
-      placeholder="Value"
-      postfix="USDC"
-      className={cn(classNames.Controls)}
-    >
-       <Field controls>
-       <ButtonComponent md elevated icon>
-        <IconMinus />
-      </ButtonComponent>
-      <ButtonComponent md elevated icon>
-        <IconPlus />
-      </ButtonComponent>
-      </Field>
-      <Field suggestion>
-        <Label badge>Max 2500</Label>
-      </Field>
-    </Superfield>
+          <Superfield
+            title="Label"
+            placeholder="Value"
+            postfix="USDC"
+            className={cn(classNames.Controls)}
+          >
+            <Field controls>
+              <ButtonComponent md elevated icon>
+                <IconMinus />
+              </ButtonComponent>
+              <ButtonComponent md elevated icon>
+                <IconPlus />
+              </ButtonComponent>
+            </Field>
+            <Field suggestion>
+              <Label badge>Max 2500</Label>
+            </Field>
+          </Superfield>
 
+          <Superfield
+            className={cn(classNames.Hovered, classNames.Controls)}
+            title="Label"
+            placeholder="Value"
+            postfix="USDC"
+          >
+            <Field controls>
+              <ButtonComponent md elevated icon>
+                <IconMinus />
+              </ButtonComponent>
+              <ButtonComponent md elevated icon>
+                <IconPlus />
+              </ButtonComponent>
+            </Field>
+            <Field suggestion>
+              <Label badge>Max 2500</Label>
+            </Field>
+          </Superfield>
 
-    <Superfield
-      className={cn(classNames.Hovered, classNames.Controls)}
-      title="Label"
-      placeholder="Value"
-      postfix="USDC"
-    >
-       <Field controls>
-       <ButtonComponent md elevated icon>
-        <IconMinus />
-      </ButtonComponent>
-      <ButtonComponent md elevated icon>
-        <IconPlus />
-      </ButtonComponent>
-      </Field>
-      <Field suggestion>
-        <Label badge>Max 2500</Label>
-      </Field>
-    </Superfield>
+          <Superfield
+            className={cn(classNames.Focused, classNames.Controls)}
+            title="Label"
+            placeholder="Value"
+            postfix="USDC"
+          >
+            <Field controls>
+              <ButtonComponent md elevated icon>
+                <IconMinus />
+              </ButtonComponent>
+              <ButtonComponent md elevated icon>
+                <IconPlus />
+              </ButtonComponent>
+            </Field>
+            <Field suggestion>
+              <Label badge>Max 2500</Label>
+            </Field>
+          </Superfield>
 
+          <Superfield
+            className={cn(classNames.Focused)}
+            title="Label"
+            placeholder="Value"
+            postfix="ETH"
+          />
 
-    <Superfield
-      className={cn(classNames.Focused, classNames.Controls)}
-      title="Label"
-      placeholder="Value"
-      postfix="USDC"
-    >
-       <Field controls>
-       <ButtonComponent md elevated icon>
-        <IconMinus />
-      </ButtonComponent>
-      <ButtonComponent md elevated icon>
-        <IconPlus />
-      </ButtonComponent>
-      </Field>
-      <Field suggestion>
-        <Label badge>Max 2500</Label>
-      </Field>
-    </Superfield>
+          <Superfield
+            className={cn(classNames.Focused)}
+            value="Value"
+            title="Label"
+            placeholder="Value"
+            postfix="BTC"
+          />
 
-    <Superfield
-      className={cn(classNames.Focused)}
-      title="Label"
-      placeholder="Value"
-      postfix="ETH"
-    />
+          <Superfield
+            className={cn(classNames.Hovered, classNames.Filled)}
+            title="Label"
+            value="Value"
+            placeholder="Value"
+          />
 
-    <Superfield
-      className={cn(classNames.Focused)}
-      value="Value"
-      title="Label"
-      placeholder="Value"
-      postfix="BTC"
-    />
+          <Superfield
+            className={cn(classNames.Filled)}
+            title="Label"
+            value="Value"
+            placeholder="Value"
+          />
 
-    <Superfield
-      className={cn(classNames.Hovered, classNames.Filled)}
-      title="Label"
-      value="Value"
-      placeholder="Value"
-    />
+          <Superfield
+            className={cn(classNames.Error)}
+            title="Label"
+            placeholder="Value"
+          />
 
-    <Superfield
-      className={cn(classNames.Filled)}
-      title="Label"
-      value="Value"
-      placeholder="Value"
-    />
+          <Superfield
+            className={cn(classNames.Error, classNames.Hovered)}
+            title="Label"
+            placeholder="Value"
+          />
 
-    <Superfield
-      className={cn(classNames.Error)}
-      title="Label"
-      placeholder="Value"
-    />
+          <Superfield
+            className={cn(classNames.Error, classNames.Focused)}
+            title="Label"
+            value="Val"
+            placeholder="Value"
+          />
 
-    <Superfield
-      className={cn(classNames.Error, classNames.Hovered)}
-      title="Label"
-      placeholder="Value"
-    />
+          <Superfield
+            className={cn(
+              classNames.Error,
+              classNames.Focused,
+              classNames.Filled,
+            )}
+            title="Label"
+            value="Value"
+            placeholder="Value"
+          />
 
-    <Superfield
-      className={cn(classNames.Error, classNames.Focused)}
-      title="Label"
-      value="Val"
-      placeholder="Value"
-    />
+          <Superfield
+            className={cn(
+              classNames.Error,
+              classNames.Hovered,
+              classNames.Filled,
+            )}
+            title="Label"
+            value="Value"
+            placeholder="Value"
+          />
 
-    <Superfield
-      className={cn(
-        classNames.Error,
-        classNames.Focused,
-        classNames.Filled,
-      )}
-      title="Label"
-      value="Value"
-      placeholder="Value"
-    />
+          <Superfield
+            className={cn(classNames.Error, classNames.Filled)}
+            title="Label"
+            value="Value"
+            placeholder="Value"
+          />
 
-    <Superfield
-      className={cn(
-        classNames.Error,
-        classNames.Hovered,
-        classNames.Filled,
-      )}
-      title="Label"
-      value="Value"
-      placeholder="Value"
-    />
+          <Superfield
+            className={cn(classNames.Focused, classNames.Controls)}
+            title="Label"
+            value="Value"
+            placeholder="Value"
+          >
+            <Field controls>
+              <ButtonComponent md elevated icon>
+                <IconMinus />
+              </ButtonComponent>
+              <ButtonComponent md elevated icon>
+                <IconPlus />
+              </ButtonComponent>
+            </Field>
+            <Field suggestion>
+              <Label badge>Max 2500</Label>
+            </Field>
+          </Superfield>
 
-    <Superfield
-      className={cn(classNames.Error, classNames.Filled)}
-      title="Label"
-      value="Value"
-      placeholder="Value"
-    />
-
-  <Superfield
-      className={cn( classNames.Focused, classNames.Controls)}
-      title="Label"
-      value="Value"
-      placeholder="Value"
-    >
-      <Field controls>
-      <ButtonComponent md elevated icon>
-        <IconMinus />
-      </ButtonComponent>
-      <ButtonComponent md elevated icon>
-        <IconPlus />
-      </ButtonComponent>
-      </Field>
-      <Field suggestion>
-        <Label badge>Max 2500</Label>
-      </Field>
-    </Superfield>
-
-    <Superfield
-      title="Label"
-      value="Value"
-      placeholder="Value"
-      className={cn( classNames.Controls)}
-    >
-      <Field controls>
-      <ButtonComponent md elevated icon>
-        <IconMinus />
-      </ButtonComponent>
-        <ButtonComponent md elevated icon>
-          <IconPlus />
-        </ButtonComponent>
-      </Field>
-      <Field suggestion>
-        <Label badge>Max 2500</Label>
-      </Field>
-    </Superfield>
-    <SuperfieldWithState/>
-    </InputStoryWrapper>
-    </>
+          <Superfield
+            title="Label"
+            value="Value"
+            placeholder="Value"
+            className={cn(classNames.Controls)}
+          >
+            <Field controls>
+              <ButtonComponent md elevated icon>
+                <IconMinus />
+              </ButtonComponent>
+              <ButtonComponent md elevated icon>
+                <IconPlus />
+              </ButtonComponent>
+            </Field>
+            <Field suggestion>
+              <Label badge>Max 2500</Label>
+            </Field>
+          </Superfield>
+          <SuperfieldWithState />
+        </InputStoryWrapper>
+      </>
     );
   },
 };

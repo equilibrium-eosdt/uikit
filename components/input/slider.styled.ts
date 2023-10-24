@@ -13,7 +13,6 @@ export const SliderContainer = styled.div`
   padding: 0 28px;
   z-index: 20;
   background: ${cssVar("--fill-accent-secondary")};
-  overflow-x: hidden;
 
   > .${Class.Fill} {
     position: absolute;
@@ -95,6 +94,7 @@ export const SliderContainer = styled.div`
   }
 
   > input {
+    cursor: pointer;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -157,4 +157,11 @@ export const SliderContainer = styled.div`
       outline: 0;
     }
   }
+`;
+
+export const TooltipWrapper = styled.div`
+  top: -8px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -100%);
 `;

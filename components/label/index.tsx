@@ -38,6 +38,7 @@ interface Props extends Partial<ComposeProps<typeof classes, boolean>> {
   children?: ReactNode;
   className?: string;
   style?: CSSProperties;
+  onClick?: () => void
 }
 
 export default function Label(props: Props) {
@@ -45,6 +46,7 @@ export default function Label(props: Props) {
     <LabelWrapper
       className={cn(props.className, extractProps(props, ...classes))}
       style={props.style}
+      onClick={props.onClick}
     >
       {props.children}
     </LabelWrapper>

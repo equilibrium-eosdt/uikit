@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 import { FlashIcon, FlashRedIcon } from "../icons/flash";
-import Banner from "../components/banner/banner";
+import Banner from "../components/banner";
 import T from "../components/typography";
 import styled from "styled-components";
 
 const Container = styled.div`
- display: flex;
- padding: 40px;
- flex-direction: column;
- gap: 20px;
- max-width: 440px;
- margin: 0 auto;
+  display: flex;
+  padding: 40px;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 440px;
+  margin: 0 auto;
 `;
 
 const meta = {
@@ -57,7 +57,11 @@ export const Common: Story = {
 
         <Banner accent lg>
           <FlashIcon />
-          <T body>{title}</T>
+          <T body>
+            {title}
+            <br />
+            {title}
+          </T>
         </Banner>
 
         <Banner alert sm>

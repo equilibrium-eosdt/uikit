@@ -14,7 +14,7 @@ import {
 import type { ComposeProps } from "../../types/util";
 
 import { constStrArray, extractProps } from "../../util/type";
-import type { StyledTarget } from "styled-components/dist/types";
+import { DefaultProps } from "../../types/core";
 
 const classes = constStrArray(
   Title,
@@ -27,12 +27,9 @@ const classes = constStrArray(
   Secondary,
 );
 
-interface Props extends Partial<ComposeProps<typeof classes, boolean>> {
-  as?: StyledTarget<any>;
-  children?: ReactNode;
-  className?: string;
-  style?: CSSProperties;
-}
+export interface Props
+  extends DefaultProps,
+    Partial<ComposeProps<typeof classes, boolean>> {}
 
 export default function Typography(props: Props) {
   return (
@@ -40,6 +37,7 @@ export default function Typography(props: Props) {
       as={props.as}
       className={cn(props.className, extractProps(props, ...classes))}
       style={props.style}
+      onClick={props.onClick}
     >
       {props.children}
     </TypographyWrapper>

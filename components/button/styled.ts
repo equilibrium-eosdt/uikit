@@ -60,21 +60,21 @@ export const ButtonWrapper = styled.button`
 
   &.${Class.L} {
     height: 64px;
-    padding: 0 var(--spacing-space-48, 48px);
+    padding: 0 var(--spacing-space-20, 20px);
     gap: var(--spacing-space-8, 8px);
     border-radius: var(--rounding-radius-m, 16px);
   }
 
   &.${Class.M} {
     height: 48px;
-    padding: var(--spacing-space-24, 24px);
+    padding: var(--spacing-space-12, 12px);
     gap: var(--spacing-space-8, 8px);
     border-radius: var(--rounding-radius-xs, 8px);
   }
 
   &.${Class.S} {
     height: 32px;
-    padding: 0 var(--spacing-space-12, 12px);
+    padding: 0 var(--spacing-space-4, 4px);
     gap: var(--spacing-space-4, 4px);
     border-radius: var(--rounding-radius-m, 16px);
   }
