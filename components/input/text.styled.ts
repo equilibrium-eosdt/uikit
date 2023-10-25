@@ -5,11 +5,15 @@ export const FieldContainer = styled.div`
   &.${classNames.Suggestion} {
     height: 34px;
     gap: 6px;
-    margin-top: 7px;
+    transform: translateY(100%);
     display: flex;
+    position: absolute;
+    gap: 6px;
+    bottom: -8px;
     opacity: 0;
     pointer-events: none;
-  } 
+    z-index: 21;
+  }
   &.${classNames.Controls} {
     gap: 8px;
     display: flex;
@@ -19,8 +23,8 @@ export const FieldContainer = styled.div`
     right: 24px;
     transform: translateY(-50%);
     z-index: 3;
-  } 
-`
+  }
+`;
 
 export const InputBox = styled.div`
   width: 100%;
@@ -93,7 +97,6 @@ export const InputBox = styled.div`
         margin: 0;
       }
     }
- 
   }
 
   &.${classNames.Filled} {
@@ -143,9 +146,12 @@ export const InputBox = styled.div`
   }
 `;
 
-export const SuperfieldStyled = styled.div`
+export const SuperfieldStyledLabelWrapper = styled.label`
   width: 100%;
   height: 96px;
+`;
+
+export const SuperfieldStyled = styled.div`
   position: relative;
 
   span {
@@ -158,7 +164,7 @@ export const SuperfieldStyled = styled.div`
     position: relative;
     display: flex;
     gap: 4px;
-    height: 32px
+    height: 32px;
   }
   input {
     border: none;
@@ -211,18 +217,16 @@ export const SuperfieldStyled = styled.div`
       opacity: 0;
     }
 
-
     &::placeholder {
       color: rgba(140, 129, 126, 0.48);
     }
     &::-ms-clear {
       display: none;
     }
-    }
+  }
   .input {
-  
     &__span {
-      font-size: 20px;  
+      font-size: 20px;
       line-height: 24px;
       letter-spacing: 0.4px;
       font-variation-settings: "wght" 700;
@@ -248,17 +252,16 @@ export const SuperfieldStyled = styled.div`
       line-height: normal;
       letter-spacing: 0.5px;
     }
-
   }
 
-&.${classNames.Controls} {
-  &.${classNames.Focused} {
-    margin-bottom: 40px;
+  &.${classNames.Controls} {
+    &.${classNames.Focused} {
+      margin-bottom: 40px;
+    }
+    .input__area {
+      padding-right: 136px;
+    }
   }
-  .input__area {
-    padding-right: 136px
-  }
-}
 
   &.${classNames.Hovered}, &:hover {
     .input {
@@ -286,7 +289,6 @@ export const SuperfieldStyled = styled.div`
       opacity: 1;
       pointer-events: all;
     }
-
   }
 
   &.${classNames.Filled} {
@@ -335,4 +337,3 @@ export const SuperfieldStyled = styled.div`
     }
   }
 `;
-

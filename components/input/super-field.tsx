@@ -1,9 +1,19 @@
-import { forwardRef, InputHTMLAttributes, MouseEvent, ReactNode } from "react";
+import React, {
+  forwardRef,
+  InputHTMLAttributes,
+  MouseEvent,
+  ReactNode,
+} from "react";
 import cn from "classnames";
 import * as classNames from "../../constants/classnames";
-import { SuperfieldStyled } from "./text.styled";
+import { SuperfieldStyled, SuperfieldStyledLabelWrapper } from "./text.styled";
 import Noop from "../helpers/noop";
-import { constStrArray, extractProps } from "../../util/type";
+import {
+  constStrArray,
+  divideBy,
+  extractProps,
+  isNumStr,
+} from "../../util/type";
 import { ComposeProps } from "../../types/util";
 
 const classes = constStrArray(
@@ -16,49 +26,108 @@ const classes = constStrArray(
   classNames.Pending,
 );
 
-type Props = Omit<InputHTMLAttributes<HTMLInputElement>, "value"> & Partial<ComposeProps<typeof classes, boolean>> & {
-  className?: string;
-  children?: ReactNode;
-  tabIndex?: number;
-  title?: string;
-  postfix?:string;
-  autofocus?:boolean;
-  resizeFactor?: number;
-  value?: string;
-  required?: boolean;
-  disabled?:boolean;
-  onClick?: (e: MouseEvent<HTMLDivElement>) => void;
+interface WidthMap extends Record<string, number> {
+  __default: number;
 }
 
-export const SuperField = forwardRef<HTMLInputElement, Props>(({className, style, onClick, title, required, disabled, value, children, ...props}, ref) => {
-  const hasValue = Boolean(value?.trim().length);
+const WIDTHS: WidthMap = {
+  __default: 13,
+  "1": 11,
+  "2": 13,
+  "3": 13,
+  "4": 13.6,
+  "5": 12.7,
+  "6": 12.7,
+  "7": 12,
+  "8": 13.2,
+  "9": 12.8,
+  ".": 10,
+};
 
-  return (
-    <SuperfieldStyled className={cn(className, extractProps(props, ...classes))} onClick={onClick}>
-      <div className="input__area">
-        <div className="input-container"
-            style={{ width: value ? "fit-conetnt" : "100%" }}
+type Props = Omit<InputHTMLAttributes<HTMLInputElement>, "value"> &
+  Partial<ComposeProps<typeof classes, boolean>> & {
+    className?: string;
+    children?: ReactNode;
+    tabIndex?: number;
+    title?: string;
+    postfix?: string;
+    autofocus?: boolean;
+    resizeFactor?: WidthMap;
+    value?: string;
+    required?: boolean;
+    disabled?: boolean;
+    onClick?: (e: MouseEvent<HTMLDivElement>) => void;
+  };
+
+const absoluteNumStrLength = (str: `${number}`, factors: WidthMap) =>
+  str
+    .split("")
+    .reduce(
+      (prev: number, char: string | number) =>
+        prev + (factors[char] ?? factors.__default),
+      0,
+    );
+
+const Superfield = forwardRef<HTMLInputElement, Props>(
+  (
+    {
+      className,
+      style,
+      onClick,
+      resizeFactor = WIDTHS,
+      title,
+      required,
+      disabled,
+      value,
+      children,
+      ...props
+    },
+    ref,
+  ) => {
+    const hasValue = Boolean(value?.trim().length);
+
+    const width = isNumStr(value)
+      ? absoluteNumStrLength(value, resizeFactor)
+      : undefined;
+
+    const [composedProps, rest] = divideBy(props, ...classes);
+
+    return (
+      <SuperfieldStyledLabelWrapper>
+        <SuperfieldStyled
+          className={cn(className, composedProps)}
+          onClick={onClick}
+        >
+          <div className="input__area">
+            <div
+              className="input-container"
+              style={{ width: value ? "fit-conetnt" : "100%" }}
             >
-          <input
-            key="container"
-            ref={ref}
-            className="input"
-            value={value}
-            style={{ width: hasValue ?  (props.resizeFactor ?? 0.45) * ((value?.length ?? 0) + 1)+ "em" : "100%"}}
-            {...props}
-          />
-        {
-          hasValue && props.postfix ? <span className="input__span">{props.postfix}</span> : <Noop />
-        }
-        </div>
-        <div key="hint" className="input__hint">
-          {title}
-        </div>
-      </div>
-      {children}
+              <input
+                key="container"
+                ref={ref}
+                className="input"
+                value={value}
+                style={{
+                  width,
+                }}
+                {...rest}
+              />
+              {hasValue && props.postfix ? (
+                <span className="input__span">{props.postfix}</span>
+              ) : (
+                <Noop />
+              )}
+            </div>
+            <div key="hint" className="input__hint">
+              {title}
+            </div>
+          </div>
+          {children}
+        </SuperfieldStyled>
+      </SuperfieldStyledLabelWrapper>
+    );
+  },
+);
 
-    </SuperfieldStyled>
-  );
-});
-
-export default Object.assign({}, SuperField, classNames);
+export default Superfield;
