@@ -32,7 +32,7 @@ interface WidthMap extends Record<string, number> {
 
 const WIDTHS: WidthMap = {
   __default: 13,
-  "1": 9,
+  "1": 11,
   "2": 13,
   "3": 13,
   "4": 13.6,
