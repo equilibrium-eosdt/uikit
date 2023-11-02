@@ -68,7 +68,7 @@ const absoluteNumStrLength = (str: `${number}`, factors: WidthMap) =>
       0,
     );
 
-const Superfield = forwardRef<HTMLInputElement, Props>(
+const Superfield = forwardRef<HTMLLabelElement, Props>(
   (
     {
       className,
@@ -93,7 +93,7 @@ const Superfield = forwardRef<HTMLInputElement, Props>(
     const [composedProps, rest] = divideBy(props, ...classes);
 
     return (
-      <SuperfieldStyledLabelWrapper>
+      <SuperfieldStyledLabelWrapper ref={ref}>
         <SuperfieldStyled
           className={cn(className, composedProps)}
           onClick={onClick}
@@ -105,7 +105,6 @@ const Superfield = forwardRef<HTMLInputElement, Props>(
             >
               <input
                 key="container"
-                ref={ref}
                 className="input"
                 value={value}
                 style={{
