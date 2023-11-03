@@ -52,18 +52,18 @@ export const Common: Story = {
 
         <Label icon sm>
           <FlashIcon />
-          {title}
+          <span>{title}</span>
         </Label>
         <Label sm icon reverse>
           <FlashIcon />
-          {rTitle}
+          <span>{title}</span>
         </Label>
-        <Label sm>{title}</Label>
+        <Label sm><span>{title}</span></Label>
         <Label singleicon sm>
           <FlashIcon />
         </Label>
 
-        <Label accent lg>
+        <Label accent icon lg>
           <FlashIcon />
           {title}
         </Label>
@@ -78,7 +78,7 @@ export const Common: Story = {
           <FlashIcon />
         </Label>
 
-        <Label accent md>
+        <Label accent md icon>
           <FlashIcon />
           {title}
         </Label>
@@ -94,26 +94,26 @@ export const Common: Story = {
           <FlashIcon />
         </Label>
 
-        <Label accent sm>
+        <Label accent sm icon>
           <FlashIcon />
-          {title}
+          <span>{title}</span>
         </Label>
         <Label accent icon reverse sm>
           <FlashIcon />
-          {rTitle}
+          <span>{title}</span>
         </Label>
         <Label accent sm>
-          {title}
+        <span>{title}</span>
         </Label>
         <Label accent singleicon sm>
           <FlashIcon />
         </Label>
 
-        <Label className={cn(Class.L, Class.Brand)}>
+        <Label className={cn(Class.L, Class.Brand)} icon>
           <FlashIcon />
           {title}
         </Label>
-        <Label className={cn(Class.L, Class.Icon, Class.Reverse, Class.Brand)}>
+        <Label className={cn(Class.L, Class.Icon, Class.Reverse, Class.Brand)} icon>
           <FlashIcon />
           {title}
         </Label>
@@ -122,13 +122,35 @@ export const Common: Story = {
           <FlashIcon />
         </Label>
 
-        <Label className={cn(Class.M, Class.Brand)}>
+        <Label className={cn(Class.M, Class.Brand)} icon>
           <FlashIcon />
           {title}
         </Label>
-        <Label className={cn(Class.M, Class.Icon, Class.Reverse, Class.Brand)}>
+        <Label className={cn(Class.M, Class.Icon, Class.Reverse, Class.Brand)} icon>
           <FlashIcon />
           {title}
+        </Label>
+        <Label className={cn(Class.M, Class.Brand)}>
+          {title}
+        </Label>
+        <Label className={cn(Class.M, Class.Brand, Class.SignleIcon)}>
+          <FlashIcon />
+        </Label>
+
+
+        <Label className={cn(Class.S, Class.Brand)} icon>
+          <FlashIcon />
+          <span>{title}</span>
+        </Label>
+        <Label className={cn(Class.S, Class.Icon, Class.Reverse, Class.Brand)} icon>
+          <FlashIcon />
+          <span>{title}</span>
+        </Label>
+        <Label className={cn(Class.S, Class.Brand)}>
+        <span>{title}</span>
+        </Label>
+        <Label className={cn(Class.S, Class.Brand, Class.SignleIcon)}>
+          <FlashIcon />
         </Label>
         {/*} TODO wip
         <Label title={title} className={cn(Class.M, Class.Brand)}></Label>
