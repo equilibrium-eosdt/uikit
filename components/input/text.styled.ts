@@ -187,6 +187,9 @@ export const SuperfieldStyled = styled.div`
     overflow: scroll;
     overflow: -moz-scrollbars-none;
     -ms-overflow-style: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     &::-webkit-scrollbar {
       width: 0px;
       opacity: 0;
