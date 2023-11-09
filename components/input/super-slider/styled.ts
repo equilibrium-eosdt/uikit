@@ -1,8 +1,7 @@
 import { styled } from "styled-components";
-import * as Class from "./classnames";
-import * as Global from "../../constants/classnames";
-import { cssVar } from "../../util/style";
-
+import * as Class from "../classnames";
+import * as Global from "../../../constants/classnames";
+import { cssVar } from "../../../util/style";
 export const HANDLE_WIDTH = 56;
 
 export const SliderContainer = styled.div`
