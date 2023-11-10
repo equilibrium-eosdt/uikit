@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import cn from "classnames";
-import React, { ReactNode } from "react";
+import React from "react";
 import * as Class from "../constants/classnames";
 import { FlashIcon, FlashGreenIcon, FlashRedIcon } from "../icons/flash";
 import Label from "../components/label";
@@ -151,6 +151,93 @@ export const Common: Story = {
         </Label>
         <Label className={cn(Class.S, Class.Brand, Class.SignleIcon)}>
           <FlashIcon />
+        </Label>
+
+        <Label className={cn(Class.L, Class.Negative)} icon>
+          <FlashRedIcon />
+          {title}
+        </Label>
+        <Label className={cn(Class.L, Class.Icon, Class.Reverse, Class.Negative)} icon>
+          <FlashRedIcon />
+          {title}
+        </Label>
+        <Label className={cn(Class.L, Class.Negative)}>{title}</Label>
+        <Label className={cn(Class.L, Class.Negative, Class.SignleIcon)}>
+          <FlashRedIcon />
+        </Label>
+
+        <Label className={cn(Class.M, Class.Negative)} icon>
+          <FlashRedIcon />
+          {title}
+        </Label>
+        <Label className={cn(Class.M, Class.Icon, Class.Reverse, Class.Negative)} icon>
+          <FlashRedIcon />
+          {title}
+        </Label>
+        <Label className={cn(Class.M, Class.Negative)}>
+          {title}
+        </Label>
+        <Label className={cn(Class.M, Class.Negative, Class.SignleIcon)}>
+          <FlashRedIcon />
+        </Label>
+
+
+        <Label className={cn(Class.S, Class.Negative)} icon>
+          <FlashRedIcon />
+          <span>{title}</span>
+        </Label>
+        <Label className={cn(Class.S, Class.Icon, Class.Reverse, Class.Negative)} icon>
+          <FlashRedIcon />
+          <span>{title}</span>
+        </Label>
+        <Label className={cn(Class.S, Class.Negative)}>
+        <span>{title}</span>
+        </Label>
+        <Label className={cn(Class.S, Class.Negative, Class.SignleIcon)}>
+          <FlashRedIcon />
+        </Label>
+
+        <Label className={cn(Class.L, Class.Positive)} icon>
+          <FlashGreenIcon />
+          {title}
+        </Label>
+        <Label className={cn(Class.L, Class.Icon, Class.Reverse, Class.Positive)} icon>
+          <FlashGreenIcon />
+          {title}
+        </Label>
+        <Label className={cn(Class.L, Class.Positive)}>{title}</Label>
+        <Label className={cn(Class.L, Class.Positive, Class.SignleIcon)}>
+          <FlashGreenIcon />
+        </Label>
+
+        <Label className={cn(Class.M, Class.Positive)} icon>
+          <FlashGreenIcon />
+          {title}
+        </Label>
+        <Label className={cn(Class.M, Class.Icon, Class.Reverse, Class.Positive)} icon>
+          <FlashGreenIcon />
+          {title}
+        </Label>
+        <Label className={cn(Class.M, Class.Positive)}>
+          {title}
+        </Label>
+        <Label className={cn(Class.M, Class.Positive, Class.SignleIcon)}>
+          <FlashGreenIcon />
+        </Label>
+
+        <Label className={cn(Class.S, Class.Positive)} icon>
+          <FlashGreenIcon />
+          <span>{title}</span>
+        </Label>
+        <Label className={cn(Class.S, Class.Icon, Class.Reverse, Class.Positive)} icon>
+          <FlashGreenIcon />
+          <span>{title}</span>
+        </Label>
+        <Label className={cn(Class.S, Class.Positive)}>
+        <span>{title}</span>
+        </Label>
+        <Label className={cn(Class.S, Class.Positive, Class.SignleIcon)}>
+          <FlashGreenIcon />
         </Label>
         {/*} TODO wip
         <Label title={title} className={cn(Class.M, Class.Brand)}></Label>
