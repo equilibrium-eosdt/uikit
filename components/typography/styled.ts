@@ -31,7 +31,7 @@ export const TypographyWrapper = styled.p`
   }
 
   &.${Class.HeaderM} {
-    font-size: 24px;
+    font-size: 32px;
     font-style: normal;
     font-weight: 700;
     line-height: 32px;
