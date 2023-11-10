@@ -22,6 +22,7 @@ interface Props {
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   onTouchStart?: (e: TouchEvent<HTMLInputElement>) => void;
   onTouchEnd?: (e: TouchEvent<HTMLInputElement>) => void;
+  step?: number;
 }
 
 const MIN = 2;
@@ -40,7 +41,7 @@ const adjustValue = (min: number, max: number, _value?: number) => {
 
 const defaultFormatter = (num?: number) => (
   <>
-    {num?.toFixed(0) ?? ""}
+    {num ?? ""}
     &#215;
   </>
 );
@@ -56,7 +57,7 @@ export function SuperSlider({
   title,
   thresholdLeft = THRESHOLD_LEFT,
   thresholdRight = THRESHOLD_RIGHT,
-  ...handlers
+  ...otherProps
 }: Props) {
   const range = max - min;
   const value = adjustValue(min, max, _value);
@@ -148,7 +149,7 @@ export function SuperSlider({
         min={min}
         max={max}
         value={value?.toString()}
-        {...handlers}
+        {...otherProps}
       />
     </SliderContainer>
   );
