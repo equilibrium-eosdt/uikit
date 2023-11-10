@@ -12,7 +12,7 @@ export const LabelWrapper = styled.div`
   background: ${cssVar("--fill-secondary")};
   backdrop-filter: blur(12px);
   color: ${cssVar("--text-primary")};
-  gap: 4px;
+  gap: 2px;
   width: fit-content;
 
   img, svg {
@@ -68,6 +68,9 @@ export const LabelWrapper = styled.div`
     font-variation-settings: "wght" 500;
     padding: var(--spacing-space-4, 4px) var(--spacing-space-6, 6px);
     gap: 2px;
+    span {
+      transform: translateY(-1px)
+      }
     img, svg {
       width: 12px;
       height: 12px;
