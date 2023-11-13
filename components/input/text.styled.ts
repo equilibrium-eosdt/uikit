@@ -26,11 +26,7 @@ export const FieldContainer = styled.div`
   }
 `;
 
-export const InputBoxWrapper = styled.label`
-  width: 100%;
-`;
-
-export const InputBox = styled.div`
+export const InputBox = styled.label`
   width: 100%;
 
   span {
@@ -150,12 +146,9 @@ export const InputBox = styled.div`
   }
 `;
 
-export const SuperfieldStyledLabelWrapper = styled.label`
+export const SuperfieldStyled = styled.label`
   width: 100%;
   height: 96px;
-`;
-
-export const SuperfieldStyled = styled.div`
   position: relative;
 
   span {
