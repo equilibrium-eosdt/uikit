@@ -26,6 +26,10 @@ export const FieldContainer = styled.div`
   }
 `;
 
+export const InputBoxWrapper = styled.label`
+  width: 100%;
+`;
+
 export const InputBox = styled.div`
   width: 100%;
 

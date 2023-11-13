@@ -1,5 +1,5 @@
 import { ChangeEvent, forwardRef, MouseEvent, ReactNode } from "react";
-import { InputBox } from "./text.styled";
+import { InputBox, InputBoxWrapper } from "./text.styled";
 import * as classNames from "../../constants/classnames";
 
 interface Props {
@@ -38,21 +38,23 @@ export const TextField = forwardRef<HTMLInputElement, Props>((props, ref) => {
   );
 
   return (
-    <InputBox className={props.className} onClick={props.onClick}>
-      <div className="input__area">
-        {props.reverseHint ? (
-          <>
-            {container}
-            {hint}
-          </>
-        ) : (
-          <>
-            {hint}
-            {container}
-          </>
-        )}
-      </div>
-    </InputBox>
+    <InputBoxWrapper>
+      <InputBox className={props.className} onClick={props.onClick}>
+        <div className="input__area">
+          {props.reverseHint ? (
+            <>
+              {container}
+              {hint}
+            </>
+          ) : (
+            <>
+              {hint}
+              {container}
+            </>
+          )}
+        </div>
+      </InputBox>
+    </InputBoxWrapper>
   );
 });
 
