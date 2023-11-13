@@ -50,6 +50,7 @@ export const InputBox = styled.label`
     margin: 0;
     color: var(--text-primary);
     padding: 0;
+    pointer-events: none;
 
     &::-ms-clear {
       display: none;
@@ -86,6 +87,7 @@ export const InputBox = styled.label`
 
   &.${classNames.Focused} {
     .input {
+      pointer-events: auto;
       &__area {
         background: transparent;
         box-shadow: inset 0 0 0 2px var(--border-focus);
