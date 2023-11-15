@@ -11,7 +11,7 @@ interface Props {
   title?: string;
   reverseHint?: boolean;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-  onClick?: (e: MouseEvent<HTMLDivElement>) => void;
+  onClick?: (e: MouseEvent<HTMLLabelElement>) => void;
 }
 
 export const TextField = forwardRef<HTMLInputElement, Props>((props, ref) => {

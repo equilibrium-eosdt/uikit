@@ -26,7 +26,7 @@ export const FieldContainer = styled.div`
   }
 `;
 
-export const InputBox = styled.div`
+export const InputBox = styled.label`
   width: 100%;
 
   span {
@@ -50,6 +50,7 @@ export const InputBox = styled.div`
     margin: 0;
     color: var(--text-primary);
     padding: 0;
+    pointer-events: none;
 
     &::-ms-clear {
       display: none;
@@ -86,6 +87,7 @@ export const InputBox = styled.div`
 
   &.${classNames.Focused} {
     .input {
+      pointer-events: auto;
       &__area {
         background: transparent;
         box-shadow: inset 0 0 0 2px var(--border-focus);
@@ -146,12 +148,9 @@ export const InputBox = styled.div`
   }
 `;
 
-export const SuperfieldStyledLabelWrapper = styled.label`
+export const SuperfieldStyled = styled.label`
   width: 100%;
   height: 96px;
-`;
-
-export const SuperfieldStyled = styled.div`
   position: relative;
 
   span {
