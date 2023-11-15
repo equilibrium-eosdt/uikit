@@ -39,7 +39,7 @@ const WIDTHS: WidthMap = {
   ".": 10,
 };
 
-type Props = Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "title"> &
+type Props = Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "title" | "onClick"> &
   Partial<ComposeProps<typeof classes, boolean>> & {
     className?: string;
     children?: ReactNode;
