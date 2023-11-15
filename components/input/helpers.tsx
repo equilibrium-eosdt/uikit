@@ -6,6 +6,7 @@ import {
   M,
   Elevated,
   Icon,
+  Caption,
 } from "../../constants/classnames";
 
 import { DefaultProps } from "../../types/core";
@@ -14,7 +15,7 @@ import { constStrArray, divideBy } from "../../util/type";
 import Noop from "../helpers/noop";
 import { FieldContainer } from "./text.styled";
 
-const classes = constStrArray(Suggestion, Controls, M, Elevated, Icon);
+const classes = constStrArray(Suggestion, Controls, M, Elevated, Icon, Caption);
 
 interface FieldContainerProps
   extends DefaultProps,
