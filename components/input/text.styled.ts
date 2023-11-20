@@ -24,6 +24,24 @@ export const FieldContainer = styled.div`
     transform: translateY(-50%);
     z-index: 3;
   }
+  &.${classNames.Icon} {
+    gap: 8px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: -12%;
+    right: 0px;
+    z-index: 3;
+  }
+  &.${classNames.Caption} {
+    gap: 8px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 140%;
+    left: -12px;
+    z-index: 3;
+  }
 `;
 
 export const InputBox = styled.label`
