@@ -7,6 +7,7 @@ import { StoryInput } from "../components/helpers/story-controls";
 import { TextField as TextField_ } from "../components/input/text-field";
 import * as classNames from "../constants/classnames";
 // import { within, userEvent } from "@storybook/testing-library";
+import AlertIcon from "../icons/alert";
 
 const meta = {
   title: "Components/Input/Textfield",
@@ -57,12 +58,16 @@ export const Common: Story = {
           value="Value"
         />
 
-        <TextField className={cn(classNames.Error)} title="Label" />
+        <TextField className={cn(classNames.Error)} title="Label">
+          <AlertIcon />
+        </TextField>
 
         <TextField
           className={cn(classNames.Error, classNames.Hovered)}
           title="Label"
-        />
+        >
+          <AlertIcon />
+        </TextField>
 
         <TextField
           className={cn(classNames.Error, classNames.Focused)}
@@ -88,13 +93,17 @@ export const Common: Story = {
           )}
           title="Label"
           value="Value"
-        />
+        >
+          <AlertIcon />
+        </TextField>
 
         <TextField
           className={cn(classNames.Error, classNames.Filled)}
           title="Label"
           value="Value"
-        />
+        >
+          <AlertIcon />
+        </TextField>
       </InputStoryWrapper>
     );
   },
