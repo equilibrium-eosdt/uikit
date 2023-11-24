@@ -13,24 +13,25 @@ export const TooltipWrapper = styled.div`
   &::before {
     content: " ";
     position: absolute;
-    width: 11px;
-    height: 11px;
     left: 50%;
-    background: ${cssVar("--fill-primary")};
+    background: url("data:image/svg+xml,%3Csvg width='16' height='8' viewBox='0 0 16 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 8H7L0 8.07577e-07L16 0L9 8Z' fill='black' style='fill:black;fill:black;fill-opacity:1;'/%3E%3C/svg%3E%0A");
+    background-size: 16px 8px;
+    width: 16px;
+    height: 8px;
     transform-origin: 50% 50%;
   }
 
   &.${Class.Top} {
     &::before {
       bottom: 0;
-      transform: translate(-50%, 50%) rotate(-45deg);
+      transform: translate(-50%, 100%);
     }
   }
 
   &.${Class.Bottom} {
     &::before {
       top: 0;
-      transform: translate(-50%, -50%) rotate(-45deg);
+      transform: translate(-50%, -100%) rotate(-180deg);
     }
   }
 
@@ -39,7 +40,7 @@ export const TooltipWrapper = styled.div`
     height: 64px;
     padding: ${cssVar("--spacing-space-24")};
     font-size: 20px;
-    font-variation-settings: "whgt" 700;
+    font-weight: 700;
     line-height: 28px;
     letter-spacing: 0.4px;
   }
