@@ -56,6 +56,14 @@ export const InputBox = styled.label`
   .input-container {
     position: relative;
     display: flex;
+    & > svg,
+    & > img {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      top: -24px;
+      right: 10px;
+    }
   }
 
   .input {
@@ -69,6 +77,10 @@ export const InputBox = styled.label`
     color: var(--text-primary);
     padding: 0;
     pointer-events: none;
+    font-weight: 400;
+    font-variation-settings: "whgt" 500;
+    font-size: 16px;
+    line-height: 24px;
 
     &::-ms-clear {
       display: none;
@@ -162,6 +174,19 @@ export const InputBox = styled.label`
     outline: 0;
     .input {
       pointer-events: none;
+    }
+  }
+
+  &.filled {
+    .input__area {
+      padding-right: 60px;
+    }
+    .input-container {
+      & > svg,
+      & > img {
+        top: -5px;
+        right: -40px
+      }
     }
   }
 `;
