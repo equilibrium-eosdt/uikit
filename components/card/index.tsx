@@ -40,7 +40,11 @@ function Card(props: CardProps) {
       )}
 
       <CardRow>
-        {props.cover ? <CardIcon>{props.cover}</CardIcon> : <Noop />}
+        {props.cover ? (
+          <CardIcon className="card-icon">{props.cover}</CardIcon>
+        ) : (
+          <Noop />
+        )}
         {props.children}
       </CardRow>
     </CardStyled>
