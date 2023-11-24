@@ -52,7 +52,7 @@ img, svg {
 }
 
 &.${Class.S} {
-border-radius: ${cssVar("--rounding-radius-s")};
+border-radius: ${cssVar("--rounding-radius-m")};
 width: 32px;
 height: 32px;
 
