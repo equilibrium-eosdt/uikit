@@ -29,8 +29,8 @@ export const FieldContainer = styled.div`
     display: flex;
     align-items: center;
     position: absolute;
-    top: -12%;
-    right: 0px;
+    top: 35%;
+    right: 20px;
     z-index: 3;
   }
   &.${classNames.Caption} {
@@ -38,8 +38,8 @@ export const FieldContainer = styled.div`
     display: flex;
     align-items: center;
     position: absolute;
-    top: 140%;
-    left: -12px;
+    top: 109%;
+    left: 24px;
     z-index: 3;
   }
 `;
