@@ -87,7 +87,8 @@ export const ButtonWrapper = styled.button`
       padding: 0 var(--spacing-space-6, 6px) 0 var(--spacing-space-6, 6px);
     }
     p {
-      transform: translateY(-1px)}
+      transform: translateY(-1px);
+    }
   }
 
   &.${Class.FullWidth} {
@@ -155,8 +156,8 @@ export const ButtonWrapper = styled.button`
         transform-origin: 50% 50%;
         stroke-dashoffset: 60;
         animation: ${animateLoaderStroke} 2s linear infinite;
-        }
       }
+    }
   }
 
   &.${Class.Secondary} {
@@ -282,86 +283,92 @@ export const ButtonWrapper = styled.button`
     p {
       color: ${cssVar("--text-primary")};
     }
-    &>img, svg {
+    & > img,
+    svg {
       filter: invert(0) !important;
     }
     &.${Class.Hovered}, &:hover {
       background: ${cssVar("--fill-secondary-hover")};
     }
-      &.${Class.Disabled} {
-        opacity: 0.24;
-      }
-      &.${Class.Loading} {
-          opacity: 0.24;
-      }
-
+    &.${Class.Disabled} {
+      opacity: 0.24;
+    }
+    &.${Class.Loading} {
+      opacity: 0.24;
     }
   }
 
   &.${Class.Tertiary} {
     background: transparent;
     color: ${cssVar("--text-primary")};
-     p {
+    p {
       color: ${cssVar("--text-primary")};
     }
-    &>img, &>svg {
+    & > img,
+    & > svg {
       filter: invert(0) !important;
     }
     &.${Class.Hovered}, &:hover {
       background: ${cssVar("--fill-secondary")};
     }
-      &.${Class.Disabled} {
-        background: transparent;
-        opacity: 0.24;
-      }
-      &.${Class.Loading} {
-        background: transparent;
-        opacity: 0.24;
-      }
+    &.${Class.Disabled} {
+      background: transparent;
+      opacity: 0.24;
     }
+    &.${Class.Loading} {
+      background: transparent;
+      opacity: 0.24;
+    }
+  }
 
   &.${Class.Elevated} {
     background: ${cssVar("--fill-elevated")};
-    box-shadow: 0px 4px 8px 0px rgba(51, 20, 0, 0.08), 0px 2px 1px 0px rgba(51, 20, 0, 0.04);
-     p {
+    box-shadow: 0px 4px 8px 0px rgba(51, 20, 0, 0.08),
+      0px 2px 1px 0px rgba(51, 20, 0, 0.04);
+    p {
       color: ${cssVar("--text-primary")};
     }
-    &>img, &>svg {
+    & > img,
+    & > svg {
       filter: invert(0) !important;
     }
     &.${Class.Hovered}, &:hover {
       background: ${cssVar("--fill-elevated-hover")};
-      box-shadow: 0px 4px 8px 0px rgba(51, 20, 0, 0.08), 0px 2px 1px 0px rgba(51, 20, 0, 0.04);
+      box-shadow: 0px 4px 8px 0px rgba(51, 20, 0, 0.08),
+        0px 2px 1px 0px rgba(51, 20, 0, 0.04);
     }
-      &.${Class.Disabled} {
-        background: ${cssVar("--fill-elevated")};
-        opacity: 0.24;
-        box-shadow: 0px 4px 8px 0px rgba(51, 20, 0, 0.08), 0px 2px 1px 0px rgba(51, 20, 0, 0.04);
-      }
-      &.${Class.Loading} {
-        background: ${cssVar("--fill-elevated")};
-        opacity: 0.24;
-        box-shadow: 0px 4px 8px 0px rgba(51, 20, 0, 0.08), 0px 2px 1px 0px rgba(51, 20, 0, 0.04);
-      }
+    &.${Class.Disabled} {
+      background: ${cssVar("--fill-elevated")};
+      opacity: 0.24;
+      box-shadow: 0px 4px 8px 0px rgba(51, 20, 0, 0.08),
+        0px 2px 1px 0px rgba(51, 20, 0, 0.04);
     }
-
-    &.${Class.Icon}&:not(.${Class.Children}) {
-      width: fit-content;
-      aspect-ratio: 1 / 1;
-      &>img, &>svg {
-        margin: 0 auto;
-      }
-      &.${Class.L} {
-        padding: 0 var(--spacing-space-20, 20px);
-      }
-      &.${Class.M} {
-        padding: 0 var(--spacing-space-12, 12px);
-      }
-      &.${Class.S} {
-        padding: 0 var(--spacing-space-4, 4px);
-      } 
+    &.${Class.Loading} {
+      background: ${cssVar("--fill-elevated")};
+      opacity: 0.24;
+      box-shadow: 0px 4px 8px 0px rgba(51, 20, 0, 0.08),
+        0px 2px 1px 0px rgba(51, 20, 0, 0.04);
+    }
   }
-      
+
+  &.${Class.Icon}&:not(.${Class.Children}) {
+    width: fit-content;
+    aspect-ratio: 1 / 1;
+    & > img,
+    & > svg {
+      margin: 0 auto;
+    }
+    &.${Class.L} {
+      padding: 0 var(--spacing-space-20, 20px);
+    }
+    &.${Class.M} {
+      padding: 0 var(--spacing-space-12, 12px);
+    }
+    &.${Class.S} {
+      padding: 0 var(--spacing-space-4, 4px);
+    }
+  }
+
   &.${Class.Text} {
     width: fit-content;
     padding: 0 !important;
@@ -392,10 +399,9 @@ export const ButtonWrapper = styled.button`
     &.${Class.Disabled} {
       opacity: 0.24;
       background: transparent;
-      & > svg rect{
+      & > svg rect {
         fill: ${cssVar("--icon-secondary")} !important;
       }
     }
   }
-
 `;
