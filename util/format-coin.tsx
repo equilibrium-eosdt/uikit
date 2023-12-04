@@ -1,4 +1,3 @@
-import BigNumber from "bignumber.js";
 import React from "react";
 
 export const getZeroDecimalCountFromString = (value: string) => {
@@ -53,7 +52,7 @@ const decimalFormatter = (value: number) => {
 };
 
 export const formatCoin = (
-  value: number | BigNumber | string | undefined | null,
+  value: number | string | undefined | null,
 ): React.ReactNode => {
   if (value == null) return null;
   const numericValue = Number(value);
