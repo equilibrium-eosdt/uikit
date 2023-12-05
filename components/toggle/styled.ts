@@ -18,7 +18,7 @@ export const ToggleWrapper = styled.div`
   &::before {
     content: " ";
     position: absolute;
-    background: ${cssVar("--fill-elevated")};
+    background: ${cssVar("--fill-control")};
     width: 28px;
     height: 28px;
     left: 2px;
