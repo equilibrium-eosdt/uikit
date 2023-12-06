@@ -235,19 +235,11 @@ export const ModalOverflow = styled.div`
 `;
 
 export const Consent = styled.div`
-  display: flex;
   padding: var(--spacing-space-16, 16px) var(--spacing-space-24, 24px);
-  align-items: center;
-  gap: 8px;
-  flex: 1 0 0;
   font-weight: 500;
 
   border-radius: var(--rounding-radius-xl, 24px);
   background: var(--fill-secondary, rgba(204, 187, 184, 0.16));
-
-  > div:last-of-type {
-    flex-shrink: 0;
-  }
 
   a {
     text-decoration: underline 1px solid;
