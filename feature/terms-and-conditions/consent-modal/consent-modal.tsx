@@ -1,5 +1,4 @@
 import Button from "../../../components/button";
-import Toggle from "../../../components/toggle/toggle";
 import * as Class from "../../../constants/classnames";
 import cn from "classnames";
 import React, { useEffect, useState } from "react";
@@ -40,7 +39,6 @@ export const ConsentModal = ({
     signMessage: (data: { message: string }) => void;
   };
 }) => {
-  const [consents, setConsents] = useState([true, true, true]);
   const { data: signature, signMessage } = useSignMessage();
 
   const [isLoaded, setIsLoaded] = useState(false);
@@ -90,26 +88,6 @@ export const ConsentModal = ({
     return null;
   }
 
-  const ConsentPoint = ({
-    children,
-    index,
-  }: {
-    children: React.ReactNode;
-    index: number;
-  }) => (
-    <Consent>
-      <div>{children}</div>
-      <Toggle
-        on={consents[index]}
-        onClick={() =>
-          setConsents(
-            consents.map((element, i) => (i === index ? !element : element)),
-          )
-        }
-      />
-    </Consent>
-  );
-
   return (
     <Modal>
       <ModalLayout onClick={disconnect} />
@@ -124,27 +102,26 @@ export const ConsentModal = ({
         </ModalHeading>
 
         <ModalOverflow className="padded full-height">
-          <ConsentPoint index={0}>
+          <Consent>
             I have read and agreed with the{" "}
             <a href={TERMS_AND_CONDITIONS_LINK} target="_blank">
               Terms and Conditions
             </a>
-          </ConsentPoint>
-          <ConsentPoint index={1}>
+          </Consent>
+          <Consent>
             I have read and agreed with the{" "}
             <a href={PRIVACY_POLICY_LINK} target="_blank">
               Privacy Policy
             </a>
-          </ConsentPoint>
-          <ConsentPoint index={2}>
+          </Consent>
+          <Consent>
             I state that I am not a person or a company who is a resident of, or
             is located, incorporated or has a registered agent in the United
             States, Canada, or other restricted jurisdiction
-          </ConsentPoint>
+          </Consent>
           <Button
             className={cn(Class.FullWidth, "submit-button")}
             lg
-            disabled={!consents.every((c) => c)}
             onClick={handleSign}
           >
             {t`Sign Message`}
