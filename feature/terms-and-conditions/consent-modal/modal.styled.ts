@@ -248,7 +248,8 @@ export const Consent = styled.div`
   }
 
   a {
-    text-decoration: underline;
+    text-decoration: underline 1px solid;
+    text-underline-offset: 4px;
   }
 
   & + & {
