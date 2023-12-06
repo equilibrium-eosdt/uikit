@@ -4,7 +4,6 @@ import * as Class from "../../../constants/classnames";
 import cn from "classnames";
 import React, { useCallback, useEffect, useState } from "react";
 import { t } from "ttag";
-import { useDisconnect, useSignMessage } from "wagmi";
 
 import {
   Consent,
@@ -29,10 +28,17 @@ export const ConsentModal = ({
   baseUrl,
   onError,
   userAddress,
+  useDisconnect,
+  useSignMessage,
 }: {
   baseUrl: string;
   onError: (err: any) => void;
   userAddress?: `0x${string}`;
+  useDisconnect: () => { disconnect: () => void };
+  useSignMessage: () => {
+    data?: `0x${string}`;
+    signMessage: (data: { message: string }) => void;
+  };
 }) => {
   const [consents, setConsents] = useState([true, true, true]);
   const { data: signature, signMessage } = useSignMessage();
@@ -86,7 +92,7 @@ export const ConsentModal = ({
     }
   }, [userAddress, userConsent]);
 
-  const { disconnect } = useDisconnect()
+  const { disconnect } = useDisconnect();
   const handleConsentFail = useCallback(() => {
     setIsConsentModalVisible(false);
     disconnect();
