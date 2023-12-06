@@ -84,10 +84,7 @@ export const getFetcher =
     }
   };
 
-export const useCommonMarginlyApi = <
-  T extends CommonEndpoints,
-  V = EndpointValues[T],
->({
+export const useCommonMarginlyApi = <T extends CommonEndpoints>({
   baseUrl,
   onError,
   enabled = true,

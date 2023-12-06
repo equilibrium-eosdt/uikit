@@ -2,7 +2,7 @@ import Button from "../../../components/button";
 import Toggle from "../../../components/toggle/toggle";
 import * as Class from "../../../constants/classnames";
 import cn from "classnames";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { t } from "ttag";
 
 import {
@@ -43,14 +43,20 @@ export const ConsentModal = ({
   const [consents, setConsents] = useState([true, true, true]);
   const { data: signature, signMessage } = useSignMessage();
 
+  const [isLoaded, setIsLoaded] = useState(false);
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
   const handleSign = async () => {
     signMessage({ message: CONSENT_MESSAGE });
   };
 
+  const signCheckIsEnabled = Boolean(signature && userAddress);
   const { data, error, isLoading } = useCommonMarginlyApi({
     baseUrl,
     onError,
-    enabled: Boolean(signature && userAddress),
+    enabled: signCheckIsEnabled,
     endpoint: "consent.sign",
     args: [
       userAddress,
@@ -60,45 +66,27 @@ export const ConsentModal = ({
     ],
     allowEmptyResponse: true,
   });
+  const consentsAreSignedSuccessfully =
+    (signCheckIsEnabled && data && !error) || isLoading;
 
-  useEffect(() => {
-    if (data && !error && !isLoading) {
-      setIsConsentModalVisible(false);
-    }
-  }, [data, error, isLoading]);
-
-  const [isConsentModalVisible, setIsConsentModalVisible] =
-    React.useState(false);
-  const showConsentModal = () => {
-    setIsConsentModalVisible(true);
-  };
-  const hideConsentModal = () => {
-    setIsConsentModalVisible(false);
-  };
-
-  const { data: userConsent } = useCommonMarginlyApi({
-    baseUrl,
-    onError,
-    enabled: Boolean(userAddress),
-    endpoint: "consent.existence",
-    args: [userAddress],
-  });
-
-  useEffect(() => {
-    if (userAddress && userConsent === false) {
-      showConsentModal();
-    } else {
-      hideConsentModal();
-    }
-  }, [userAddress, userConsent]);
+  const { data: userConsent, isLoading: userConsentIsLoading } =
+    useCommonMarginlyApi({
+      baseUrl,
+      onError,
+      enabled: Boolean(userAddress),
+      endpoint: "consent.existence",
+      args: [userAddress],
+    });
+  const consentsAreExist = userConsent === true || userConsentIsLoading;
 
   const { disconnect } = useDisconnect();
-  const handleConsentFail = useCallback(() => {
-    setIsConsentModalVisible(false);
-    disconnect();
-  }, [disconnect]);
 
-  if (!isConsentModalVisible) {
+  if (
+    !userAddress ||
+    consentsAreExist ||
+    consentsAreSignedSuccessfully ||
+    !isLoaded
+  ) {
     return null;
   }
 
@@ -124,7 +112,7 @@ export const ConsentModal = ({
 
   return (
     <Modal>
-      <ModalLayout onClick={handleConsentFail} />
+      <ModalLayout onClick={disconnect} />
       <ModalBody className="sm rubber-height">
         <ModalHeading className="padded">
           <div>
