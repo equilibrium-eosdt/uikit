@@ -79,12 +79,20 @@ export const ConsentModal = ({
 
   const { disconnect } = useDisconnect();
 
-  if (
+  const isHidden =
     !userAddress ||
     consentsAreExist ||
     consentsAreSignedSuccessfully ||
-    !isLoaded
-  ) {
+    !isLoaded;
+
+  useEffect(() => {
+    window.document.body.style.overflow = isHidden ? "" : "hidden";
+    return () => {
+      window.document.body.style.overflow = "";
+    };
+  }, [isHidden]);
+
+  if (isHidden) {
     return null;
   }
 
