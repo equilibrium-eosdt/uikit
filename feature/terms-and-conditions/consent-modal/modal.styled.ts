@@ -20,6 +20,8 @@ export const ModalLayout = styled.div`
   backdrop-filter: blur(8px);
 `;
 
+const sidePaddings = "32px";
+
 export const ModalBody = styled.div`
   position: absolute;
   max-width: 100%;
@@ -32,7 +34,7 @@ export const ModalBody = styled.div`
   transform: translate(-50%, 0);
   max-height: calc(100vh - 64px);
   max-height: calc(100dvh - 64px);
-  border-radius: 32px 32px 0 0;
+  border-radius: 48px 48px 0 0;
   color: var(--text-primary);
   background: var(--background-elevated);
 
@@ -41,20 +43,20 @@ export const ModalBody = styled.div`
   }
 
   &.padded {
-    padding: 20px 24px 12px;
+    padding: 20px ${sidePaddings} 12px;
   }
 
   .padded {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: ${sidePaddings};
+    padding-right: ${sidePaddings};
   }
 
   &.sm {
     width: 504px;
   }
   &.high {
-    height: calc(100% - 24px);
-    max-height: calc(100% - 24px);
+    height: calc(100% - ${sidePaddings});
+    max-height: calc(100% - ${sidePaddings});
   }
   &.middle-high {
     height: calc(100% - 74px);
@@ -76,11 +78,11 @@ export const ModalBody = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 48px 24px;
+    padding: 48px ${sidePaddings};
     box-sizing: border-box;
     max-width: calc(100% - 18px);
     bottom: 9px;
-    border-radius: 32px;
+    border-radius: 48px;
 
     @media (min-width: 1024px) {
       top: 50%;
@@ -110,17 +112,17 @@ export const ModalBody = styled.div`
     top: 50%;
     bottom: auto;
     transform: translate(-50%, -50%);
-    border-radius: 32px;
+    border-radius: 48px;
     height: fit-content;
 
     &.padded {
-      padding: 24px;
+      padding: 24px ${sidePaddings};
       overflow: auto;
     }
 
     .padded {
-      padding-left: 24px;
-      padding-right: 24px;
+      padding-left: ${sidePaddings};
+      padding-right: ${sidePaddings};
     }
 
     &.empty-position {
