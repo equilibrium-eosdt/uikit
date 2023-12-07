@@ -89,6 +89,12 @@ export const SliderContainer = styled.div`
       border-radius: 28px;
       top: calc(100% - 2px);
       transform: translate(-50%, -100%);
+      border: 2px solid ${cssVar("--fill-accent-primary")};
+      box-shadow: 0px 2px 1px rgba(51, 20, 0, 0.04),
+        0px 4px 8px rgba(51, 20, 0, 0.08);
+      -webkit-box-shadow: 0px 2px 1px rgba(51, 20, 0, 0.04),
+        0px 4px 8px rgba(51, 20, 0, 0.08) !important;
+      outline: 2px solid rgba(211, 255, 248, 0.2);
     }
   }
 
@@ -125,13 +131,13 @@ export const SliderContainer = styled.div`
       width: ${HANDLE_WIDTH}px;
       border-radius: 23px;
       z-index: 5;
-      // box-shadow: none !important;
+      box-shadow: none !important;
       outline: none;
-      box-shadow: 0px 2px 1px rgba(51, 20, 0, 0.04),
-        0px 4px 8px rgba(51, 20, 0, 0.08);
-      -webkit-box-shadow: 0px 2px 1px rgba(51, 20, 0, 0.04),
-        0px 4px 8px rgba(51, 20, 0, 0.08) !important;
-      outline: 2px solid rgba(211, 255, 248, 0.2);
+      // box-shadow: 0px 2px 1px rgba(51, 20, 0, 0.04),
+      //   0px 4px 8px rgba(51, 20, 0, 0.08);
+      // -webkit-box-shadow: 0px 2px 1px rgba(51, 20, 0, 0.04),
+      //   0px 4px 8px rgba(51, 20, 0, 0.08) !important;
+      // outline: 2px solid rgba(211, 255, 248, 0.2);
     }
 
     &::-moz-range-thumb,
