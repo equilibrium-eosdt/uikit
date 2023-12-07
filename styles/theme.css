@@ -79,6 +79,7 @@
   --fill-secondary: var(--color-transparent-gray2);
   --fill-primary-hover: var(--color-opaque-gray8);
   --fill-primary: var(--color-opaque-black);
+  --text-primary-on-brand: var(--color-opaque-black);
   /* fill/invert */
   --fill-invert-negative: var(--color-opaque-red3);
   --fill-invert-primary: var(--color-opaque-white);
@@ -178,6 +179,7 @@
   --text-secondary: var(--color-transparent-invert-gray5);
   --text-primary-hover: var(--color-opaque-gray3);
   --text-primary: var(--color-opaque-gray1);
+  --text-primary-on-brand: var(--color-opaque-black);
   /* text/invert */
   --text-invert-secondary-hover: var(--color-transparent-gray6);
   --text-invert-secondary: var(--color-transparent-gray5);
