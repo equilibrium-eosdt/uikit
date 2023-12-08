@@ -52,7 +52,7 @@ export const ModalBody = styled.div`
   }
 
   &.sm {
-    width: 504px;
+    width: 520px;
   }
   &.high {
     height: calc(100% - ${sidePaddings});
