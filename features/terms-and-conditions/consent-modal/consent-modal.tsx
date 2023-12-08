@@ -111,21 +111,17 @@ export const ConsentModal = ({
 
         <ModalOverflow className="padded full-height">
           <Consent>
-            I have read and agreed with the{" "}
+            I agree with the{" "}
             <a href={TERMS_AND_CONDITIONS_LINK} target="_blank">
               Terms and Conditions
             </a>
-          </Consent>
-          <Consent>
-            I have read and agreed with the{" "}
+            ,{" "}
             <a href={PRIVACY_POLICY_LINK} target="_blank">
               Privacy Policy
             </a>
-          </Consent>
-          <Consent>
-            I state that I am not a person or a company who is a resident of, or
-            is located, incorporated or has a registered agent in the United
-            States, Canada, or other restricted jurisdiction
+            , and I state that I am not a person or a company who is a resident
+            of, or is located, incorporated or has a registered agent in the
+            United States, Canada, or other restricted jurisdiction
           </Consent>
           <Button
             className={cn(Class.FullWidth, "submit-button")}
