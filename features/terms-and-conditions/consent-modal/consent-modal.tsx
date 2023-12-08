@@ -1,7 +1,7 @@
 import Button from "../../../components/button";
 import * as Class from "../../../constants/classnames";
 import cn from "classnames";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { t } from "ttag";
 
 import {
@@ -26,12 +26,14 @@ const CONSENT_MESSAGE =
 export const ConsentModal = ({
   baseUrl,
   onError,
+  onSuccess,
   userAddress,
   useDisconnect,
   useSignMessage,
 }: {
   baseUrl: string;
   onError: (err: any) => void;
+  onSuccess?: () => void;
   userAddress?: `0x${string}`;
   useDisconnect: () => { disconnect: () => void };
   useSignMessage: () => {
@@ -66,6 +68,19 @@ export const ConsentModal = ({
   });
   const consentsAreSignedSuccessfully =
     (signCheckIsEnabled && data && !error) || isLoading;
+
+  const isSuccessHappenedRef = useRef(false);
+
+  useEffect(() => {
+    if (consentsAreSignedSuccessfully && !isSuccessHappenedRef.current) {
+      isSuccessHappenedRef.current = true;
+      onSuccess?.();
+    }
+  }, [consentsAreSignedSuccessfully]);
+
+  useEffect(() => {
+    isSuccessHappenedRef.current = false;
+  }, [userAddress]);
 
   const { data: userConsent, isLoading: userConsentIsLoading } =
     useCommonMarginlyApi({
