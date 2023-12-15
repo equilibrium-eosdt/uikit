@@ -100,7 +100,6 @@ export const ModalBody = styled.div`
     letter-spacing: 0.01em;
     color: var(--text-primary);
     font-family: "PlusJakartaSans", "Medium", sans-serif;
-    font-variation-settings: "wght" 500;
     & + p {
       margin-top: 24px;
     }

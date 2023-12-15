@@ -1,5 +1,4 @@
 import cn from "classnames";
-import type { CSSProperties, ReactNode } from "react";
 import { TypographyWrapper } from "./styled";
 import {
   Title,
