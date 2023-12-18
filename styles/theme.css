@@ -11,6 +11,7 @@
   --color-opaque-green2: #45be33;
   --color-opaque-green1: #f0f9ec;
   --color-opaque-black: #000000;
+  --color-opaque-gray9: #403A3A;
   --color-opaque-gray8: #252222;
   --color-opaque-gray7: #43403f;
   --color-opaque-gray6: #646060;
@@ -63,6 +64,7 @@
   --background-positive: var(--color-opaque-green1);
   --background-elevated: var(--color-opaque-white);
   --background-secondary: var(--color-opaque-gray2);
+  --pending-background: var(--color-opaque-gray2);
   --background-primary: var(--color-opaque-white);
   /* fill */
   --fill-control: var(--color-opaque-white);
@@ -149,6 +151,7 @@
   --background-positive: var(--color-opaque-green3);
   --background-elevated: var(--color-opaque-gray8);
   --background-secondary: var(--color-opaque-gray8);
+  --pending-background: var(--color-opaque-gray9);
   --background-primary: var(--color-opaque-black);
   /* fill */
   --fill-control: var(--color-opaque-gray1);
