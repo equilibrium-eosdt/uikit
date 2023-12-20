@@ -14,12 +14,11 @@ interface Props {
   onClick?: (e: MouseEvent<HTMLLabelElement>) => void;
 }
 
-export const TextField = forwardRef<HTMLInputElement, Props>((props, ref) => {
+export const TextField = forwardRef<HTMLLabelElement, Props>((props, ref) => {
   const container = (
     <div className="input-container">
       <input
         key="container"
-        ref={ref}
         tabIndex={props.tabIndex}
         className="input"
         placeholder={props.placeholder}
@@ -38,7 +37,7 @@ export const TextField = forwardRef<HTMLInputElement, Props>((props, ref) => {
   );
 
   return (
-    <InputBox className={props.className} onClick={props.onClick}>
+    <InputBox className={props.className} onClick={props.onClick} ref={ref}>
       <div className="input__area">
         {props.reverseHint ? (
           <>
