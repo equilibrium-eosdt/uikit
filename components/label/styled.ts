@@ -12,7 +12,7 @@ export const LabelWrapper = styled.div`
   background: ${cssVar("--fill-secondary")};
   backdrop-filter: blur(12px);
   color: ${cssVar("--text-primary")};
-  gap: 2px;
+  gap: 4px;
   width: fit-content;
 
   img, svg {
