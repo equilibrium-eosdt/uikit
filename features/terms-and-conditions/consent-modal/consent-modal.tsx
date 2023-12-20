@@ -53,7 +53,11 @@ export const ConsentModal = ({
   };
 
   const signCheckIsEnabled = Boolean(signature && userAddress);
-  const { data, error, isLoading } = useCommonMarginlyApi({
+  const {
+    data,
+    error,
+    isLoading: consentSignIsLoading,
+  } = useCommonMarginlyApi({
     baseUrl,
     onError,
     enabled: signCheckIsEnabled,
@@ -66,21 +70,7 @@ export const ConsentModal = ({
     ],
     allowEmptyResponse: true,
   });
-  const consentsAreSignedSuccessfully =
-    (signCheckIsEnabled && data && !error) || isLoading;
-
-  const isSuccessHappenedRef = useRef(false);
-
-  useEffect(() => {
-    if (consentsAreSignedSuccessfully && !isSuccessHappenedRef.current) {
-      isSuccessHappenedRef.current = true;
-      onSuccess?.();
-    }
-  }, [consentsAreSignedSuccessfully]);
-
-  useEffect(() => {
-    isSuccessHappenedRef.current = false;
-  }, [userAddress]);
+  const consentsAreSignedSuccessfully = signCheckIsEnabled && data && !error;
 
   const { data: userConsent, isLoading: userConsentIsLoading } =
     useCommonMarginlyApi({
@@ -90,15 +80,33 @@ export const ConsentModal = ({
       endpoint: "consent.existence",
       args: [userAddress],
     });
-  const consentsAreExist = userConsent === true || userConsentIsLoading;
+  const consentsAreExist = userConsent === true;
 
   const { disconnect } = useDisconnect();
 
   const isHidden =
     !userAddress ||
     consentsAreExist ||
+    userConsentIsLoading ||
     consentsAreSignedSuccessfully ||
+    consentSignIsLoading ||
     !isLoaded;
+
+  const isSuccessHappenedRef = useRef(false);
+
+  useEffect(() => {
+    if (
+      (consentsAreSignedSuccessfully || consentsAreExist) &&
+      !isSuccessHappenedRef.current
+    ) {
+      isSuccessHappenedRef.current = true;
+      onSuccess?.();
+    }
+  }, [consentsAreSignedSuccessfully, consentsAreExist]);
+
+  useEffect(() => {
+    isSuccessHappenedRef.current = false;
+  }, [userAddress]);
 
   useEffect(() => {
     window.document.body.style.overflow = isHidden ? "" : "hidden";
