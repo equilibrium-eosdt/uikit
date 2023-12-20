@@ -33,7 +33,7 @@ export const ConsentModal = ({
 }: {
   baseUrl: string;
   onError: (err: any) => void;
-  onSuccess?: () => void;
+  onSuccess?: (value: string) => void;
   userAddress?: `0x${string}`;
   useDisconnect: () => { disconnect: () => void };
   useSignMessage: () => {
@@ -97,12 +97,13 @@ export const ConsentModal = ({
   useEffect(() => {
     if (
       (consentsAreSignedSuccessfully || consentsAreExist) &&
-      !isSuccessHappenedRef.current
+      !isSuccessHappenedRef.current &&
+      userAddress
     ) {
       isSuccessHappenedRef.current = true;
-      onSuccess?.();
+      onSuccess?.(userAddress);
     }
-  }, [consentsAreSignedSuccessfully, consentsAreExist]);
+  }, [consentsAreSignedSuccessfully, consentsAreExist, userAddress]);
 
   useEffect(() => {
     isSuccessHappenedRef.current = false;
