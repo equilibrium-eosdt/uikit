@@ -107,6 +107,7 @@ export const ConsentModal = ({
 
   useEffect(() => {
     isSuccessHappenedRef.current = false;
+    setConsentsAreSignedSuccessfully(false);
   }, [userAddress]);
 
   useEffect(() => {
