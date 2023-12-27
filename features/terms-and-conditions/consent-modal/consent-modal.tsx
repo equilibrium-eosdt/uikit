@@ -15,6 +15,8 @@ import {
   Subtext,
 } from "./modal.styled";
 import { useCommonMarginlyApi } from "../hooks";
+import { request } from "./request";
+import { createCommonEndpointConfig } from "../api";
 
 const TERMS_AND_CONDITIONS_LINK =
   "https://marginly.com/terms-and-conditions.pdf";
@@ -33,15 +35,16 @@ export const ConsentModal = ({
 }: {
   baseUrl: string;
   onError: (err: any) => void;
-  onSuccess?: () => void;
+  onSuccess?: (value: string) => void;
   userAddress?: `0x${string}`;
   useDisconnect: () => { disconnect: () => void };
   useSignMessage: () => {
-    data?: `0x${string}`;
-    signMessage: (data: { message: string }) => void;
+    signMessageAsync: (args?: { message: string }) => Promise<`0x${string}`>;
   };
 }) => {
-  const { data: signature, signMessage } = useSignMessage();
+  const { signMessageAsync } = useSignMessage();
+  const [consentsAreSignedSuccessfully, setConsentsAreSignedSuccessfully] =
+    useState(false);
 
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
@@ -49,38 +52,26 @@ export const ConsentModal = ({
   }, []);
 
   const handleSign = async () => {
-    signMessage({ message: CONSENT_MESSAGE });
-  };
-
-  const signCheckIsEnabled = Boolean(signature && userAddress);
-  const { data, error, isLoading } = useCommonMarginlyApi({
-    baseUrl,
-    onError,
-    enabled: signCheckIsEnabled,
-    endpoint: "consent.sign",
-    args: [
-      userAddress,
-      JSON.stringify({
-        signatureHash: signature,
-      }),
-    ],
-    allowEmptyResponse: true,
-  });
-  const consentsAreSignedSuccessfully =
-    (signCheckIsEnabled && data && !error) || isLoading;
-
-  const isSuccessHappenedRef = useRef(false);
-
-  useEffect(() => {
-    if (consentsAreSignedSuccessfully && !isSuccessHappenedRef.current) {
-      isSuccessHappenedRef.current = true;
-      onSuccess?.();
+    if (!userAddress) {
+      return;
     }
-  }, [consentsAreSignedSuccessfully]);
-
-  useEffect(() => {
-    isSuccessHappenedRef.current = false;
-  }, [userAddress]);
+    try {
+      const signatureHash = await signMessageAsync({
+        message: CONSENT_MESSAGE,
+      });
+      const { url, ...config } = createCommonEndpointConfig(
+        {
+          name: "consent.sign",
+          args: [userAddress, JSON.stringify({ signatureHash })],
+        },
+        baseUrl,
+      );
+      await request(url, config);
+      setConsentsAreSignedSuccessfully(true);
+    } catch (e) {
+      setConsentsAreSignedSuccessfully(false);
+    }
+  };
 
   const { data: userConsent, isLoading: userConsentIsLoading } =
     useCommonMarginlyApi({
@@ -90,15 +81,34 @@ export const ConsentModal = ({
       endpoint: "consent.existence",
       args: [userAddress],
     });
-  const consentsAreExist = userConsent === true || userConsentIsLoading;
+  const consentsAreExist = userConsent === true;
 
   const { disconnect } = useDisconnect();
 
   const isHidden =
     !userAddress ||
     consentsAreExist ||
+    userConsentIsLoading ||
     consentsAreSignedSuccessfully ||
     !isLoaded;
+
+  const isSuccessHappenedRef = useRef(false);
+
+  useEffect(() => {
+    if (
+      (consentsAreSignedSuccessfully || consentsAreExist) &&
+      !isSuccessHappenedRef.current &&
+      userAddress
+    ) {
+      isSuccessHappenedRef.current = true;
+      onSuccess?.(userAddress);
+    }
+  }, [consentsAreSignedSuccessfully, consentsAreExist, userAddress]);
+
+  useEffect(() => {
+    isSuccessHappenedRef.current = false;
+    setConsentsAreSignedSuccessfully(false);
+  }, [userAddress]);
 
   useEffect(() => {
     window.document.body.style.overflow = isHidden ? "" : "hidden";

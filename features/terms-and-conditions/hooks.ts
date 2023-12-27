@@ -112,7 +112,7 @@ export const useCommonMarginlyApi = <T extends CommonEndpoints>({
     }
 
     return {};
-  }, [enabled, endpoint, args, baseUrl]);
+  }, [enabled, endpoint, baseUrl, ...args]);
 
   const fetcher = useMemo(() => {
     return getFetcher(
