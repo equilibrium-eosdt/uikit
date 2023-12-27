@@ -53,6 +53,7 @@ const decimalFormatter = (value: number) => {
 
 export const formatCoin = (
   value: number | string | undefined | null,
+  { prefix, postfix }: { prefix?: string; postfix?: string } = {}
 ): React.ReactNode => {
   if (value == null) return null;
   const numericValue = Number(value);
@@ -74,5 +75,5 @@ export const formatCoin = (
     return decimalFormatter(numericValue);
   };
 
-  return <>{getNumber()}</>;
+  return <>{prefix ?? ""}{getNumber()}{postfix ?? ""}</>;
 };
