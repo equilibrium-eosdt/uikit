@@ -3,7 +3,6 @@
   --default-font: "PlusJakartaSans";
   /** Colors **/
   /* opaque */
-  --color-brand-marginly: #99FFEE;
   --color-opaque-blue: #477ae1;
   --color-opaque-red3: #4c2d3c;
   --color-opaque-red2: #e54796;
@@ -55,6 +54,28 @@
   --color-accent-transparent3: #00ccbba3;
   --color-accent-transparent2: #2bffdc7a;
   --color-accent-transparent1: #32fadc29;
+
+  /** Brands **/
+  --color-brand-marginly: #99FFEE;
+  --color-brand-arbitrum: #B9CDF7;
+  --color-brand-bitcoin: #F7931A;
+  --color-brand-ethereum: #627EEA;
+  --color-brand-gmx: #2D42FC;
+  --color-brand-usd-coin: #2775CA;
+  --color-brand-weth: #ED1E79;
+  --color-brand-pendle: #EFF1FC;
+  --color-brand-blur: #FF8700;
+  --color-brand-dai: #FDC134;
+  --color-brand-lido: #00A3FF;
+  --color-brand-maker: #1AAB9B;
+  --color-brand-optimism: #FF0420;
+  --color-brand-polka: #E6007A;
+  --color-brand-ripple: #008CFF;
+  --color-brand-stellar: #3E1BDB;
+  --color-brand-tether: #26A17B;
+  --color-brand-zksync: #1E69FF;
+  --color-brand-polygon: #7B3FE4;
+
 
   /** Aliases(light theme) **/
   /* background */
