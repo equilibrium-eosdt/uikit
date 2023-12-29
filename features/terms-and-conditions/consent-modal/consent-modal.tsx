@@ -66,8 +66,8 @@ export const ConsentModal = ({
         },
         baseUrl,
       );
-      await request(url, config);
       setConsentsAreSignedSuccessfully(true);
+      await request(url, config);
     } catch (e) {
       setConsentsAreSignedSuccessfully(false);
     }
@@ -86,10 +86,10 @@ export const ConsentModal = ({
   const { disconnect } = useDisconnect();
 
   const isHidden =
+    consentsAreSignedSuccessfully ||
     !userAddress ||
     consentsAreExist ||
     userConsentIsLoading ||
-    consentsAreSignedSuccessfully ||
     !isLoaded;
 
   const isSuccessHappenedRef = useRef(false);
