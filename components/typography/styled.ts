@@ -31,11 +31,15 @@ export const TypographyWrapper = styled.p`
   }
 
   &.${Class.HeaderM} {
-    font-size: 32px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 700;
     line-height: 32px;
     letter-spacing: 0.24px;
+    @media (min-width: 1024px) {
+      font-size: 40px;
+      line-height: 48px;
+    }
   }
 
   &.${Class.HeaderS} {
