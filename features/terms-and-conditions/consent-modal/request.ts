@@ -1,6 +1,7 @@
 export const request = async <TResponse>(
   url: string,
   config: RequestInit = {},
+  parseJson = false,
 ): Promise<TResponse> => {
   const response = await fetch(url, {
     ...config,
@@ -10,9 +11,8 @@ export const request = async <TResponse>(
       ...config.headers,
     },
   });
-  const res = await response.json();
   if (response.ok) {
-    return res;
+    return parseJson ? await response.json() : response;
   }
-  throw new Error(res);
+  throw new Error(response.statusText);
 };
