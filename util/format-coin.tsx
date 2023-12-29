@@ -43,7 +43,13 @@ const decimalFormatter = (value: number) => {
     );
     return (
       <>
-        {digitsBeforeDot}0<sub>&#8239;{zeroCount}&#8239;</sub>
+        {digitsBeforeDot}0<span
+        style={{
+          position: "relative",
+          fontSize: "0.7em",
+          top: "0.45em",
+        }}
+        >&#8239;{zeroCount}&#8239;</span>
         {strAfterSub}
       </>
     );
