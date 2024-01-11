@@ -99,7 +99,7 @@ const Superfield = forwardRef<HTMLLabelElement, Props>(
         <div className="input__area">
           <div
             className="input-container"
-            style={{ width: value ? "fit-conetnt" : "100%" }}
+            style={{ width: value ? "auto" : "100%" }}
           >
             <input
               key="container"
