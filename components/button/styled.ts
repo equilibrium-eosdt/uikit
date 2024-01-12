@@ -64,7 +64,7 @@ export const ButtonWrapper = styled.button`
     gap: var(--spacing-space-8, 8px);
     border-radius: var(--rounding-radius-m, 16px);
     &.${Class.Icon} {
-      padding: 0 var(--spacing-space-40, 40px) 0 var(--spacing-space-40, 40px);
+      padding: 0 var(--spacing-space-48, 48px) 0 var(--spacing-space-40, 40px);
     }
   }
 
@@ -74,7 +74,7 @@ export const ButtonWrapper = styled.button`
     gap: var(--spacing-space-8, 8px);
     border-radius: var(--rounding-radius-xs, 8px);
     &.${Class.Icon} {
-      padding: 0 var(--spacing-space-16, 16px) 0 var(--spacing-space-16, 16px);
+      padding: 0 var(--spacing-space-24, 24px) 0 var(--spacing-space-16, 16px);
     }
   }
 
@@ -84,7 +84,7 @@ export const ButtonWrapper = styled.button`
     gap: var(--spacing-space-4, 4px);
     border-radius: var(--rounding-radius-m, 16px);
     &.${Class.Icon} {
-      padding: 0 var(--spacing-space-6, 6px) 0 var(--spacing-space-6, 6px);
+      padding: 0 var(--spacing-space-12, 12px) 0 var(--spacing-space-6, 6px);
     }
     p {
       transform: translateY(-1px);
@@ -142,12 +142,17 @@ export const ButtonWrapper = styled.button`
     pointer-events: none;
     opacity: 0.24;
     background: ${cssVar("--fill-primary")};
+    position: relative;
     svg {
       fill: transparent;
       width: 16px;
       height: 16px;
       animation: ${animateLoaderTurn} 2s linear infinite;
       transform-origin: 50% 50%;
+      position: absolute;
+      left: calc(50% - 8px);
+      top: calc(50% - 8px);
+
       circle {
         stroke: var(--icon-invert);
         stroke-width: 3;
@@ -157,6 +162,18 @@ export const ButtonWrapper = styled.button`
         stroke-dashoffset: 60;
         animation: ${animateLoaderStroke} 2s linear infinite;
       }
+    }
+    p {
+      opacity: 0;
+    }
+    &.${Class.L} {
+      padding: 0 var(--spacing-space-48, 48px) 0 var(--spacing-space-48, 48px);
+    }
+    &.${Class.M} {
+      padding: 0 var(--spacing-space-36, 36px) 0 var(--spacing-space-36, 36px);
+    }
+    &.${Class.S} {
+      padding: 0 var(--spacing-space-24, 24px) 0 var(--spacing-space-24, 24px);
     }
   }
 
