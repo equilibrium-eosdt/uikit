@@ -56,6 +56,7 @@ export const InputBox = styled.label`
   .input-container {
     position: relative;
     display: flex;
+    width: 100%;
     & > svg,
     & > img {
       position: absolute;
@@ -143,6 +144,20 @@ export const InputBox = styled.label`
     }
   }
 
+  &.${classNames.Disabled} {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.5;
+    .input__area {
+      background: var(--fill-secondary, rgba(204, 187, 184, 0.16));
+    }
+    input,
+    input::placeholder {
+      pointer-events: none;
+      color: var(--text-secondary, rgba(66, 61, 60, 0.64));
+    }
+  }
+
   &.${classNames.Error} {
     .input {
       &__area {
@@ -178,14 +193,10 @@ export const InputBox = styled.label`
   }
 
   &.filled {
-    .input__area {
-      padding-right: 60px;
-    }
     .input-container {
       & > svg,
       & > img {
         top: -5px;
-        right: -40px
       }
     }
   }
