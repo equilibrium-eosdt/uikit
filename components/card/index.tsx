@@ -27,7 +27,11 @@ const classes = constStrArray(M, L, Reverse, Secondary, "clearMargin");
 function Card(props: CardProps) {
   return (
     <CardStyled
-      className={cn(props.className, extractProps(props, ...classes))}
+      className={cn(
+        props.className,
+        { hasCover: props.cover },
+        extractProps(props, ...classes),
+      )}
       style={props.style}
       onClick={props.onClick}
     >
