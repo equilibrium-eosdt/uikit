@@ -39,7 +39,7 @@ const CardItemStyled = styled.div`
 export const CardHeading = styled.div`
   color: ${cssVar("--text-primary", "#000")};
   font-family: "PlusJakartaSans", sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   font-variation-settings: "wght" 700;
   line-height: 133%;
   letter-spacing: 0.24px;
@@ -53,7 +53,7 @@ export const CardDescription = styled.div`
   font-weight: 500;
   line-height: 150%;
   letter-spacing: 0.16px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 `;
 
 export const CardStyled = styled.div`
@@ -61,7 +61,7 @@ export const CardStyled = styled.div`
     0px 4px 8px 0px rgba(51, 20, 0, 0.04);
   background: ${cssVar("--fill-elevated", "#fff")};
   border-radius: 24px;
-  padding: 16px 24px 16px 16px;
+  padding: 16px 24px;
   height: fit-content;
 
   &.${classNames.Secondary} {
@@ -81,9 +81,17 @@ export const CardStyled = styled.div`
     border-radius: 32px;
     ${CardHeading} {
       margin-bottom: 2px;
+      font-size: 24px;
+      @media (min-width: 1023px) {
+        font-size: 32px;
+      }
     }
     ${CardIcon} {
       border-radius: 50%;
     }
+  }
+
+  &.hasCover {
+    padding-bottom: 24px;
   }
 `;
