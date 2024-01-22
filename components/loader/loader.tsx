@@ -3,11 +3,12 @@ import React from 'react'
 import { LoaderWrapper } from './styled'
 
 interface Props {
-  className?: string
+  className?: string;
+  src: string;
 }
 
-export const Loader: React.FC<Props> = ({ className }) => (
+export const Loader: React.FC<Props> = ({ className, src }) => (
   <LoaderWrapper className={className}>
-    <img src="/images/loader.svg" alt="loader" />
+    <img src={src} alt="loader" />
   </LoaderWrapper>
 )
