@@ -11,6 +11,7 @@ export const TypographyWrapper = styled.p`
     font-weight: 700;
     line-height: 56px;
     letter-spacing: 0;
+    
     @media (min-width: 1024px) {
       font-size: 64px;
       line-height: 80px;

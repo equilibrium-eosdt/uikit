@@ -5,7 +5,6 @@ import { cssVar } from "../../util/style";
 export const CellItemWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${cssVar("--spacing-space-2")};
 
   &.${Reverse} {
     flex-direction: column-reverse;
