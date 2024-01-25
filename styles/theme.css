@@ -11,7 +11,7 @@
   --color-opaque-green2: #45be33;
   --color-opaque-green1: #f0f9ec;
   --color-opaque-black: #000000;
-  --color-opaque-gray9: #403A3A;
+  --color-opaque-gray9: #403a3a;
   --color-opaque-gray8: #252222;
   --color-opaque-gray7: #43403f;
   --color-opaque-gray6: #646060;
@@ -49,6 +49,7 @@
   --color-accent-opaque2: #99ffee;
   --color-accent-opaque1: #defef9;
   /* accent/transparent */
+  --color-accent-transparent6: #284540f5;
   --color-accent-transparent5: #284540f5;
   --color-accent-transparent4: #009c8fcc;
   --color-accent-transparent3: #00ccbba3;
@@ -56,26 +57,25 @@
   --color-accent-transparent1: #32fadc29;
 
   /** Brands **/
-  --color-brand-marginly: #99FFEE;
-  --color-brand-arbitrum: #B9CDF7;
-  --color-brand-bitcoin: #F7931A;
-  --color-brand-ethereum: #627EEA;
-  --color-brand-gmx: #2D42FC;
-  --color-brand-usd-coin: #2775CA;
-  --color-brand-weth: #ED1E79;
-  --color-brand-pendle: #EFF1FC;
-  --color-brand-blur: #FF8700;
-  --color-brand-dai: #FDC134;
-  --color-brand-lido: #00A3FF;
-  --color-brand-maker: #1AAB9B;
-  --color-brand-optimism: #FF0420;
-  --color-brand-polka: #E6007A;
-  --color-brand-ripple: #008CFF;
-  --color-brand-stellar: #3E1BDB;
-  --color-brand-tether: #26A17B;
-  --color-brand-zksync: #1E69FF;
-  --color-brand-polygon: #7B3FE4;
-
+  --color-brand-marginly: #99ffee;
+  --color-brand-arbitrum: #b9cdf7;
+  --color-brand-bitcoin: #f7931a;
+  --color-brand-ethereum: #627eea;
+  --color-brand-gmx: #2d42fc;
+  --color-brand-usd-coin: #2775ca;
+  --color-brand-weth: #ed1e79;
+  --color-brand-pendle: #eff1fc;
+  --color-brand-blur: #ff8700;
+  --color-brand-dai: #fdc134;
+  --color-brand-lido: #00a3ff;
+  --color-brand-maker: #1aab9b;
+  --color-brand-optimism: #ff0420;
+  --color-brand-polka: #e6007a;
+  --color-brand-ripple: #008cff;
+  --color-brand-stellar: #3e1bdb;
+  --color-brand-tether: #26a17b;
+  --color-brand-zksync: #1e69ff;
+  --color-brand-polygon: #7b3fe4;
 
   /** Aliases(light theme) **/
   /* background */
@@ -182,7 +182,7 @@
   --fill-positive-bg: var(--color-transparent-green3);
   --fill-positive: var(--color-opaque-green2);
   --fill-accent-primary-hover: var(--color-accent-opaque1);
-  --fill-accent-secondary: var(--color-accent-transparent5);
+  --fill-accent-secondary: var(--color-accent-transparent1);
   --fill-accent-primary: var(--color-accent-opaque2);
   --fill-elevated-hover: var(--color-transparent-gray3);
   --fill-elevated: var(--color-transparent-gray2);
