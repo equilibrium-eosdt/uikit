@@ -1,8 +1,11 @@
 import { styled } from "styled-components";
 
 export const CardStoryWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px 60px;
-  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 60px 20px;
+  width: 570px;
+  max-width: 100%;
+  margin: 0 auto;
 `;

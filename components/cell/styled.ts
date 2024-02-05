@@ -24,10 +24,9 @@ export const CellWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-shrink: 0;
-  gap: ${cssVar("--spacing-space-8")};
+  gap: ${cssVar("--spacing-space-16")};
   font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
+  line-height: 23px;
   letter-spacing: 0.16px;
   width: 100%;
   max-width: 100%;
@@ -50,4 +49,9 @@ export const CellWrapper = styled.div`
       align-items: flex-start;
     }
   }
+`;
+
+export const Stepper = styled.div`
+  display: flex;
+  gap: ${cssVar("--spacing-space-8")};
 `;
