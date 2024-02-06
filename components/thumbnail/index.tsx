@@ -1,6 +1,7 @@
 import React from "react";
+import type { ReactNode } from "react";
 import cn from "classnames";
-import { ThumbnailWrapper, NotificationWrapper } from "./styled";
+import { ThumbnailWrapper, NotificationWrapper, BadgeWrapper } from "./styled";
 import {
   XL,
   M,
@@ -40,13 +41,12 @@ export interface ThumbnailProps
   extends DefaultProps,
     Partial<ComposeProps<typeof classes, boolean>> {
   notificationValue?: string;
+  badge?: ReactNode;
 }
 
-export default function Thumbnail(
-  props: ThumbnailProps,
-  notificationValue?: string,
-) {
-  const { style, className, children, onClick } = props;
+export default function Thumbnail(props: ThumbnailProps) {
+  const { style, className, children, notificationValue, badge, onClick } =
+    props;
   return (
     <ThumbnailWrapper
       onClick={onClick}
@@ -54,14 +54,14 @@ export default function Thumbnail(
       style={style}
     >
       {children}
-      
+
       {notificationValue ? (
-        <NotificationWrapper>
-          {notificationValue}
-        </NotificationWrapper>
+        <NotificationWrapper>{notificationValue}</NotificationWrapper>
       ) : (
         <Noop />
       )}
+
+      {badge ? <BadgeWrapper>{badge}</BadgeWrapper> : <Noop />}
     </ThumbnailWrapper>
   );
 }
