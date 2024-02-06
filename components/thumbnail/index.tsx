@@ -1,7 +1,6 @@
 import React from "react";
 import cn from "classnames";
-import type { CSSProperties, ReactNode } from "react";
-import { ThumbnailWrapper } from "./styled";
+import { ThumbnailWrapper, NotificationWrapper } from "./styled";
 import {
   XL,
   M,
@@ -13,11 +12,14 @@ import {
   Status,
   Accent,
   Image,
+  Positive,
+  Negative,
 } from "../../constants/classnames";
 import type { ComposeProps } from "../../types/util";
 
 import { constStrArray, extractProps } from "../../util/type";
 import { DefaultProps } from "../../types/core";
+import Noop from "../helpers/noop";
 
 const classes = constStrArray(
   XL,
@@ -30,13 +32,20 @@ const classes = constStrArray(
   Status,
   Accent,
   Image,
+  Positive,
+  Negative,
 );
 
-interface Props
+export interface ThumbnailProps
   extends DefaultProps,
-    Partial<ComposeProps<typeof classes, boolean>> {}
+    Partial<ComposeProps<typeof classes, boolean>> {
+  notificationValue?: string;
+}
 
-export default function Thumbnail(props: Props) {
+export default function Thumbnail(
+  props: ThumbnailProps,
+  notificationValue?: string,
+) {
   const { style, className, children, onClick } = props;
   return (
     <ThumbnailWrapper
@@ -45,6 +54,14 @@ export default function Thumbnail(props: Props) {
       style={style}
     >
       {children}
+      
+      {notificationValue ? (
+        <NotificationWrapper>
+          {notificationValue}
+        </NotificationWrapper>
+      ) : (
+        <Noop />
+      )}
     </ThumbnailWrapper>
   );
 }
