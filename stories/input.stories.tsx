@@ -104,6 +104,11 @@ export const Common: Story = {
         >
           <AlertIcon />
         </TextField>
+
+        <TextField
+          className={cn(classNames.Disabled)}
+          title="Label"
+        ></TextField>
       </InputStoryWrapper>
     );
   },

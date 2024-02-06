@@ -62,7 +62,7 @@ export const InputBox = styled.label`
       width: 24px;
       height: 24px;
       top: -24px;
-      right: 10px;
+      right: 4px;
     }
   }
 
@@ -185,9 +185,17 @@ export const InputBox = styled.label`
       & > svg,
       & > img {
         top: -5px;
-        right: -40px
+        right: -40px;
       }
     }
+  }
+
+  &.${classNames.Disabled} {
+    background: var(--fill-secondary, rgba(204, 187, 184, 0.16));
+    pointer-events: none;
+    border-radius: var(--rounding-radius-m, 16px);
+    color: var(--text-secondary, rgba(66, 61, 60, 0.64));
+    opacity: 0.5;
   }
 `;
 
