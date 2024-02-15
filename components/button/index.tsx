@@ -47,17 +47,20 @@ const loaderSvg = (
 interface ButtonProps
   extends Partial<ComposeProps<typeof classes, boolean>>,
     DefaultProps {
+  /** @deprecated refactor */
+  fix?: boolean;
   icon?: ReactNode;
 }
 
 export default function Button(props: ButtonProps) {
-  const { children, className, onClick, style, icon, ...rest } = props;
+  const { children, className, onClick, fix, style, icon, ...rest } = props;
   return (
     <ButtonWrapper
       className={classNames(className, extractProps(rest, ...classes), {
         [Icon]: props.icon,
         [Children]: props.children,
       })}
+      $importantFix={fix}
       style={style}
       onClick={onClick}
     >

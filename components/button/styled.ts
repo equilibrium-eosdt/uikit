@@ -31,7 +31,10 @@ const animateLoaderStroke = keyframes`
   }
 `;
 
-export const ButtonWrapper = styled.button`
+export const ButtonWrapper = styled.button<{
+  /** @deprecated fixme refactor styles */
+  $importantFix?: boolean;
+}>`
   position: relative;
   display: inline-flex;
   justify-content: center;
@@ -209,7 +212,8 @@ export const ButtonWrapper = styled.button`
     }
     & > img,
     & > svg {
-      filter: invert(0) !important;
+      ${(props) =>
+        !props.$importantFix ? "filter: invert(0) !important;" : ""}
       circle {
         stroke: var(--icon-primary);
       }
@@ -302,7 +306,8 @@ export const ButtonWrapper = styled.button`
     }
     & > img,
     svg {
-      filter: invert(0) !important;
+      ${(props) =>
+        !props.$importantFix ? "filter: invert(0) !important;" : ""}
     }
     &.${Class.Hovered}, &:hover {
       background: ${cssVar("--fill-secondary-hover")};
@@ -323,7 +328,8 @@ export const ButtonWrapper = styled.button`
     }
     & > img,
     & > svg {
-      filter: invert(0) !important;
+      ${(props) =>
+        !props.$importantFix ? "filter: invert(0) !important;" : ""}
     }
     &.${Class.Hovered}, &:hover {
       background: ${cssVar("--fill-secondary")};
@@ -399,7 +405,8 @@ export const ButtonWrapper = styled.button`
     }
     & > svg {
       margin: 0 auto;
-      filter: invert(0) !important;
+      ${(props) =>
+        !props.$importantFix ? "filter: invert(0) !important;" : ""}
       rect {
         fill: ${cssVar("--icon-secondary")} !important;
       }
