@@ -188,7 +188,7 @@ export const ButtonWrapper = styled.button<{
     }
     & > img,
     svg {
-      filter: invert(0) !important;
+      filter: invert(0);
       circle {
         stroke: var(--icon-primary);
       }
@@ -240,7 +240,7 @@ export const ButtonWrapper = styled.button<{
     }
     & > img,
     & > svg {
-      filter: invert(0) !important;
+      filter: invert(0);
       circle {
         stroke: var(--icon-primary);
       }
@@ -353,7 +353,7 @@ export const ButtonWrapper = styled.button<{
     }
     & > img,
     & > svg {
-      filter: invert(0) !important;
+      filter: invert(0);
     }
     &.${Class.Hovered}, &:hover {
       background: ${cssVar("--fill-elevated-hover")};
