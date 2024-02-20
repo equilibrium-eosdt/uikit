@@ -1041,7 +1041,6 @@ export const ElevatedButton: StoryElevated = {
         <Container>
           <ButtonComponent
             lg
-            hovered
             elevated
             icon={<IconPlus secondary style={{ width: 24, height: 24 }} />}
           >
