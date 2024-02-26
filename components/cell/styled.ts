@@ -24,7 +24,7 @@ export const CellWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-shrink: 0;
-  gap: ${cssVar("--spacing-space-16")};
+  gap: ${cssVar("--spacing-space-12")};
   font-size: 16px;
   line-height: 23px;
   letter-spacing: 0.16px;
