@@ -41,25 +41,7 @@ export const Common: Story = {
           <CellItem clearMargin label={title}>
             {underTitle}
           </CellItem>
-          <CellItem reverse label={value}>
-            {underValue}
-          </CellItem>
-        </Cell>
-
-        <Cell>
-          <Thumbnail md>{icon}</Thumbnail>
-          <CellItem clearMargin label={title}>
-            {underTitle}
-          </CellItem>
           <CellItem label={value}>{underValue}</CellItem>
-        </Cell>
-
-        <Cell>
-          <Thumbnail md>{icon}</Thumbnail>
-          <CellItem clearMargin label={underTitle}>
-            {title}
-          </CellItem>
-          <CellItem label={underValue}>{value}</CellItem>
         </Cell>
 
         <Cell>
@@ -82,13 +64,23 @@ export const Common: Story = {
 
         <Cell>
           <Thumbnail md>{icon}</Thumbnail>
-          <CellItem clearMargin label={title}>
-            {underTitle}
+          <CellItem clearMargin reverse label="Caption">
+            {title}
           </CellItem>
           <CellItem>
             <Label accent md className={cn(Class.M, Class.Accent)}>
               Label
             </Label>
+          </CellItem>
+        </Cell>
+
+        <Cell>
+          <Thumbnail md>{icon}</Thumbnail>
+          <CellItem clearMargin reverse label="Caption">
+            {title}
+          </CellItem>
+          <CellItem reverse label="Caption">
+            {value}
           </CellItem>
         </Cell>
 
@@ -236,7 +228,7 @@ export const Common: Story = {
             {underTitle}
           </CellItem>
           <CellItem>
-            <Checkmark style={{ width: "24px" }} />c
+            <Checkmark style={{ width: "24px" }} />
           </CellItem>
         </Cell>
 
