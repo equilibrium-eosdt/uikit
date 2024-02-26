@@ -195,7 +195,7 @@ export const InputBox = styled.label`
     pointer-events: none;
     border-radius: var(--rounding-radius-m, 16px);
     color: var(--text-secondary, rgba(66, 61, 60, 0.64));
-    opacity: 0.5;
+    opacity: 0.24;
   }
 `;
 
