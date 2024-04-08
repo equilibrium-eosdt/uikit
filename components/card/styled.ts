@@ -61,8 +61,12 @@ export const CardStyled = styled.div`
     0px 4px 8px 0px rgba(51, 20, 0, 0.04);
   background: ${cssVar("--fill-elevated", "#fff")};
   border-radius: 24px;
-  padding: 16px 24px;
+  padding: 16px;
   height: fit-content;
+
+  &.hasCover {
+    padding-left: 24px;
+  }
 
   &.${classNames.Secondary} {
     background: ${cssVar("--fill-secondary", "rgba(204, 187, 184, 0.16)")};
@@ -70,8 +74,8 @@ export const CardStyled = styled.div`
   }
 
   &.${classNames.M} {
-    padding: 16px 24px 24px;
-    border-radius: 24px;
+    padding: 22px 22px 32px;
+    border-radius: 32px;
     ${CardIcon} {
       border-radius: 50%;
     }
@@ -82,16 +86,12 @@ export const CardStyled = styled.div`
     ${CardHeading} {
       margin-bottom: 2px;
       font-size: 24px;
-      @media (min-width: 1023px) {
-        font-size: 32px;
-      }
+      // @media (min-width: 1023px) {
+      //   font-size: 32px;
+      // }
     }
     ${CardIcon} {
       border-radius: 50%;
     }
-  }
-
-  &.hasCover {
-    padding-bottom: 24px;
   }
 `;

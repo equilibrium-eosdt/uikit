@@ -80,10 +80,8 @@ export const Common: Story = {
 
         <Card heading={heading} cover={<SwapIcon />}>
           <Cell>
-            <CellItem label={title}>{underTitle}</CellItem>
-            <CellItem reverse label={value}>
-              {underValue}
-            </CellItem>
+            <CellItem label={underTitle}>{title}</CellItem>
+            <CellItem label={underValue}>{value}</CellItem>
           </Cell>
         </Card>
 
@@ -93,26 +91,22 @@ export const Common: Story = {
           className={classNames.Secondary}
         >
           <Cell>
-            <CellItem label={title}>{underTitle}</CellItem>
-            <CellItem label={value}>{underValue}</CellItem>
+            <CellItem label={underTitle}>{title}</CellItem>
+            <CellItem label={underValue}>{value}</CellItem>
           </Cell>
         </Card>
 
         <Card heading={heading} cover={<SwapIcon />} md>
           <Cell>
-            <CellItem label={title}>{underTitle}</CellItem>
-            <CellItem reverse label={value}>
-              {underValue}
-            </CellItem>
+            <CellItem label={underTitle}>{title}</CellItem>
+            <CellItem label={underValue}>{value}</CellItem>
           </Cell>
         </Card>
 
         <Card heading={heading} cover={<SwapIcon />} md secondary>
           <Cell>
-            <CellItem label={title}>{underTitle}</CellItem>
-            <CellItem reverse label={value}>
-              {underValue}
-            </CellItem>
+            <CellItem label={underTitle}>{title}</CellItem>
+            <CellItem label={underValue}>{value}</CellItem>
           </Cell>
         </Card>
 
@@ -123,10 +117,8 @@ export const Common: Story = {
           lg
         >
           <Cell>
-            <CellItem label={title}>{underTitle}</CellItem>
-            <CellItem reverse label={value}>
-              {underValue}
-            </CellItem>
+            <CellItem label={underTitle}>{title}</CellItem>
+            <CellItem label={underValue}>{value}</CellItem>
           </Cell>
         </Card>
 
@@ -138,8 +130,8 @@ export const Common: Story = {
           secondary
         >
           <Cell>
-            <CellItem label={title}>{underTitle}</CellItem>
-            <CellItem label={value}>{underValue}</CellItem>
+            <CellItem label={underTitle}>{title}</CellItem>
+            <CellItem label={underValue}>{value}</CellItem>
           </Cell>
         </Card>
 
