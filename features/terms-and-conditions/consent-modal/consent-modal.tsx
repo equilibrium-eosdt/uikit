@@ -39,7 +39,7 @@ export const ConsentModal = ({
   userAddress?: `0x${string}`;
   useDisconnect: () => { disconnect: () => void };
   useSignMessage: () => {
-    signMessageAsync: (args?: { message: string }) => Promise<`0x${string}`>;
+    signMessageAsync: (args: { message: string }) => Promise<`0x${string}`>;
   };
 }) => {
   const { signMessageAsync } = useSignMessage();
