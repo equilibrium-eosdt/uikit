@@ -79,7 +79,7 @@
 
   /** Aliases(light theme) **/
   /* background */
-  --background-overlay: var(--color-transparent-invert-gray2);
+  --background-overlay: rgba(43, 0, 64, 0.7);
   --background-accent-secondary: var(--color-accent-opaque1);
   --background-accent-primary: var(--color-accent-opaque2);
   --background-negative: var(--color-opaque-red1);
@@ -180,7 +180,7 @@
 [data-theme="dark"][data-product="Levva"] {
   /** Aliases(dark theme) **/
   /* background */
-  --background-overlay: var(--color-transparent-gray7);
+  --background-overlay: rgba(33, 8, 45, 0.7);
   --background-accent-secondary: var(--color-accent-opaque5);
   --background-accent-primary: var(--color-accent-opaque4);
   --background-negative: var(--color-opaque-red3);
