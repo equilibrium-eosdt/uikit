@@ -1,6 +1,6 @@
 :root[data-product="Levva"] {
   /** Fonts **/
-  --default-font: "PlusJakartaSans";
+  --default-font: "PlanarRegular";
   /** Colors **/
   /* opaque */
   --color-opaque-blue: #477ae1;
@@ -57,7 +57,7 @@
   --color-accent-transparent1: #bfbe923d;
 
   /** Brands **/
-  --color-brand-marginly: #99ffee;
+  --color-brand-marginly: #cccc3e;
   --color-brand-arbitrum: #b9cdf7;
   --color-brand-bitcoin: #f7931a;
   --color-brand-ethereum: #627eea;
@@ -158,14 +158,23 @@
   --rounding-radius-xs: 8px;
   --rounding-radius-s: 12px;
   --rounding-radius-m: 16px;
+  --rounding-radius-l: 20px;
   --rounding-radius-xl: 24px;
-  --rounding-radius-xxl: 32px;
+  --rounding-radius-xxl: 30px;
   --rounding-radius-xxxl: 48px;
+  --card-shadow: unset;
   --border-image-edge: rgba(204, 187, 184, 0.16);
   --logo-width: 70px;
   --logo-height: 40px;
   --lg-logo-width: 88px;
   --lg-logo-height: 50px;
+  --card-box-shadow: none;
+  --spacing-space-xs: 5px;
+  --spacing-space-m: 8px;
+  --spacing-space-l: 10px;
+  --spacing-space-xxl: 16px;
+  --spacing-space-4xl: 20px;
+  --spacing-space-8xl: 50px;
 }
 
 [data-theme="dark"][data-product="Levva"] {

@@ -3,3 +3,21 @@
   font-display: swap;
   src: url("/fonts/PlusJakartaSans-VariableFont_wght.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "PlanarLight";
+  weight: 300;
+  src: url("/fonts/GT-Planar-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "PlanarMedium";
+  weight: 500;
+  src: url("/fonts/GT-Planar-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "PlanarRegular";
+  weight: 400;
+  src: url("/fonts/GT-Planar-Regular.woff2") format("woff2");
+}
