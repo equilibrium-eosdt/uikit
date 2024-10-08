@@ -3,7 +3,7 @@ import * as Class from "../../constants/classnames";
 import { cssVar } from "../../util/style";
 
 export const TypographyWrapper = styled.p`
-  font-family: ${cssVar("--default-font")}, sans-serif;
+  font-family: var(--default-font, sans-serif);
 
   &.${Class.Title} {
     font-size: 48px;
@@ -11,7 +11,7 @@ export const TypographyWrapper = styled.p`
     font-weight: 700;
     line-height: 56px;
     letter-spacing: 0;
-    
+
     @media (min-width: 1024px) {
       font-size: 64px;
       line-height: 80px;
