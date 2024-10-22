@@ -139,6 +139,7 @@
   --border-invert: var(--color-opaque-white);
   --border-hover: var(--color-opaque-gray5);
   --border-focus: var(--color-opaque-black);
+  --border-secondary: #483f53a3;
   /* misc */
   --svg-invert: 0;
   --svg-invert-secondary: 1;
@@ -191,9 +192,9 @@
   --background-primary: var(--color-opaque-black);
   /* fill */
   --fill-control: var(--color-opaque-gray1);
-  --fill-negative-bg: var(--color-transparent-red3);
+  --fill-negative-bg: #6b4040;
   --fill-negative: var(--color-opaque-red2);
-  --fill-positive-bg: var(--color-transparent-green3);
+  --fill-positive-bg: #3e5951;
   --fill-positive: var(--color-opaque-green2);
   --fill-accent-primary-hover: var(--color-accent-opaque1);
   --fill-accent-secondary: var(--color-accent-transparent1);
@@ -240,6 +241,7 @@
   --border-invert: var(--color-opaque-black);
   --border-hover: var(--color-opaque-gray5);
   --border-focus: var(--color-opaque-gray1);
+  --border-secondary: #f2edeb8f;
   /* misc */
   --svg-invert: 1;
   --svg-invert-secondary: 0;
